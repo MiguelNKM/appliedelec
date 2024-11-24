@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1: Alternating Current Circuit Theory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #2196F3;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: #2196F3;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #2196F3;
+            color: white;
+        }
+        .button {
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #0b7dda;
+        }
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Section 1: Alternating Current Circuit Theory</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Alternating Current Circuit Theory</h2>
+            <p>Alternating Current (AC) is an electric current that periodically reverses direction and changes its magnitude continuously with time. In contrast to DC, AC is the form in which electric power is delivered to businesses and residences.</p>
+            
+            <h3>1. Characteristics of AC</h3>
+            <ul>
+                <li>Frequency: The number of cycles per second, measured in Hertz (Hz)</li>
+                <li>Amplitude: The maximum value of voltage or current in each cycle</li>
+                <li>Phase: The position of the waveform relative to a reference point</li>
+            </ul>
+
+            <h3>2. AC Waveforms</h3>
+            <p>The most common AC waveform is sinusoidal, but other forms include square, triangular, and sawtooth waves.</p>
+
+            <h3>3. RLC Circuits</h3>
+            <p>RLC circuits contain resistors (R), inductors (L), and capacitors (C). These components behave differently in AC circuits compared to DC circuits.</p>
+
+            <h4>3.1 Resistors in AC Circuits</h4>
+            <p>Resistors behave the same in both AC and DC circuits, following Ohm's Law: V = IR</p>
+
+            <h4>3.2 Inductors in AC Circuits</h4>
+            <p>Inductors oppose changes in current. In AC circuits, they introduce a phase shift between voltage and current. The inductive reactance is given by: X<sub>L</sub> = 2πfL</p>
+
+            <h4>3.3 Capacitors in AC Circuits</h4>
+            <p>Capacitors oppose changes in voltage. In AC circuits, they also introduce a phase shift. The capacitive reactance is given by: X<sub>C</sub> = 1 / (2πfC)</p>
+
+            <h3>4. Power in AC Circuits</h3>
+            <p>In AC circuits, power calculations are more complex due to the phase differences between voltage and current.</p>
+
+            <h4>4.1 Types of Power</h4>
+            <ul>
+                <li>Real Power (P): Measured in watts (W), it's the power actually consumed in the circuit</li>
+                <li>Reactive Power (Q): Measured in volt-amperes reactive (VAR), it's the power stored in and discharged by inductive and capacitive elements</li>
+                <li>Apparent Power (S): Measured in volt-amperes (VA), it's the vector sum of real and reactive power</li>
+            </ul>
+
+            <h4>4.2 Power Factor</h4>
+            <p>Power factor is the ratio of real power to apparent power. It's a measure of how efficiently electrical power is being used in a circuit.</p>
+
+            <h3>5. Resonance in RLC Circuits</h3>
+            <p>Resonance occurs in an RLC circuit when the inductive and capacitive reactances are equal. At resonance, the circuit impedance is purely resistive.</p>
+
+            <p>The resonant frequency is given by: f<sub>r</sub> = 1 / (2π√(LC))</p>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            <h3>Problem 1: RLC Series Circuit</h3>
+            <p>A series RLC circuit has R = 50 Ω, L = 0.1 H, and C = 100 μF. The applied voltage is 230 V at 50 Hz. Calculate:</p>
+            <ol>
+                <li>The inductive reactance</li>
+                <li>The capacitive reactance</li>
+                <li>The impedance</li>
+                <li>The current in the circuit</li>
+                <li>The phase angle between voltage and current</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Inductive reactance:</p>
+                    <p>X<sub>L</sub> = 2πfL = 2π × 50 × 0.1 = 31.4 Ω</p>
+                </li>
+                <li>
+                    <p>Capacitive reactance:</p>
+                    <p>X<sub>C</sub> = 1 / (2πfC) = 1 / (2π × 50 × 100 × 10<sup>-6</sup>) = 31.8 Ω</p>
+                </li>
+                <li>
+                    <p>Impedance:</p>
+                    <p>Z = √(R<sup>2</sup> + (X<sub>L</sub> - X<sub>C</sub>)<sup>2</sup>)</p>
+                    <p>Z = √(50<sup>2</sup> + (31.4 - 31.8)<sup>2</sup>) = 50.0 Ω</p>
+                </li>
+                <li>
+                    <p>Current:</p>
+                    <p>I = V / Z = 230 / 50.0 = 4.6 A</p>
+                </li>
+                <li>
+                    <p>Phase angle:</p>
+                    <p>φ = tan<sup>-1</sup>((X<sub>L</sub> - X<sub>C</sub>) / R)</p>
+                    <p>φ = tan<sup>-1</sup>((31.4 - 31.8) / 50) = -0.46°</p>
+                </li>
+            </ol>
+
+            <h3>Problem 2: Power Factor Correction</h3>
+            <p>An AC circuit draws 10 kW at a power factor of 0.8 lagging. Calculate:</p>
+            <ol>
+                <li>The apparent power</li>
+                <li>The reactive power</li>
+                <li>The capacitance needed to improve the power factor to 0.95 lagging</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Apparent power:</p>
+                    <p>S = P / cos φ = 10000 / 0.8 = 12500 VA = 12.5 kVA</p>
+                </li>
+                <li>
+                    <p>Reactive power:</p>
+                    <p>Q = √(S<sup>2</sup> - P<sup>2</sup>) = √(12500<sup>2</sup> - 10000<sup>2</sup>) = 7500 VAR = 7.5 kVAR</p>
+                </li>
+                <li>
+                    <p>Capacitance for power factor correction:</p>
+                    <p>New reactive power: Q<sub>new</sub> = P × tan(cos<sup>-1</sup>(0.95)) = 10000 × tan(18.19°) = 3287 VAR</p>
+                    <p>Reactive power to be supplied by capacitor: Q<sub>C</sub> = 7500 - 3287 = 4213 VAR</p>
+                    <p>Assuming 230V, 50Hz supply:</p>
+                    <p>C = Q<sub>C</sub> / (2πfV<sup>2</sup>) = 4213 / (2π × 50 × 230<sup>2</sup>) = 254 μF</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button class="button" onclick="startQuiz('study')">Start Study Mode</button>
+                <button class="button" onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button class="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <h3>1. RLC Circuit Simulator</h3>
+            <div>
+                <label for="resistance">Resistance (Ω):</label>
+                <input type="number" id="resistance" value="50" min="1">
+                <label for="inductance">Inductance (H):</label>
+                <input type="number" id="inductance" value="0.1" min="0.001" step="0.001">
+                <label for="capacitance">Capacitance (μF):</label>
+                <input type="number" id="capacitance" value="100" min="1">
+                <label for="frequency">Frequency (Hz):</label>
+                <input type="number" id="frequency" value="50" min="1">
+                <button class="button" onclick="calculateRLC()">Calculate</button>
+            </div>
+            <div id="rlc-results">
+                <p>Impedance: <span id="impedance-result">-</span> Ω</p>
+                <p>Phase Angle: <span id="phase-angle-result">-</span> degrees</p>
+                <p>Current: <span id="current-result">-</span> A</p>
+            </div>
+
+            <h3>2. PhET AC Circuit Construction Kit</h3>
+            <p>Explore AC circuits interactively with the PhET AC Circuit Construction Kit simulation:</p>
+            <iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-ac/latest/circuit-construction-kit-ac_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+            <p>This simulation allows you to build and analyze AC circuits, observe current flow, and measure voltage and current using virtual tools.</p>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Video Tutorials</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=Vd2UJiIPbag" target="_blank">Introduction to AC Circuits</a></li>
+                <li><a href="https://www.youtube.com/watch?v=81BgFhm2vz8" target="_blank">RLC Circuits Explained</a></li>
+                <li><a href="https://www.youtube.com/watch?v=vN9aR2wKv0U" target="_blank">Power in AC Circuits</a></li>
+            </ul>
+            <h3>Online Courses</h3>
+            <ul>
+                <li><a href="https://www.edx.org/course/circuits-and-electronics-1-basic-circuit-analysi-2" target="_blank">Circuits and Electronics 1: Basic Circuit Analysis (edX)</a></li>
+                <li><a href="https://www.coursera.org/learn/linear-circuits-dcanalysis" target="_blank">Introduction to Electronics: AC/DC Analysis (Coursera)</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Fundamentals of Electric Circuits" by Charles K. Alexander and Matthew N. O. Sadiku</li>
+                <li>"Electric Circuits" by James W. Nilsson and Susan Riedel</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build an AC Voltage Divider</h3>
+            <p>Create a simple AC voltage divider circuit and measure the output voltage at different frequencies.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>Function generator or AC power source</li>
+                <li>Oscilloscope</li>
+                <li>Resistors (various values)</li>
+                <li>Capacitors (various values)</li>
+                <li>Connecting wires</li>
+            </ul>
+
+            <h3>2. RC Low-Pass Filter</h3>
+            <p>Design and build an RC low-pass filter. Measure its cutoff frequency and observe the phase shift.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>Function generator</li>
+                <li>Oscilloscope</li>
+                <li>Resistors (1kΩ, 10kΩ)</li>
+                <li>Capacitors (0.1μF, 1μF)</li>
+                <li>Connecting wires</li>
+            </ul>
+
+            <h3>3. Power Factor Correction</h3>
+            <p>Build a circuit with a low power factor and implement power factor correction using a capacitor.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>AC power source</li>
+                <li>Inductive load (e.g., small motor or inductor)</li>
+                <li>Capacitors (various values)</li>
+                <li>AC ammeter and voltmeter</li>
+                <li>Power factor meter (or oscilloscope to measure phase difference)</li>
+            </ul>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the relationship between line voltage and phase voltage in a star connection?",
+                options: ["Line voltage = Phase voltage", "Line voltage = √3 × Phase voltage", "Line voltage = 3 × Phase voltage", "Line voltage = Phase voltage / √3"],
+                correctAnswer: "b",
+                topic: "star-delta-connections"
+            },
+            {
+                question: "In an AC circuit, what does the power factor represent?",
+                options: ["The ratio of resistance to impedance", "The ratio of reactance to resistance", "The cosine of the phase angle between voltage and current", "The ratio of apparent power to reactive power"],
+                correctAnswer: "c",
+                topic: "power-in-ac-circuit"
+            },
+            {
+                question: "What is the formula for calculating the resonant frequency in an RLC circuit?",
+                options: ["f = 1 / (2π√LC)", "f = 2π√LC", "f = 1 / (2πLC)", "f = 2π / √LC"],
+                correctAnswer: "a",
+                topic: "rlc-circuit"
+            },
+            {
+                question: "Which of the following is NOT a type of power in AC circuits?",
+                options: ["Active Power", "Reactive Power", "Apparent Power", "Resistive Power"],
+                correctAnswer: "d",
+                topic: "power-in-ac-circuit"
+            },
+            {
+                question: "In a transformer, what is the relationship between the primary and secondary voltages and the number of turns?",
+                options: ["V<sub>p</sub> / V<sub>s</sub> = N<sub>p</sub> / N<sub>s</sub>", "V<sub>p</sub> / V<sub>s</sub> = N<sub>s</sub> / N<sub>p</sub>", "V<sub>p</sub> × N<sub>p</sub> = V<sub>s</sub> × N<sub>s</sub>", "V<sub>p</sub> × N<sub>s</sub> = V<sub>s</sub> × N<sub>p</sub>"],
+                correctAnswer: "a",
+                topic: "work-solutions"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the principle of operation of an AC generator.",
+                keywords: ["electromagnetic induction", "rotating magnetic field", "faraday's law", "slip rings", "commutator"],
+                topic: "generators",
+                modelAnswer: "An AC generator operates on the principle of electromagnetic induction. It consists of a rotating magnetic field (rotor) and stationary conductors (stator). As the rotor spins, it creates a changing magnetic field that induces an alternating current in the stator windings, following Faraday's law. The frequency of the AC is determined by the rotational speed and the number of magnetic poles. Slip rings are used to transfer the generated current from the rotating part to the stationary external circuit, while a commutator is not needed in AC generators as it is in DC generators."
+            },
+            {
+                question: "Describe the differences between star and delta connections in three-phase systems.",
+                keywords: ["line voltage", "phase voltage", "line current", "phase current", "√3 factor"],
+                topic: "star-delta-connections",
+                modelAnswer: "Star (Y) and Delta (Δ) connections are two ways of connecting three-phase systems. In a star connection, one end of each phase is connected to a common neutral point. The line voltage is √3 times the phase voltage, while the line current equals the phase current. In a delta connection, the end of one phase is connected to the start of the next phase, forming a triangle. Here, the line voltage equals the phase voltage, but the line current is √3 times the phase current. The √3 factor is crucial in calculations and is a key difference between the two connections. Star connections are often used for higher voltages and when a neutral is required, while delta connections are common in motor windings and for balanced loads."
+            },
+            {
+                question: "What is power factor correction, and why is it important in AC circuits?",
+                keywords: ["reactive power", "capacitors", "efficiency", "voltage regulation", "power loss"],
+                topic: "power-in-ac-circuit",
+                modelAnswer: "Power factor correction is the process of improving the power factor of an AC electrical power system. The power factor is the ratio of real power to apparent power in a circuit. A low power factor indicates that a significant amount of reactive power is present, which doesn't do useful work but still needs to be generated and transmitted. Power factor correction typically involves adding capacitors to the circuit to counteract inductive loads. This is important because it increases efficiency by reducing power loss in transmission lines, improves voltage regulation, and allows electrical systems to operate closer to their capacity. For utilities, it means they can supply more real power without upgrading infrastructure, and for consumers, it can lead to reduced electricity bills as many utilities charge for poor power factors."
+            },
+            {
+                question: "Explain the concept of resonance in an RLC circuit and its practical applications.",
+                keywords: ["natural frequency", "impedance", "bandwidth", "quality factor", "tuning"],
+                topic: "rlc-circuit",
+                modelAnswer: "Resonance in an RLC circuit occurs when the inductive and capacitive reactances are equal in magnitude but opposite in phase, resulting in a purely resistive circuit. This happens at a specific frequency called the resonant or natural frequency. At resonance, the circuit impedance is at its minimum (series resonance) or maximum (parallel resonance), and the circuit can produce large voltage or current amplitudes. The bandwidth and quality factor of the resonant circuit determine its selectivity. Practical applications of RLC resonance include tuning in radio and TV receivers to select specific frequencies, filter design in audio systems, power factor correction in AC power systems, and wireless power transfer. In telecommunications, resonant circuits are crucial for frequency selection and signal processing."
+            },
+            {
+                question: "Discuss the advantages and disadvantages of AC over DC for power transmission.",
+                keywords: ["voltage transformation", "power loss", "long distance", "generation", "distribution"],
+                topic: "content",
+                modelAnswer: "AC power transmission offers several advantages over DC. The primary benefit is the ease of voltage transformation using transformers, allowing for high-voltage transmission and low-voltage distribution, which significantly reduces power losses over long distances. AC generators are also simpler and more efficient to construct than DC generators. Additionally, AC naturally passes through zero twice per cycle, making it easier to interrupt for switching and protection purposes. However, AC also has some disadvantages. It suffers from skin effect, which increases effective resistance in conductors, and from reactive power losses due to inductance and capacitance in the lines. AC systems also require synchronization between generators. In contrast, DC transmission has lower line losses for a given voltage and is more suitable for connecting asynchronous AC systems. However, DC requires expensive conversion equipment at each end of the transmission line. In modern systems, high-voltage DC (HVDC) is sometimes used for very long-distance transmission or undersea cables, while AC remains dominant for most power distribution due to its overall advantages in generation, transformation, and distribution."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button class="button" onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateRLC() {
+            const resistance = parseFloat(document.getElementById('resistance').value);
+            const inductance = parseFloat(document.getElementById('inductance').value);
+            const capacitance = parseFloat(document.getElementById('capacitance').value) * 1e-6; // Convert μF to F
+            const frequency = parseFloat(document.getElementById('frequency').value);
+
+            const omega = 2 * Math.PI * frequency;
+            const XL = omega * inductance;
+            const XC = 1 / (omega * capacitance);
+            const impedance = Math.sqrt(resistance ** 2 + (XL - XC) ** 2);
+            const phaseAngle = Math.atan2(XL - XC, resistance) * (180 / Math.PI);
+            const current = 230 / impedance; // Assuming a 230V supply
+
+            document.getElementById('impedance-result').textContent = impedance.toFixed(2);
+            document.getElementById('phase-angle-result').textContent = phaseAngle.toFixed(2);
+            document.getElementById('current-result').textContent = current.toFixed(2);
+        }
+
+        // Dictionary functionality
+        const dictionary = {
+            "Alternating Current (AC)": "An electric current that periodically reverses direction and changes its magnitude continuously with time.",
+            "Frequency": "The number of cycles per second in an AC waveform, measured in Hertz (Hz).",
+            "Amplitude": "The maximum value of voltage or current in each cycle of an AC waveform.",
+            "Phase": "The position of a point in time on a waveform cycle relative to a reference point.",
+            "Impedance": "The total opposition that a circuit presents to alternating current, measured in ohms.",
+            "Reactance": "The opposition to alternating current by inductance or capacitance in a circuit.",
+            "Power Factor": "The ratio of real power to apparent power in an AC circuit.",
+            "Resonance": "The state of a circuit in which the inductive and capacitive reactances are equal, resulting in a purely resistive impedance.",
+            "RMS (Root Mean Square)": "The effective value of a varying voltage or current, equivalent to the steady DC value which would produce the same power dissipation in a resistive load."
+        };
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            for (const [term, definition] of Object.entries(dictionary)) {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = term;
+                definitionCell.textContent = definition;
+            }
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const table = document.getElementById('dictionary-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const termCell = rows[i].getElementsByTagName('td')[0];
+                if (termCell) {
+                    const term = termCell.textContent || termCell.innerText;
+                    if (term.toLowerCase().indexOf(searchTerm) > -1) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Set the default tab to 'content' and initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+            populateDictionary();
+            document.getElementById('search-input').addEventListener('keyup', searchDictionary);
+        });
+    </script>
+</body>
+</html>

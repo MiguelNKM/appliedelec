@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 3: Semiconductor Devices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: #4CAF50;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .phet-simulation {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .phet-simulation h4 {
+            margin-top: 0;
+        }
+        .phet-simulation .button {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Section 3: Semiconductor Devices</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Semiconductor Devices</h2>
+            <h3>1. Semiconductor Theory</h3>
+            <p>Semiconductors are materials with electrical conductivity between that of conductors and insulators. Their unique properties make them fundamental to modern electronics.</p>
+            
+            <h4>1.1 Energy Bands</h4>
+            <p>In semiconductors, there are two important energy bands:</p>
+            <ul>
+                <li><strong>Valence Band:</strong> The highest energy band filled with electrons at absolute zero temperature.</li>
+                <li><strong>Conduction Band:</strong> The lowest energy band that is empty at absolute zero temperature.</li>
+            </ul>
+            <p>The energy gap between these bands is called the <strong>band gap</strong>.</p>
+
+            <h4>1.2 Types of Semiconductors</h4>
+            <p>There are two main types of semiconductors:</p>
+            <ol>
+                <li><strong>Intrinsic Semiconductors:</strong> Pure semiconductors with equal numbers of electrons and holes.</li>
+                <li><strong>Extrinsic Semiconductors:</strong> Semiconductors with added impurities (doping) to modify their electrical properties.
+                    <ul>
+                        <li><strong>N-type:</strong> Doped with donor impurities, increasing free electrons.</li>
+                        <li><strong>P-type:</strong> Doped with acceptor impurities, increasing holes.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>1.3 Charge Carriers</h4>
+            <p>In semiconductors, electrical current can be carried by:</p>
+            <ul>
+                <li><strong>Electrons:</strong> Negatively charged particles in the conduction band.</li>
+                <li><strong>Holes:</strong> Positively charged "absence of electrons" in the valence band.</li>
+            </ul>
+
+            <h3>2. Diodes</h3>
+            <p>A diode is a two-terminal semiconductor device that allows current to flow in one direction while blocking it in the opposite direction.</p>
+
+            <h4>2.1 P-N Junction</h4>
+            <p>A diode is formed by joining P-type and N-type semiconductors, creating a P-N junction. This junction has unique properties:</p>
+            <ul>
+                <li><strong>Depletion Region:</strong> A region near the junction devoid of free charge carriers.</li>
+                <li><strong>Built-in Potential:</strong> An electric field created by the diffusion of charge carriers.</li>
+            </ul>
+
+            <h4>2.2 Biasing</h4>
+            <p>Diodes can be operated in two biasing conditions:</p>
+            <ol>
+                <li><strong>Forward Bias:</strong> P-side connected to positive terminal, N-side to negative. Current flows easily.</li>
+                <li><strong>Reverse Bias:</strong> P-side connected to negative terminal, N-side to positive. Very little current flows.</li>
+            </ol>
+
+            <h4>2.3 I-V Characteristics</h4>
+            <p>The current-voltage (I-V) characteristic of a diode is non-linear:</p>
+            <ul>
+                <li>In forward bias, current increases exponentially after overcoming the barrier potential (typically 0.7V for silicon).</li>
+                <li>In reverse bias, only a small leakage current flows until breakdown voltage is reached.</li>
+            </ul>
+
+            <h4>2.4 Types of Diodes</h4>
+            <p>There are several types of diodes with specialized functions:</p>
+            <ul>
+                <li><strong>Rectifier Diodes:</strong> Used to convert AC to DC.</li>
+                <li><strong>Zener Diodes:</strong> Operate in reverse breakdown for voltage regulation.</li>
+                <li><strong>Light Emitting Diodes (LEDs):</strong> Emit light when forward biased.</li>
+                <li><strong>Photodiodes:</strong> Generate current when exposed to light.</li>
+                <li><strong>Varactor Diodes:</strong> Use variable capacitance for tuning circuits.</li>
+            </ul>
+
+            <h4>2.5 Applications</h4>
+            <p>Diodes have numerous applications in electronics:</p>
+            <ul>
+                <li>Rectification in power supplies</li>
+                <li>Signal demodulation in radio receivers</li>
+                <li>Voltage regulation</li>
+                <li>Lighting and displays (LEDs)</li>
+                <li>Solar cells (photodiodes)</li>
+                <li>Protection against reverse polarity</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            <h3>Problem 1: Diode Forward Voltage</h3>
+            <p>A silicon diode is connected in series with a 1 kΩ resistor and a 5V power supply. Calculate:</p>
+            <ol>
+                <li>The current through the diode</li>
+                <li>The voltage across the resistor</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Assuming a forward voltage drop of 0.7V for the silicon diode:</p>
+                    <p>Voltage across resistor = 5V - 0.7V = 4.3V</p>
+                    <p>Current = Voltage / Resistance = 4.3V / 1000Ω = 4.3mA</p>
+                </li>
+                <li>
+                    <p>The voltage across the resistor is 4.3V (calculated in step 1)</p>
+                </li>
+            </ol>
+
+            <h3>Problem 2: Zener Diode Voltage Regulation</h3>
+            <p>A Zener diode with a breakdown voltage of 5.1V is used in a voltage regulator circuit. The input voltage is 12V, and the load requires 20mA. Calculate the value of the series resistor needed.</p>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Voltage drop across the resistor = Input voltage - Zener voltage</p>
+                    <p>V<sub>R</sub> = 12V - 5.1V = 6.9V</p>
+                </li>
+                <li>
+                    <p>Current through the resistor = Load current (assuming minimal Zener current)</p>
+                    <p>I = 20mA = 0.02A</p>
+                </li>
+                <li>
+                    <p>Resistor value = Voltage drop / Current</p>
+                    <p>R = 6.9V / 0.02A = 345Ω</p>
+                </li>
+                <li>
+                    <p>Choose the nearest standard resistor value, e.g., 330Ω or 360Ω</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button class="button" onclick="startQuiz('study')">Start Study Mode</button>
+                <button class="button" onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button class="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <h3>1. Diode I-V Characteristic Curve</h3>
+            <div>
+                <label for="forward-voltage">Forward Voltage (V):</label>
+                <input type="number" id="forward-voltage" value="0.7" step="0.1" min="0" max="2">
+                <label for="reverse-saturation-current">Reverse Saturation Current (A):</label>
+                <input type="number" id="reverse-saturation-current" value="1e-12" step="1e-13" min="1e-15" max="1e-9">
+                <button class="button" onclick="plotDiodeCurve()">Plot Curve</button>
+            </div>
+            <canvas id="diode-curve" width="600" height="400"></canvas>
+
+            <h3>2. Zener Diode Voltage Regulator</h3>
+            <div>
+                <label for="input-voltage">Input Voltage (V):</label>
+                <input type="number" id="input-voltage" value="12" min="5" max="20">
+                <label for="zener-voltage">Zener Voltage (V):</label>
+                <input type="number" id="zener-voltage" value="5.1" min="1" max="10" step="0.1">
+                <label for="load-resistance">Load Resistance (Ω):</label>
+                <input type="number" id="load-resistance" value="1000" min="100" max="10000" step="100">
+                <button class="button" onclick="calculateZenerRegulator()">Calculate</button>
+            </div>
+            <div id="zener-results">
+                <p>Series Resistor: <span id="series-resistor-result">-</span> Ω</p>
+                <p>Load Current: <span id="load-current-result">-</span> mA</p>
+                <p>Zener Current: <span id="zener-current-result">-</span> mA</p>
+            </div>
+
+            <h3>3. PhET Semiconductor Simulation</h3>
+            <div class="phet-simulation">
+                <h4>Semiconductor Simulation</h4>
+                <p>This interactive simulation allows you to explore the behavior of semiconductors at the atomic level. You can visualize the movement of electrons and holes, and see how doping affects the semiconductor's properties.</p>
+                <ul>
+                    <li>Observe the behavior of electrons and holes in intrinsic and doped semiconductors</li>
+                    <li>Adjust temperature and see its effect on charge carrier concentration</li>
+                    <li>Add dopants to create N-type and P-type semiconductors</li>
+                    <li>Visualize the energy bands and Fermi level</li>
+                </ul>
+                <a href="https://phet.colorado.edu/sims/cheerpj/semiconductor/latest/semiconductor.html?simulation=semiconductor" target="_blank" class="button">Launch Semiconductor Simulation</a>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Video Tutorials</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=33vbFFFn04k" target="_blank">Semiconductors, Insulators & Conductors</a></li>
+                <li><a href="https://www.youtube.com/watch?v=JBtEckh3L9Q" target="_blank">P-N Junction and Diode</a></li>
+                <li><a href="https://www.youtube.com/watch?v=AcxDiesy-nI" target="_blank">Zener Diodes</a></li>
+            </ul>
+            <h3>Online Courses</h3>
+            <ul>
+                <li><a href="https://www.edx.org/course/semiconductor-devices" target="_blank">Semiconductor Devices (edX)</a></li>
+                <li><a href="https://www.coursera.org/learn/semiconductor-devices" target="_blank">Introduction to Semiconductor Devices (Coursera)</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Semiconductor Physics and Devices" by Donald A. Neamen</li>
+                <li>"Electronic Devices and Circuit Theory" by Robert L. Boylestad and Louis Nashelsky</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build a Simple Rectifier Circuit</h3>
+            <p>Construct a half-wave rectifier using a diode and measure the output waveform.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>1N4007 diode</li>
+                <li>1 kΩ resistor</li>
+                <li>Breadboard</li>
+                <li>Function generator or AC power source</li>
+                <li>Oscilloscope</li>
+            </ul>
+
+            <h3>2. LED Flasher Circuit</h3>
+            <p>Create a simple LED flasher circuit using two transistors and two LEDs.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>2 NPN transistors (e.g., 2N3904)</li>
+                <li>2 LEDs</li>
+                <li>2 10 kΩ resistors</li>
+                <li>2 100 kΩ resistors</li>
+                <li>2 10 µF capacitors</li>
+                <li>Breadboard</li>
+                <li>9V battery and connector</li>
+            </ul>
+
+            <h3>3. Zener Diode Voltage Regulator</h3>
+            <p>Build and test a simple voltage regulator using a Zener diode.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Zener diode (e.g., 1N4733 5.1V)</li>
+                <li>470 Ω resistor</li>
+                <li>Variable DC power supply</li>
+                <li>Multimeter</li>
+                <li>Breadboard</li>
+            </ul>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the main difference between intrinsic and extrinsic semiconductors?",
+                options: [
+                    "Intrinsic semiconductors conduct electricity, while extrinsic do not",
+                    "Intrinsic semiconductors are pure, while extrinsic have added impurities",
+                    "Intrinsic semiconductors are made of silicon, while extrinsic are made of germanium",
+                    "Intrinsic semiconductors have a larger band gap than extrinsic semiconductors"
+                ],
+                correctAnswer: "b",
+                topic: "semiconductor-theory"
+            },
+            {
+                question: "What is the typical forward voltage drop across a silicon diode?",
+                options: [
+                    "0.3V",
+                    "0.5V",
+                    "0.7V",
+                    "1.0V"
+                ],
+                correctAnswer: "c",
+                topic: "diodes"
+            },
+            {
+                question: "Which of the following is NOT a type of diode?",
+                options: [
+                    "Zener diode",
+                    "LED",
+                    "Transistor diode",
+                    "Schottky diode"
+                ],
+                correctAnswer: "c",
+                topic: "diodes"
+            },
+            {
+                question: "What is the primary function of a Zener diode when used in a voltage regulator circuit?",
+                options: [
+                    "To amplify the voltage",
+                    "To convert AC to DC",
+                    "To maintain a constant voltage across its terminals",
+                    "To increase the current flow"
+                ],
+                correctAnswer: "c",
+                topic: "diodes"
+            },
+            {
+                question: "In a P-N junction, what causes the depletion region?",
+                options: [
+                    "External voltage applied to the junction",
+                    "Diffusion of charge carriers across the junction",
+                    "Impurities added to the semiconductor",
+                    "Heat generated in the junction"
+                ],
+                correctAnswer: "b",
+                topic: "semiconductor-theory"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the concept of energy bands in semiconductors and how they relate to electrical conductivity.",
+                keywords: ["valence band", "conduction band", "band gap", "electron excitation", "thermal energy", "doping"],
+                topic: "semiconductor-theory",
+                modelAnswer: "Energy bands in semiconductors are ranges of energy that electrons can occupy. The two most important bands are the valence band (highest filled band at absolute zero) and the conduction band (lowest empty band at absolute zero). The energy difference between these bands is called the band gap. Electrical conductivity in semiconductors depends on electrons being excited from the valence band to the conduction band. This excitation can occur through thermal energy or by doping the semiconductor. A smaller band gap makes it easier for electrons to be excited, increasing conductivity. Doping introduces additional energy levels within the band gap, further facilitating electron movement and enhancing conductivity."
+            },
+            {
+                question: "Describe the operation of a P-N junction diode in forward and reverse bias conditions.",
+                keywords: ["depletion region", "majority carriers", "minority carriers", "current flow", "barrier potential", "breakdown voltage"],
+                topic: "diodes",
+                modelAnswer: "A P-N junction diode operates differently under forward and reverse bias conditions. In forward bias (P-side connected to positive terminal, N-side to negative), the applied voltage reduces the width of the depletion region and lowers the barrier potential. This allows majority carriers to diffuse across the junction, resulting in significant current flow. Current begins to flow substantially once the applied voltage overcomes the barrier potential (about 0.7V for silicon). In reverse bias (P-side to negative, N-side to positive), the depletion region widens, increasing the barrier for majority carriers. Only a small current (reverse saturation current) flows due to minority carriers. If the reverse voltage becomes too high, reaching the breakdown voltage, the diode conducts in reverse, potentially damaging it."
+            },
+            {
+                question: "Explain how a Zener diode can be used as a voltage regulator.",
+                keywords: ["reverse breakdown", "constant voltage", "series resistor", "load current", "Zener current", "power dissipation"],
+                topic: "diodes",
+                modelAnswer: "A Zener diode can be used as a voltage regulator by exploiting its reverse breakdown characteristic. When reverse-biased beyond its Zener voltage, it maintains a nearly constant voltage across its terminals, despite variations in current. In a typical voltage regulator circuit, the Zener diode is connected in parallel with the load, with a series resistor between the input voltage and the Zener diode. The series resistor limits the current through the Zener diode and drops the excess voltage. As the input voltage or load current changes, the current through the Zener diode adjusts to maintain a constant voltage across the load. The Zener diode must be chosen with an appropriate power rating to handle the maximum expected current, and the series resistor must be sized to limit the current to a safe value while allowing enough current for both the load and the Zener diode."
+            },
+            {
+                question: "Compare and contrast N-type and P-type semiconductors.",
+                keywords: ["doping", "majority carriers", "minority carriers", "donor impurities", "acceptor impurities", "electron concentration", "hole concentration"],
+                topic: "semiconductor-theory",
+                modelAnswer: "N-type and P-type semiconductors are created by doping intrinsic semiconductors with specific impurities. N-type semiconductors are doped with donor impurities (e.g., phosphorus in silicon) that have more valence electrons than the semiconductor material. This results in extra free electrons, making electrons the majority carriers and holes the minority carriers. P-type semiconductors are doped with acceptor impurities (e.g., boron in silicon) that have fewer valence electrons, creating extra holes. In P-type semiconductors, holes are the majority carriers and electrons are the minority carriers. The key differences are: 1) Majority carriers: electrons in N-type, holes in P-type. 2) Electrical properties: N-type has higher electron concentration and conductivity, P-type has higher hole concentration. 3) Fermi level: closer to the conduction band in N-type, closer to the valence band in P-type. Despite these differences, both types play crucial roles in semiconductor devices, often used together to create P-N junctions for diodes and transistors."
+            },
+            {
+                question: "Discuss the applications and limitations of different types of diodes (e.g., rectifier diodes, Zener diodes, LEDs, photodiodes).",
+                keywords: ["rectification", "voltage regulation", "light emission", "light detection", "switching speed", "power handling", "temperature sensitivity", "reverse recovery time"],
+                topic: "diodes",
+                modelAnswer: "Different types of diodes have specific applications and limitations: 1) Rectifier diodes are used for converting AC to DC in power supplies. They can handle high currents but have relatively slow switching speeds and significant forward voltage drops. 2) Zener diodes are used for voltage regulation and protection. They operate in reverse breakdown, maintaining a constant voltage. However, they have limited power dissipation capabilities and temperature sensitivity. 3) Light Emitting Diodes (LEDs) convert electrical energy to light and are used in displays and lighting. They are energy-efficient and long-lasting but require current-limiting and heat management. 4) Photodiodes convert light to electrical current and are used in light sensors and solar cells. They have high sensitivity but can be affected by temperature and require careful biasing. 5) Schottky diodes have very fast switching speeds and low forward voltage drops, making them ideal for high-frequency applications and improving power supply efficiency. However, they typically have higher reverse leakage current. Each type of diode is optimized for its specific application, trading off factors such as speed, power handling, and sensitivity to achieve the desired performance in its intended use case."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                reviewContent += `<p class="${questionScore === 7 ? 'correct' : questionScore > 0 ? 'partial' : 'incorrect'}">Question ${index + objectiveQuestions.length + 1}: (${questionScore}/7 marks)</p>`;
+                
+                if (quizMode === 'study') {
+                    reviewContent += `
+                        <p>Keywords to include: ${q.keywords.join(', ')}</p>
+                        <p class="show-more" onclick="toggleModelAnswer(${index})">Show Model Answer</p>
+                        <div class="model-answer" id="model-answer-${index}">
+                            <p><strong>Model Answer:</strong> ${q.modelAnswer}</p>
+                        </div>
+                    `;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(index) {
+            const modelAnswer = document.getElementById(`model-answer-${index}`);
+            modelAnswer.style.display = modelAnswer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Diode I-V Characteristic Curve Simulation
+        function plotDiodeCurve() {
+            const canvas = document.getElementById('diode-curve');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const forwardVoltage = parseFloat(document.getElementById('forward-voltage').value);
+            const reverseSaturationCurrent = parseFloat(document.getElementById('reverse-saturation-current').value);
+
+            const voltagePoints = [];
+            const currentPoints = [];
+
+            for (let v = -1; v <= 1; v += 0.01) {
+                voltagePoints.push(v);
+                const i = reverseSaturationCurrent * (Math.exp(v / (0.026 * forwardVoltage)) - 1);
+                currentPoints.push(i);
+            }
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: voltagePoints,
+                    datasets: [{
+                        label: 'Diode I-V Characteristic',
+                        data: currentPoints,
+                        borderColor: 'blue',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (A)'
+                            },
+                            type: 'logarithmic'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Zener Diode Voltage Regulator Simulation
+        function calculateZenerRegulator() {
+            const inputVoltage = parseFloat(document.getElementById('input-voltage').value);
+            const zenerVoltage = parseFloat(document.getElementById('zener-voltage').value);
+            const loadResistance = parseFloat(document.getElementById('load-resistance').value);
+
+            const loadCurrent = zenerVoltage / loadResistance;
+            const seriesResistor = (inputVoltage - zenerVoltage) / loadCurrent;
+            const zenerCurrent = (inputVoltage - zenerVoltage) / seriesResistor - loadCurrent;
+
+            document.getElementById('series-resistor-result').textContent = seriesResistor.toFixed(2);
+            document.getElementById('load-current-result').textContent = (loadCurrent * 1000).toFixed(2);
+            document.getElementById('zener-current-result').textContent = (zenerCurrent * 1000).toFixed(2);
+        }
+
+        // Dictionary
+        const dictionary = [
+            { term: "Semiconductor", definition: "A material with electrical conductivity between that of a conductor and an insulator." },
+            { term: "Diode", definition: "A two-terminal electronic component that conducts current primarily in one direction." },
+            { term: "P-N Junction", definition: "The interface between P-type and N-type semiconductor materials." },
+            { term: "Forward Bias", definition: "The condition where a diode allows significant current flow." },
+            { term: "Reverse Bias", definition: "The condition where a diode blocks most current flow." },
+            { term: "Zener Diode", definition: "A diode designed to operate in the reverse breakdown region for voltage regulation." },
+            { term: "LED", definition: "Light Emitting Diode, a semiconductor device that emits light when current flows through it." },
+            { term: "Photodiode", definition: "A semiconductor device that converts light into electrical current." },
+            { term: "Doping", definition: "The process of adding impurities to a semiconductor to modify its electrical properties." },
+            { term: "Band Gap", definition: "The energy difference between the valence band and the conduction band in a semiconductor." }
+        ];
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            dictionary.forEach(entry => {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = entry.term;
+                definitionCell.textContent = entry.definition;
+            });
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredDictionary = dictionary.filter(entry => 
+                entry.term.toLowerCase().includes(searchTerm) || 
+                entry.definition.toLowerCase().includes(searchTerm)
+            );
+            
+            const resultsDiv = document.getElementById('search-results');
+            resultsDiv.innerHTML = '';
+            
+            if (filteredDictionary.length > 0) {
+                filteredDictionary.forEach(entry => {
+                    const entryDiv = document.createElement('div');
+                    entryDiv.innerHTML = `<strong>${entry.term}:</strong> ${entry.definition}`;
+                    resultsDiv.appendChild(entryDiv);
+                });
+            } else {
+                resultsDiv.textContent = 'No results found.';
+            }
+        }
+
+        document.getElementById('search-input').addEventListener('input', searchDictionary);
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            openTab(event, 'content');
+            populateDictionary();
+            plotDiodeCurve();
+            calculateZenerRegulator();
+        });
+    </script>
+</body>
+</html>

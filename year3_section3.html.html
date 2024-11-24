@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 3 Applied Electricity - Electrical Energy Supply: Generating Station (Ghana)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: block;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 3 Applied Electricity - Electrical Energy Supply: Generating Station (Ghana)</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Generating Station Content (Ghana)</h2>
+            <h3>1. Introduction to Generating Stations in Ghana</h3>
+            <p>Ghana's electricity generation sector is diverse and evolving, with a mix of hydroelectric, thermal, and renewable energy sources. The country has been working towards increasing its power generation capacity to meet growing demand and support economic development.</p>
+            
+            <h3>2. Types of Generating Stations in Ghana</h3>
+            <ul>
+                <li><strong>Hydroelectric Power Plants:</strong> Ghana's largest source of electricity, including the Akosombo Dam and Bui Dam.</li>
+                <li><strong>Thermal Power Plants:</strong> Using natural gas, light crude oil, or diesel, such as the Tema Thermal Plant Complex.</li>
+                <li><strong>Solar Power Plants:</strong> Emerging renewable energy source, with projects like the BXC Solar Power Station in the Central Region.</li>
+                <li><strong>Biomass Power Plants:</strong> Potential future source, with planned projects using cocoa pod husks and other agricultural waste.</li>
+            </ul>
+
+            <h3>3. Major Power Plants in Ghana</h3>
+            <ol>
+                <li><strong>Akosombo Hydroelectric Power Station:</strong>
+                    <ul>
+                        <li>Capacity: 1,020 MW</li>
+                        <li>Location: Eastern Region</li>
+                        <li>Commissioned: 1965</li>
+                        <li>Operator: Volta River Authority (VRA)</li>
+                    </ul>
+                </li>
+                <li><strong>Bui Hydroelectric Power Station:</strong>
+                    <ul>
+                        <li>Capacity: 400 MW</li>
+                        <li>Location: Brong Ahafo Region</li>
+                        <li>Commissioned: 2013</li>
+                        <li>Operator: Bui Power Authority</li>
+                    </ul>
+                </li>
+                <li><strong>Takoradi Thermal Power Station:</strong>
+                    <ul>
+                        <li>Capacity: 330 MW</li>
+                        <li>Location: Western Region</li>
+                        <li>Fuel: Light Crude Oil / Natural Gas</li>
+                        <li>Operator: Volta River Authority (VRA)</li>
+                    </ul>
+                </li>
+                <li><strong>Kpone Thermal Power Plant:</strong>
+                    <ul>
+                        <li>Capacity: 350 MW</li>
+                        <li>Location: Greater Accra Region</li>
+                        <li>Fuel: Natural Gas</li>
+                        <li>Operator: Volta River Authority (VRA)</li>
+                    </ul>
+                </li>
+                <li><strong>Cenpower Kpone Independent Power Plant:</strong>
+                    <ul>
+                        <li>Capacity: 350 MW</li>
+                        <li>Location: Greater Accra Region</li>
+                        <li>Fuel: Multi-fuel (Natural Gas / Diesel)</li>
+                        <li>Operator: Cenpower Generation Company Limited</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>4. Challenges in Ghana's Power Generation Sector</h3>
+            <ul>
+                <li><strong>Overreliance on hydroelectric power:</strong> Vulnerable to rainfall patterns and climate change.</li>
+                <li><strong>Fuel supply issues for thermal power plants:</strong> Inconsistent natural gas supply and high costs of light crude oil.</li>
+                <li><strong>Aging infrastructure:</strong> Many plants require renovation and upgrades.</li>
+                <li><strong>Transmission and distribution losses:</strong> High technical and commercial losses in the power system.</li>
+                <li><strong>Financing:</strong> Difficulty in securing investments for new projects and maintenance.</li>
+            </ul>
+
+            <h3>5. Future of Power Generation in Ghana</h3>
+            <p>Ghana is focusing on diversifying its energy mix and increasing capacity:</p>
+            <ul>
+                <li><strong>Renewable Energy:</strong> Aim to increase the share of renewable energy (excluding large hydro) to 10% by 2030.</li>
+                <li><strong>Nuclear Power:</strong> Plans to introduce nuclear power to the energy mix in the long term.</li>
+                <li><strong>Natural Gas Infrastructure:</strong> Developing infrastructure to utilize domestic natural gas resources.</li>
+                <li><strong>Independent Power Producers (IPPs):</strong> Encouraging private sector participation to increase generation capacity.</li>
+                <li><strong>Regional Power Integration:</strong> Participating in the West African Power Pool (WAPP) for cross-border electricity trade.</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            <h3>Problem 1: Akosombo Dam Efficiency</h3>
+            <p>The Akosombo Dam has a maximum water flow rate of 1,600 m³/s and a head of 69 meters. If the overall efficiency of the hydroelectric plant is 90%, calculate the maximum power output.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>The power available in falling water is given by the formula:
+                    <br>P = ρ × g × Q × H × η
+                    <br>Where:
+                    <br>ρ = density of water (1000 kg/m³)
+                    <br>g = acceleration due to gravity (9.81 m/s²)
+                    <br>Q = flow rate (1,600 m³/s)
+                    <br>H = head (69 m)
+                    <br>η = efficiency (0.90)</li>
+                <li>Calculate the power output:
+                    <br>P = 1000 × 9.81 × 1600 × 69 × 0.90
+                    <br>P = 973,555,200 W = 973.6 MW</li>
+            </ol>
+            <p>Therefore, the maximum power output of the Akosombo Dam is approximately 973.6 MW.</p>
+
+            <h3>Problem 2: Takoradi Thermal Power Station Fuel Consumption</h3>
+            <p>The Takoradi Thermal Power Station has a capacity of 330 MW and operates at an efficiency of 35%. If the station runs at full capacity for 24 hours, calculate the amount of fuel oil consumed, given that the calorific value of the fuel oil is 42 MJ/kg.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>Calculate the total energy output in 24 hours:
+                    <br>Energy output = 330 MW × 24 hours = 7,920 MWh = 28,512,000 MJ</li>
+                <li>Calculate the total energy input required:
+                    <br>Energy input = Energy output / Efficiency
+                    <br>Energy input = 28,512,000 MJ / 0.35 = 81,462,857 MJ</li>
+                <li>Calculate the amount of fuel oil consumed:
+                    <br>Fuel oil consumed = Energy input / Calorific value
+                    <br>Fuel oil consumed = 81,462,857 MJ / 42 MJ/kg = 1,939,592 kg ≈ 1,940 tonnes</li>
+            </ol>
+            <p>Therefore, the Takoradi Thermal Power Station would consume approximately 1,940 tonnes of fuel oil in 24 hours of full capacity operation.</p>
+
+            <h3>Problem 3: Solar Power Plant Output</h3>
+            <p>A solar power plant in Ghana has 10,000 photovoltaic panels, each rated at 300W. If the average daily sunshine duration is 6 hours and the overall system efficiency is 80%, calculate the daily energy output of the plant.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>Calculate the total installed capacity:
+                    <br>Total capacity = Number of panels × Panel rating
+                    <br>Total capacity = 10,000 × 300W = 3,000,000W = 3 MW</li>
+                <li>Calculate the daily energy output:
+                    <br>Energy output = Total capacity × Sunshine hours × Efficiency
+                    <br>Energy output = 3 MW × 6 hours × 0.80
+                    <br>Energy output = 14.4 MWh</li>
+            </ol>
+            <p>Therefore, the daily energy output of the solar power plant is 14.4 MWh.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>Hydroelectric Power Output Calculator</h3>
+                <p>Calculate the power output of a hydroelectric plant based on water flow rate, head, and efficiency:</p>
+                <label for="flow-rate">Water Flow Rate (m³/s):</label>
+                <input type="number" id="flow-rate" step="0.1" min="0" max="2000">
+                <label for="head">Head (m):</label>
+                <input type="number" id="head" step="0.1" min="0" max="200">
+                <label for="efficiency">Efficiency (%):</label>
+                <input type="number" id="efficiency" step="0.1" min="0" max="100">
+                <button onclick="calculateHydroPower()">Calculate Power Output</button>
+                <div id="hydro-power-result" class="result"></div>
+            </div>
+            <div class="simulation-container">
+                <h3>Solar Panel Energy Output Calculator</h3>
+                <p>Calculate the daily energy output of a solar panel installation:</p>
+                <label for="panel-count">Number of Panels:</label>
+                <input type="number" id="panel-count" min="1">
+                <label for="panel-rating">Panel Rating (W):</label>
+                <input type="number" id="panel-rating" min="1">
+                <label for="sunshine-hours">Daily Sunshine Hours:</label>
+                <input type="number" id="sunshine-hours" step="0.1" min="0" max="24">
+                <label for="system-efficiency">System Efficiency (%):</label>
+                <input type="number" id="system-efficiency" step="0.1" min="0" max="100">
+                <button onclick="calculateSolarOutput()">Calculate Energy Output</button>
+                <div id="solar-output-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=q8HmRLCgDAI" target="_blank">Ghana's Renewable Energy Master Plan</a></li>
+                <li><a href="https://www.youtube.com/watch?v=3SU9tV1cm6E" target="_blank">The Akosombo Dam: Ghana's Hydroelectric Wonder</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="http://www.energycom.gov.gh/" target="_blank">Energy Commission of Ghana</a></li>
+                <li><a href="http://www.vra.com/" target="_blank">Volta River Authority</a></li>
+                <li><a href="http://www.gridcogh.com/" target="_blank">Ghana Grid Company (GRIDCo)</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Renewable Energy Transition in Africa: The Case of Ghana" by Yaw Agyeman Boafo</li>
+                <li>"Power Generation in Ghana: Past, Present and Future" by Ishmael Ackah</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Mini Hydroelectric Generator</h3>
+            <p><strong>Objective:</strong> Build a small-scale hydroelectric generator to understand the principles of hydropower.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>PVC pipe and fittings</li>
+                <li>Small DC motor</li>
+                <li>LED lights</li>
+                <li>Plastic spoons or small turbine blades</li>
+                <li>Water source (e.g., elevated bucket or tap)</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Construct a water wheel using plastic spoons or small turbine blades.</li>
+                <li>Attach the water wheel to the DC motor shaft.</li>
+                <li>Create a housing for the water wheel using PVC pipes and fittings.</li>
+                <li>Connect LED lights to the motor output.</li>
+                <li>Test the generator with flowing water and measure the output.</li>
+            </ol>
+
+            <h3>2. Solar-Powered Water Pump</h3>
+            <p><strong>Objective:</strong> Design a solar-powered water pump system for small-scale irrigation, similar to those used in rural Ghana.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Solar panel (5-10W)</li>
+                <li>Small water pump (12V DC)</li>
+                <li>Water storage container</li>
+                <li>PVC pipes and fittings</li>
+                <li>Charge controller (optional)</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Connect the solar panel to the water pump (use a charge controller if available).</li>
+                <li>Set up the water storage container and piping system.</li>
+                <li>Install the pump in the water source.</li>
+                <li>Test the system's performance under different sunlight conditions.</li>
+                <li>Measure the water flow rate and calculate the system's efficiency.</li>
+            </ol>
+
+            <h3>3. Biomass Briquette Production</h3>
+            <p><strong>Objective:</strong> Create biomass briquettes using agricultural waste (e.g., cocoa pod husks) for small-scale power generation.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Agricultural waste (e.g., sawdust, rice husks, or cocoa pod husks)</li>
+                <li>Binder (e.g., cassava starch)</li>
+                <li>Briquette press (can be handmade or purchased)</li>
+                <li>Drying racks</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Collect and prepare the agricultural waste materials.</li>
+                <li>Mix the waste with the binder to create a consistent mixture.</li>
+                <li>Use the briquette press to form the briquettes.</li>
+                <li>Dry the briquettes thoroughly.</li>
+                <li>Test the briquettes for burning efficiency and compare with traditional fuels.</li>
+            </ol>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the installed capacity of the Akosombo Hydroelectric Power Station?",
+                options: ["800 MW", "1,020 MW", "1,500 MW", "2,000 MW"],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which of the following is NOT a major type of power plant in Ghana?",
+                options: ["Hydroelectric", "Thermal", "Solar", "Nuclear"],
+                correctAnswer: "d"
+            },
+            {
+                question: "What is the target percentage for renewable energy in Ghana's total energy mix by 2030?",
+                options: ["5%", "10%", "15%", "20%"],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which dam is the second-largest hydroelectric plant in Ghana after Akosombo?",
+                options: ["Kpong Dam", "Bui Dam", "Pwalugu Dam", "Tano Dam"],
+                correctAnswer: "b"
+            },
+            {
+                question: "What is the main fuel used in Ghana's thermal power plants?",
+                options: ["Coal", "Natural gas", "Diesel", "Nuclear fuel"],
+                correctAnswer: "b"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the importance of the Akosombo Dam to Ghana's power generation and economy.",
+                keywords: ["hydroelectric", "Volta River", "industrialization", "electricity export", "irrigation"],
+                modelAnswer: "The Akosombo Dam, built on the Volta River, is crucial to Ghana's power generation and economy. As the country's largest hydroelectric facility, it provides a significant portion of Ghana's electricity, supporting industrial development and residential power needs. The dam created Lake Volta, the world's largest man-made lake by surface area, which supports fishing, transportation, and irrigation for agriculture. Additionally, the dam has enabled Ghana to export electricity to neighboring countries, contributing to regional integration and economic growth. However, its dependence on rainfall patterns has also highlighted the need for a diversified energy mix in Ghana."
+            },
+            {
+                question: "Discuss the challenges faced by Ghana's power generation sector and suggest possible solutions.",
+                keywords: ["overreliance on hydro", "fuel supply", "aging infrastructure", "financing", "transmission losses"],
+                modelAnswer: "Ghana's power generation sector faces several challenges: 1) Overreliance on hydroelectric power, making it vulnerable to rainfall patterns and climate change. 2) Fuel supply issues for thermal plants, including inconsistent natural gas supply and high costs of light crude oil. 3) Aging infrastructure requiring renovation and upgrades. 4) High transmission and distribution losses. 5) Difficulties in securing financing for new projects and maintenance. Possible solutions include: diversifying the energy mix with more renewable sources like solar and wind, improving natural gas infrastructure, encouraging private sector participation through IPPs, implementing energy efficiency measures, and seeking international partnerships for financing and technical expertise. Additionally, investing in smart grid technologies and improving maintenance practices can help reduce transmission losses and extend the lifespan of existing infrastructure."
+            },
+            {
+                question: "Describe the potential benefits and drawbacks of increasing solar power generation in Ghana.",
+                keywords: ["renewable", "abundant sunlight", "reduce dependence", "initial cost", "energy storage", "job creation"],
+                modelAnswer: "Increasing solar power generation in Ghana offers several benefits: 1) Utilization of abundant sunlight, a renewable resource. 2) Reduction of dependence on fossil fuels and hydroelectric power. 3) Potential for rural electrification through off-grid solutions. 4) Job creation in the renewable energy sector. 5) Reduction of carbon emissions. However, there are also drawbacks to consider: 1) High initial investment costs for large-scale projects. 2) Intermittent nature of solar power requiring energy storage solutions. 3) Land use concerns for large solar farms. 4) Potential impact on the existing grid infrastructure. 5) Need for skilled workforce and technology transfer. To maximize benefits and mitigate drawbacks, Ghana should focus on a balanced approach, combining utility-scale projects with distributed solar systems, investing in energy storage technologies, and developing local capacity in solar technology."
+            },
+            {
+                question: "Explain how Ghana's reliance on hydroelectric power affects its electricity supply during dry seasons.",
+                keywords: ["water levels", "reduced output", "load shedding", "thermal plants", "climate change"],
+                modelAnswer: "Ghana's reliance on hydroelectric power, particularly from the Akosombo and Bui dams, makes its electricity supply vulnerable during dry seasons. When water levels in the Volta River and Black Volta River decrease due to lack of rainfall, the power output from these hydroelectric plants is significantly reduced. This often leads to a power deficit, resulting in load shedding (planned power outages) across the country. To compensate, Ghana must increase generation from thermal power plants, which are more expensive to operate and often face fuel supply challenges. The situation is exacerbated by climate change, which is making rainfall patterns more unpredictable. This vulnerability underscores the need for Ghana to diversify its energy mix, invest in other renewable sources like solar and wind, and improve energy efficiency to reduce the impact of seasonal variations on its power supply."
+            },
+            {
+                question: "Discuss the role of independent power producers (IPPs) in Ghana's electricity generation sector.",
+                keywords: ["private investment", "capacity addition", "technology transfer", "competition", "challenges"],
+                modelAnswer: "Independent Power Producers (IPPs) play an increasingly important role in Ghana's electricity generation sector. They bring private investment into the power sector, helping to add much-needed generation capacity without straining government resources. IPPs often introduce new technologies and efficient practices, contributing to the overall improvement of the sector. Their presence introduces competition, potentially leading to better service and more competitive pricing in the long term. However, IPPs in Ghana also face challenges, including securing reliable fuel supply, navigating complex regulatory environments, and ensuring fair power purchase agreements with the main off-taker, typically the Electricity Company of Ghana (ECG). The government's role is crucial in creating a conducive environment for IPPs, balancing the need for private investment with ensuring affordable and reliable electricity for consumers. As Ghana aims to increase its generation capacity and diversify its energy mix, IPPs are expected to play a vital role in achieving these objectives."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateHydroPower() {
+            const flowRate = parseFloat(document.getElementById('flow-rate').value);
+            const head = parseFloat(document.getElementById('head').value);
+            const efficiency = parseFloat(document.getElementById('efficiency').value) / 100;
+            const gravity = 9.81; // m/s²
+            const waterDensity = 1000; // kg/m³
+
+            const power = waterDensity * gravity * flowRate * head * efficiency / 1000000; // Convert to MW
+            document.getElementById('hydro-power-result').innerHTML = `Estimated Power Output: ${power.toFixed(2)} MW`;
+        }
+
+        function calculateSolarOutput() {
+            const panelCount = parseInt(document.getElementById('panel-count').value);
+            const panelRating = parseFloat(document.getElementById('panel-rating').value);
+            const sunshineHours = parseFloat(document.getElementById('sunshine-hours').value);
+            const efficiency = parseFloat(document.getElementById('system-efficiency').value) / 100;
+
+            const dailyOutput = panelCount * panelRating * sunshineHours * efficiency / 1000; // Convert to kWh
+            document.getElementById('solar-output-result').innerHTML = `Estimated Daily Energy Output: ${dailyOutput.toFixed(2)} kWh`;
+        }
+
+        const dictionary = {
+            "Generating Station": "A facility where electrical power is produced on a large scale, typically using various energy sources such as hydro, thermal, or solar.",
+            "Hydroelectric Power": "Electricity generated by harnessing the energy of falling or flowing water.",
+            "Thermal Power Plant": "A power station that generates electricity by burning fuel to heat water into steam, which drives a turbine connected to a generator.",
+            "Solar Power": "Electricity generated by converting sunlight into electricity, typically using photovoltaic panels or concentrated solar power systems.",
+            "Biomass Energy": "Energy produced by burning organic materials, such as agricultural waste or wood, to generate electricity or heat.",
+            "Independent Power Producer (IPP)": "A private entity that owns and operates facilities to generate electric power for sale to utilities and end users.",
+            "Transmission": "The process of transporting electricity over long distances from power plants to substations.",
+            "Distribution": "The delivery of electricity from substations to individual consumers.",
+            "Grid": "The network of transmission lines, substations, and distribution facilities that deliver electricity from power plants to consumers.",
+            "Load Shedding": "The deliberate shutdown of electric power in parts of a power-distribution system to prevent the failure of the entire system when the demand strains the capacity of the system.",
+            "Renewable Energy": "Energy derived from natural sources that are replenished at a higher rate than they are consumed, such as sunlight, wind, rain, tides, waves, and geothermal heat.",
+            "Power Factor": "The ratio of real power to apparent power in an electrical system, indicating how efficiently electrical power is being used.",
+            "Voltage Regulation": "The ability of a power system to provide near constant voltage over a wide range of load conditions.",
+            "Efficiency": "The ratio of useful energy output to the total energy input in a power generation system, usually expressed as a percentage."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Set the default tab to 'content'
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+</body>
+</html>

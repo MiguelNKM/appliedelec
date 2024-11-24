@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Electricity Course - Year 1: Introduction to Electricity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .phet-simulation {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Applied Electricity Course - Year 1</h1>
+    <h2>Section 2: Introduction to Electricity</h2>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h3>1. Electronics and Electricity</h3>
+            <h4>1.1 Fundamentals of Electricity</h4>
+            <p>Electricity is a form of energy resulting from the existence of charged particles, such as electrons or protons. The flow of these charged particles creates an electric current, which is the basis for all electrical and electronic devices.</p>
+            <h4>1.2 Differences between Electronics and Electricity</h4>
+            <ul>
+                <li><strong>Electricity:</strong> Deals with the generation, distribution, and use of electrical power on a large scale.</li>
+                <li><strong>Electronics:</strong> Focuses on the control and manipulation of electric current in devices and circuits, typically at lower power levels.</li>
+            </ul>
+            <h4>1.3 Recent Technological Advancements</h4>
+            <ul>
+                <li><strong>Smart Grids:</strong> Integration of digital technology in power distribution systems for improved efficiency and reliability.</li>
+                <li><strong>Power Electronics:</strong> Advanced semiconductor devices for more efficient power conversion and control.</li>
+                <li><strong>Nanotechnology in Electronics:</strong> Development of nanoscale components for faster and more energy-efficient devices.</li>
+                <li><strong>Quantum Computing:</strong> Utilization of quantum mechanical phenomena for unprecedented computational power.</li>
+            </ul>
+
+            <h3>2. Nature of Electricity</h3>
+            <h4>2.1 Electric Charge</h4>
+            <p>Electric charge is a fundamental property of matter. There are two types of electric charges: positive and negative. Like charges repel, while opposite charges attract.</p>
+            <h4>2.2 Electric Current</h4>
+            <p>Electric current is the flow of electric charge through a conductor. It is measured in amperes (A).</p>
+            <h4>2.3 Voltage</h4>
+            <p>Voltage is the difference in electric potential energy between two points in a circuit. It is measured in volts (V).</p>
+            <h4>2.4 Resistance</h4>
+            <p>Resistance is the opposition to the flow of electric current in a conductor. It is measured in ohms (Ω).</p>
+            <h4>2.5 Ohm's Law</h4>
+            <p>Ohm's Law is a fundamental principle in electrical engineering that describes the relationship between voltage (V), current (I), and resistance (R) in an electrical circuit. It states that the current through a conductor is directly proportional to the voltage across it and inversely proportional to its resistance.</p>
+            <p>The mathematical expression of Ohm's Law is:</p>
+            <p style="text-align: center;"><strong>V = I × R</strong></p>
+            <p>Where:</p>
+            <ul>
+                <li>V is the voltage across the conductor in volts (V)</li>
+                <li>I is the current flowing through the conductor in amperes (A)</li>
+                <li>R is the resistance of the conductor in ohms (Ω)</li>
+            </ul>
+            <p>This law forms the basis for analyzing and designing electrical circuits. It allows us to calculate any one of the three quantities if we know the other two. For example:</p>
+            <ul>
+                <li>To find current: I = V / R</li>
+                <li>To find resistance: R = V / I</li>
+            </ul>
+            <p>Ohm's Law is applicable to many electrical components and systems, but it's important to note that some components (like diodes and transistors) have non-linear behavior and do not follow Ohm's Law under all conditions.</p>
+            <h4>2.6 Types of Electricity</h4>
+            <ul>
+                <li><strong>Static Electricity:</strong> The accumulation of electric charges on the surface of objects.</li>
+                <li><strong>Current Electricity:</strong> The flow of electric charges through a conductor.</li>
+            </ul>
+            <h4>2.7 AC vs DC</h4>
+            <ul>
+                <li><strong>Alternating Current (AC):</strong> The direction of the current reverses periodically. This is the form of electricity supplied to homes and businesses.</li>
+                <li><strong>Direct Current (DC):</strong> The current flows in only one direction. This is the form of electricity produced by batteries and used in most electronic devices.</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h3>Problem 1: Calculating Current using Ohm's Law</h3>
+            <p><strong>Question:</strong> A circuit has a voltage of 12V and a resistance of 4Ω. Calculate the current flowing through the circuit.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use Ohm's Law: V = IR</li>
+                <li>Rearrange the formula to solve for I: I = V / R</li>
+                <li>Substitute the known values:
+                    <br>I = 12V / 4Ω</li>
+                <li>Calculate:
+                    <br>I = 3A</li>
+            </ol>
+            <p>Therefore, the current flowing through the circuit is 3 amperes.</p>
+
+            <h3>Problem 2: Calculating Resistance using Ohm's Law</h3>
+            <p><strong>Question:</strong> An LED bulb draws 0.02A of current when connected to a 3V battery. What is the resistance of the LED?</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use Ohm's Law: V = IR</li>
+                <li>Rearrange the formula to solve for R: R = V / I</li>
+                <li>Substitute the known values:
+                    <br>R = 3V / 0.02A</li>
+                <li>Calculate:
+                    <br>R = 150Ω</li>
+            </ol>
+            <p>The resistance of the LED is 150 ohms.</p>
+
+            <h3>Problem 3: Calculating Voltage using Ohm's Law</h3>
+            <p><strong>Question:</strong> A heating element with a resistance of 20Ω draws a current of 6A. What is the voltage across the heating element?</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use Ohm's Law: V = IR</li>
+                <li>Substitute the known values:
+                    <br>V = 6A × 20Ω</li>
+                <li>Calculate:
+                    <br>V = 120V</li>
+            </ol>
+            <p>The voltage across the heating element is 120 volts.</p>
+
+            <h3>Problem 4: Power Calculation in a Circuit</h3>
+            <p><strong>Question:</strong> An electric heater draws 10A of current when connected to a 230V power supply. Calculate the power consumed by the heater.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the power formula: P = VI</li>
+                <li>Substitute the known values:
+                    <br>P = 230V × 10A</li>
+                <li>Calculate:
+                    <br>P = 2300W or 2.3kW</li>
+            </ol>
+            <p>The power consumed by the heater is 2300 watts or 2.3 kilowatts.</p>
+
+            <h3>Problem 5: Series and Parallel Resistors</h3>
+            <p><strong>Question:</strong> Two resistors of 100Ω and 200Ω are connected in (a) series and (b) parallel. Calculate the total resistance in each case.</p>
+            <p><strong>Solution:</strong></p>
+            <p>(a) Series connection:</p>
+            <ol>
+                <li>For resistors in series, we add the individual resistances:
+                    <br>R_total = R1 + R2</li>
+                <li>Substitute the values:
+                    <br>R_total = 100Ω + 200Ω</li>
+                <li>Calculate:
+                    <br>R_total = 300Ω</li>
+            </ol>
+            <p>The total resistance for series connection is 300Ω.</p>
+            <p>(b) Parallel connection:</p>
+            <ol>
+                <li>For resistors in parallel, we use the formula:
+                    <br>1/R_total = 1/R1 + 1/R2</li>
+                <li>Substitute the values:
+                    <br>1/R_total = 1/100Ω + 1/200Ω</li>
+                <li>Calculate:
+                    <br>1/R_total = 0.01 + 0.005 = 0.015</li>
+                <li>Take the reciprocal:
+                    <br>R_total = 1/0.015 ≈ 66.67Ω</li>
+            </ol>
+            <p>The total resistance for parallel connection is approximately 66.67Ω.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h3>PhET Simulation: Ohm's Law</h3>
+            <p>Explore the relationship between voltage, current, and resistance with this interactive Ohm's Law simulation.</p>
+            <iframe class="phet-simulation" src="https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html" allowfullscreen></iframe>
+            
+            <h3>PhET Simulation: Circuit Construction Kit</h3>
+            <p>Build and explore circuits with this interactive simulation. Practice applying Ohm's Law in various circuit configurations.</p>
+            <iframe class="phet-simulation" src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" allowfullscreen></iframe>
+            
+            <div class="simulation-container">
+                <h3>Ohm's Law Calculator</h3>
+                <p>Calculate voltage, current, or resistance using Ohm's Law:</p>
+                <label for="voltage">Voltage (V):</label>
+                <input type="number" id="voltage" step="0.1">
+                <label for="current">Current (A):</label>
+                <input type="number" id="current" step="0.1">
+                <label for="resistance">Resistance (Ω):</label>
+                <input type="number" id="resistance" step="0.1">
+                <button onclick="calculateOhmsLaw()">Calculate</button>
+                <div id="ohms-law-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=17AQxKOBLKM" target="_blank">Introduction to Electricity - Basic Concepts</a></li>
+                <li><a href="https://www.youtube.com/watch?v=mc979OhitAg" target="_blank">Difference Between AC and DC</a></li>
+                <li><a href="https://www.youtube.com/watch?v=HXOok3mfMLM" target="_blank">Ohm's Law Explained</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.electronics-tutorials.ws/category/basic" target="_blank">Basic Electronics Tutorials</a></li>
+                <li><a href="https://www.allaboutcircuits.com/textbook/" target="_blank">All About Circuits Textbook</a></li>
+                <li><a href="https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/all" target="_blank">SparkFun: Voltage, Current, Resistance, and Ohm's Law</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Practical Electronics for Inventors" by Paul Scherz and Simon Monk</li>
+                <li>"The Art of Electronics" by Paul Horowitz and Winfield Hill</li>
+                <li>"Electricity Demystified" by Stan Gibilisco</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h3>1. Build a Simple DC Motor</h3>
+            <p><strong>Objective:</strong> Construct a basic DC motor to understand the principles of electromagnetism and energy conversion.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>A large cork or styrofoam cylinder</li>
+                <li>Enameled copper wire</li>
+                <li>Two large paper clips</li>
+                <li>A strong permanent magnet</li>
+                <li>A 9V battery</li>
+                <li>Sandpaper</li>
+                <li>Tape</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Wind the copper wire around the cork to create a coil with about 30 turns. Leave about 2 inches of wire free at each end.</li>
+                <li>Sand the enamel off both ends of the wire.</li>
+                <li>Bend the paper clips to form supports and tape them to opposite sides of the battery.</li>
+                <li>Balance the coil between the paper clip supports.</li>
+                <li>Place the magnet underneath the coil.</li>
+                <li>Connect the battery to the paper clips.</li>
+                <li>Give the coil a gentle push to start it spinning.</li>
+            </ol>
+            <p>Observe how the interaction between the magnetic field of the coil and the permanent magnet causes the coil to rotate, demonstrating the basic principle of electric motors.</p>
+
+            <h3>2. Create a Lemon Battery</h3>
+            <p><strong>Objective:</strong> Build a simple battery using a lemon to understand the principles of electrochemistry and voltage generation.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>A lemon</li>
+                <li>A zinc nail or strip</li>
+                <li>A copper nail or strip</li>
+                <li>Connecting wires</li>
+                <li>A small LED</li>
+                <li>Voltmeter (optional)</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Roll the lemon on a hard surface to break down some of the internal membranes.</li>
+                <li>Insert the zinc nail into one side of the lemon.</li>
+                <li>Insert the copper nail into the other side, ensuring it doesn't touch the zinc nail.</li>
+                <li>Connect one wire to the zinc nail and another to the copper nail.</li>
+                <li>Connect the other ends of the wires to the LED (long leg to copper, short leg to zinc).</li>
+                <li>Observe the LED lighting up.</li>
+                <li>If you have a voltmeter, measure the voltage produced by your lemon battery.</li>
+            </ol>
+            <p>This project demonstrates how chemical reactions can produce electricity, which is the principle behind all batteries.</p>
+
+            <h3>3. Ohm's Law Demonstration Circuit</h3>
+            <p><strong>Objective:</strong> Build a circuit to demonstrate Ohm's Law and measure voltage, current, and resistance.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Breadboard</li>
+                <li>9V battery</li>
+                <li>Battery connector</li>
+                <li>Resistors (220Ω, 330Ω, 470Ω)</li>
+                <li>LED</li>
+                <li>Multimeter</li>
+                <li>Jumper wires</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Connect the battery to the breadboard using the battery connector.</li>
+                <li>Connect the LED to the breadboard in series with one of the resistors.</li>
+                <li>Use the multimeter to measure the voltage across the resistor.</li>
+                <li>Use the multimeter to measure the current flowing through the circuit.</li>
+                <li>Calculate the resistance using Ohm's Law and compare it to the known resistor value.</li>
+                <li>Repeat the process with different resistors and compare the results.</li>
+            </ol>
+            <p>This project provides hands-on experience with Ohm's Law and helps understand the relationship between voltage, current, and resistance in a practical circuit.</p>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h3>Dictionary</h3>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the unit of electrical current?",
+                options: [
+                    "Volt",
+                    "Ohm",
+                    "Ampere",
+                    "Watt"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which of the following is NOT a type of electrical charge?",
+                options: [
+                    "Positive",
+                    "Negative",
+                    "Neutral",
+                    "Alternating"
+                ],
+                correctAnswer: "d"
+            },
+            {
+                question: "What does Ohm's Law state?",
+                options: [
+                    "Current is inversely proportional to voltage",
+                    "Voltage is directly proportional to resistance",
+                    "Current is directly proportional to voltage and inversely proportional to resistance",
+                    "Resistance is equal to the square of the current"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which type of current is typically supplied to homes and businesses?",
+                options: [
+                    "Direct Current (DC)",
+                    "Alternating Current (AC)",
+                    "Pulsating Current",
+                    "Static Current"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "What is the main difference between electronics and electricity?",
+                options: [
+                    "Electronics deals with AC, while electricity deals with DC",
+                    "Electronics focuses on power generation, while electricity focuses on power distribution",
+                    "Electronics deals with the control and manipulation of electric current, while electricity deals with the generation and distribution of electrical power",
+                    "There is no difference between electronics and electricity"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the concept of electric potential difference (voltage) and its importance in electrical circuits.",
+                keywords: ["energy", "charge", "potential", "flow", "current", "power", "work"],
+                modelAnswer: "Electric potential difference, commonly known as voltage, is a fundamental concept in electrical circuits. It represents the difference in electric potential energy per unit charge between two points in an electrical circuit. Voltage is crucial because it is the driving force that causes electric charges to flow, creating an electric current. The importance of voltage in electrical circuits can be understood through several key points: 1) Energy Transfer: Voltage determines the amount of energy that can be transferred through the circuit. Higher voltage means more energy can be moved per unit of charge. 2) Current Flow: According to Ohm's Law, voltage is directly proportional to current (given constant resistance). Thus, voltage controls the amount of current flowing through a circuit. 3) Power Delivery: The power delivered in a circuit is the product of voltage and current. Higher voltage allows for more power to be transmitted efficiently over long distances, which is why high voltages are used in power transmission lines. 4) Circuit Operation: Different electronic components require specific voltages to operate correctly. Too low a voltage may not activate a component, while too high a voltage could damage it. 5) Safety: Understanding voltage is crucial for electrical safety. Higher voltages pose greater risks of electric shock and require appropriate safety measures. 6) Signal Processing: In electronic circuits, small voltage differences are used to represent and process information, forming the basis of all modern digital technology. By manipulating and controlling voltage in circuits, we can create a wide range of electrical and electronic devices, from simple light bulbs to complex computers and telecommunications systems."
+            },
+            {
+                question: "Describe the process of electricity generation in a typical power plant and how it reaches consumers.",
+                keywords: ["fuel", "turbine", "generator", "transformer", "transmission", "distribution", "grid"],
+                modelAnswer: "The process of electricity generation and distribution involves several stages: 1) Fuel Combustion: In thermal power plants, fuel (coal, natural gas, or nuclear material) is burned to produce heat. Renewable sources like wind or solar directly harness natural energy. 2) Steam Generation: In thermal plants, the heat boils water to create high-pressure steam. 3) Turbine Operation: The steam drives a turbine, converting thermal energy to mechanical energy. In hydroelectric plants, flowing water drives the turbine directly. 4) Electricity Generation: The turbine is connected to a generator. As the turbine spins, it rotates a large magnet inside coils of wire in the generator, inducing an electric current through electromagnetic induction. 5) Step-Up Transformation: The generated electricity, typically at around 20,000 volts, is stepped up to very high voltages (200,000 to 750,000 volts) using transformers. This reduces power loss during long-distance transmission. 6) Transmission: High-voltage electricity is transmitted over long distances through power lines supported by transmission towers. 7) Step-Down Transformation: Near populated areas, the voltage is stepped down at substations for distribution. 8) Distribution: Electricity is distributed to individual consumers through local power lines at voltages suitable for homes and businesses (typically 120/240 volts in residential areas). 9) Consumer Use: Electricity enters homes and businesses through service drops, where it's measured by meters and used to power various appliances and devices. This process ensures efficient generation and delivery of electricity from power plants to end-users, forming the backbone of modern electrical infrastructure."
+            },
+            {
+                question: "Compare and contrast Alternating Current (AC) and Direct Current (DC), discussing their advantages, disadvantages, and applications.",
+                keywords: ["direction", "polarity", "frequency", "transmission", "efficiency", "conversion", "applications"],
+                modelAnswer: "Alternating Current (AC) and Direct Current (DC) are two forms of electrical current, each with distinct characteristics: AC: 1) Periodically changes direction and polarity. 2) Typically sinusoidal waveform. 3) Frequency in most countries is 50 or 60 Hz. DC: 1) Flows in one direction consistently. 2) Constant polarity. 3) No frequency (steady state). Advantages of AC: 1) Easily transformed to different voltage levels, enabling efficient long-distance transmission. 2) Can be generated more efficiently in large power plants. 3) Most household appliances are designed for AC. Disadvantages of AC: 1) More complex circuits required for precise control. 2) Can cause electromagnetic interference. 3) Not directly usable by many electronic devices without conversion. Advantages of DC: 1) Easier to store in batteries. 2) More efficient for low-voltage applications. 3) Essential for most electronic circuits. 4) No power factor issues. Disadvantages of DC: 1) Difficult to transform voltage levels efficiently. 2) Not suitable for long-distance transmission without significant power loss. 3) Cannot be generated as efficiently as AC in large scale. Applications: AC is used in: 1) Power grids and household electricity. 2) Large industrial motors. 3) Household appliances. DC is used in: 1) Electronic devices (computers, smartphones). 2) Automotive electrical systems. 3) Solar panel systems. 4) LED lighting. In modern systems, AC and DC often coexist, with power supplies converting between the two as needed. For example, laptops use AC from wall outlets but convert it to DC for internal use. The choice between AC and DC depends on the specific application, with each having its optimal use cases in the electrical and electronic world."
+            },
+            {
+                question: "Explain the concept of resistance in electrical circuits and how it affects current flow. Include a discussion on factors that influence resistance.",
+                keywords: ["opposition", "current flow", "Ohm's law", "conductor", "temperature", "length", "cross-sectional area", "material"],
+                modelAnswer: "Resistance in electrical circuits is the opposition to the flow of electric current. It is a fundamental property of materials and plays a crucial role in determining how current flows through a circuit. Key points about resistance: 1) Definition: Resistance is measured in ohms (Ω) and is defined by Ohm's Law: R = V/I, where R is resistance, V is voltage, and I is current. 2) Current Limitation: Resistance limits the amount of current that can flow through a circuit for a given voltage. Higher resistance results in lower current flow, and vice versa. 3) Energy Conversion: Resistance causes electrical energy to be converted into other forms, usually heat. This is the principle behind electric heaters and incandescent light bulbs. Factors influencing resistance: 1) Material: Different materials have different intrinsic resistivities. Metals like copper and silver have low resistivity, making them good conductors, while materials like rubber or glass have high resistivity, making them insulators. 2) Length: Resistance is directly proportional to the length of the conductor. Longer wires have higher resistance than shorter ones of the same material and cross-sectional area. 3) Cross-sectional Area: Resistance is inversely proportional to the cross-sectional area of the conductor. Thicker wires have lower resistance than thinner ones of the same material and length. 4) Temperature: For most materials, resistance increases with temperature. This is why electronic devices can malfunction when they overheat. Some materials, like certain semiconductors, exhibit decreased resistance with increased temperature. 5) Frequency (in AC circuits): In AC circuits, resistance can change with frequency due to the skin effect and reactance of components. 6) Mechanical Stress: Physical stress or strain on a conductor can change its resistance. This principle is used in strain gauges. 7) Light (in photoresistors): Some materials change their resistance when exposed to light. Applications of resistance: 1) Circuit Design: Resistors are used to control current flow and voltage levels in circuits. 2) Heating Elements: High-resistance materials are used in electric heaters. 3) Sensors: Changes in resistance are used to measure temperature (thermistors), light (photoresistors), and mechanical strain (strain gauges). 4) Voltage Division: Resistors are used in voltage divider circuits to obtain a fraction of a voltage. Understanding and manipulating resistance is crucial in electrical engineering, allowing for the design of efficient and effective electrical systems and electronic devices."
+            },
+            {
+                question: "Discuss the impact of recent technological advancements in electronics on everyday life and future possibilities.",
+                keywords: ["miniaturization", "efficiency", "connectivity", "AI", "IoT", "renewable energy", "quantum computing", "nanotechnology"],
+                modelAnswer: "Recent technological advancements in electronics have profoundly impacted everyday life and opened up exciting future possibilities: 1) Miniaturization: The continuous reduction in size of electronic components has led to more powerful and portable devices. Smartphones now have more computing power than early supercomputers, enabling mobile computing and communication. Future: Further miniaturization could lead to even more integrated wearable tech and implantable medical devices. 2) Energy Efficiency: Improvements in power management and low-power electronics have extended battery life and reduced energy consumption. This has made portable electronics more practical and helped in the development of electric vehicles. Future: Continued advancements could lead to self-powered devices and more efficient energy harvesting technologies. 3) Internet of Things (IoT): The ability to connect everyday objects to the internet has led to smart homes, cities, and industries. This has improved efficiency, convenience, and data-driven decision making. Future: The expansion of IoT could lead to more interconnected and responsive environments, optimizing resource use and improving quality of life. 4) Artificial Intelligence (AI) and Machine Learning: The integration of AI in electronic devices has enabled voice assistants, predictive text, and advanced image recognition. This has made devices more intuitive and capable of complex tasks. Future: AI could lead to more personalized and anticipatory technology, potentially revolutionizing fields like healthcare and education. 5) Display Technology: Advancements like OLED and micro-LED have improved screen quality and energy efficiency. Flexible displays are becoming a reality. Future: Holographic displays and augmented reality could become commonplace, changing how we interact with information and our environment. 6) Renewable Energy Electronics: Improvements in solar cell efficiency and power electronics have made renewable energy more viable. Smart grids are improving energy distribution. Future: Advanced power electronics could enable more efficient energy harvesting and storage, accelerating the transition to renewable energy. 7) Quantum Computing: While still in early stages, quantum computing promises to revolutionize fields like cryptography, drug discovery, and complex system modeling. Future: Practical quantum computers could solve problems currently intractable for classical computers, potentially leading to breakthroughs in various scientific fields. 8) Nanotechnology: Manipulation of materials at the nanoscale has led to improved electronics, more efficient solar cells, and new medical treatments. Future: Nanotech could enable self-healing materials, more targeted drug delivery, and even more powerful and efficient electronics. 9) 5G and Beyond: The rollout of 5G networks is enabling faster data transfer and more connected devices. Future: 6G and beyond could enable near-instantaneous communication, supporting technologies like remote surgery and autonomous vehicles. 10) Brain-Computer Interfaces: Advancements in neurotechnology are allowing direct communication between brains and external devices. Future: This could lead to breakthrough treatments for neurological conditions and new ways of interacting with technology. These advancements are not only changing how we live and work but are also creating new ethical considerations and challenges. As electronics continue to evolve, they will likely play an even more integral role in shaping our future society, economy, and individual lives."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}" rows="6" cols="50"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 3600; // 60 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length + subjectiveQuestions.length * 5;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct!</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect.</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 5);
+                score += questionScore;
+
+                if (questionScore === 5) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/5 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/5 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/5 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have a good understanding of the introduction to electricity.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You might want to review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateOhmsLaw() {
+            const voltage = parseFloat(document.getElementById('voltage').value);
+            const current = parseFloat(document.getElementById('current').value);
+            const resistance = parseFloat(document.getElementById('resistance').value);
+
+            let result = '';
+
+            if (!isNaN(voltage) && !isNaN(current) && isNaN(resistance)) {
+                result = `Resistance = ${(voltage / current).toFixed(2)} Ω`;
+            } else if (!isNaN(voltage) && isNaN(current) && !isNaN(resistance)) {
+                result = `Current = ${(voltage / resistance).toFixed(2)} A`;
+            } else if (isNaN(voltage) && !isNaN(current) && !isNaN(resistance)) {
+                result = `Voltage = ${(current * resistance).toFixed(2)} V`;
+            } else {
+                result = 'Please enter values for two of the three fields.';
+            }
+
+            document.getElementById('ohms-law-result').innerHTML = result;
+        }
+
+        const dictionary = {
+            "Voltage": "The difference in electric potential between two points in an electrical circuit, measured in volts (V).",
+            "Current": "The flow of electric charge through a conductor, measured in amperes (A).",
+            "Resistance": "The opposition to the flow of electric current in a conductor, measured in ohms (Ω).",
+            "Ohm's Law": "A fundamental relationship in electricity stating that the current through a conductor is directly proportional to the voltage across it and inversely proportional to its resistance.",
+            "AC": "Alternating Current - an electric current that reverses direction periodically, typically used in power grids and household electricity.",
+            "DC": "Direct Current - an electric current that flows in only one direction, typically used in batteries and electronic devices.",
+            "Conductor": "A material that allows electric current to flow easily through it, typically metals like copper or aluminum.",
+            "Insulator": "A material that does not allow electric current to flow easily through it, such as rubber or plastic.",
+            "Circuit": "A closed path through which electricity can flow.",
+            "Power": "The rate at which electrical energy is transferred by an electric circuit, measured in watts (W).",
+            "Capacitor": "An electrical component that stores electrical energy in an electric field.",
+            "Inductor": "An electrical component that stores energy in a magnetic field when electric current flows through it.",
+            "Transformer": "A device that transfers electrical energy between two or more circuits through electromagnetic induction.",
+            "Semiconductor": "A material with electrical conductivity between that of a conductor and an insulator, used in the fabrication of electronic components.",
+            "Diode": "A semiconductor device that allows current to flow in only one direction.",
+            "Transistor": "A semiconductor device used to amplify or switch electronic signals and electrical power.",
+            "Integrated Circuit": "A set of electronic circuits on one small flat piece (or chip) of semiconductor material, usually silicon.",
+            "LED": "Light Emitting Diode - a semiconductor device that emits light when an electric current passes through it.",
+            "PCB": "Printed Circuit Board - a board that mechanically supports and electrically connects electronic components using conductive tracks.",
+            "Microcontroller": "A small computer on a single integrated circuit containing a processor, memory, and programmable input/output peripherals."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Set the default tab to 'content'
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+</body>
+</html>

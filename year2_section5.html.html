@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 2 Section 5: Bipolar/Unipolar Transistor and Other Semiconductor Devices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: #4CAF50;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .simulation-container {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .simulation-container h3 {
+            margin-top: 0;
+        }
+        #transistor-simulation {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 2 Section 5: Bipolar/Unipolar Transistor and Other Semiconductor Devices</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Bipolar/Unipolar Transistor and Other Semiconductor Devices</h2>
+            
+            <h3>1. Transistor (Bipolar)</h3>
+            <p>A bipolar junction transistor (BJT) is a three-terminal semiconductor device that can amplify or switch electronic signals and electrical power.</p>
+            <h4>1.1 Structure and Types</h4>
+            <ul>
+                <li><strong>NPN Transistor:</strong> Consists of two N-type semiconductor regions separated by a thin P-type region.</li>
+                <li><strong>PNP Transistor:</strong> Consists of two P-type semiconductor regions separated by a thin N-type region.</li>
+            </ul>
+            <h4>1.2 Operating Regions</h4>
+            <ul>
+                <li><strong>Cut-off:</strong> Both junctions are reverse biased.</li>
+                <li><strong>Active:</strong> Emitter-base junction is forward biased, collector-base junction is reverse biased.</li>
+                <li><strong>Saturation:</strong> Both junctions are forward biased.</li>
+            </ul>
+            <h4>1.3 Common Configurations</h4>
+            <ul>
+                <li><strong>Common Emitter (CE):</strong> High current gain, voltage gain, and power gain.</li>
+                <li><strong>Common Base (CB):</strong> Low input impedance, high output impedance.</li>
+                <li><strong>Common Collector (CC):</strong> High input impedance, low output impedance, voltage follower.</li>
+            </ul>
+
+            <h3>2. Unipolar Transistor</h3>
+            <p>Unipolar transistors, also known as field-effect transistors (FETs), use an electric field to control the flow of current.</p>
+            <h4>2.1 Types of FETs</h4>
+            <ul>
+                <li><strong>Junction Field-Effect Transistor (JFET):</strong> Voltage-controlled device with high input impedance.</li>
+                <li><strong>Metal-Oxide-Semiconductor FET (MOSFET):</strong> Widely used in digital circuits, comes in enhancement and depletion modes.</li>
+            </ul>
+            <h4>2.2 JFET Characteristics</h4>
+            <ul>
+                <li>Three terminals: Gate, Source, and Drain</li>
+                <li>N-channel and P-channel types</li>
+                <li>Operates in depletion mode</li>
+            </ul>
+            <h4>2.3 MOSFET Characteristics</h4>
+            <ul>
+                <li>Four terminals: Gate, Source, Drain, and Body (usually connected to source)</li>
+                <li>N-channel and P-channel types</li>
+                <li>Can operate in enhancement or depletion mode</li>
+            </ul>
+
+            <h3>3. Other Semiconductor Devices</h3>
+            <h4>3.1 Thyristors</h4>
+            <ul>
+                <li><strong>Silicon Controlled Rectifier (SCR):</strong> Four-layer PNPN device used for power control and switching.</li>
+                <li><strong>TRIAC:</strong> Bidirectional thyristor used for AC power control.</li>
+                <li><strong>DIAC:</strong> Bidirectional trigger device often used with TRIACs.</li>
+            </ul>
+            <h4>3.2 Optoelectronic Devices</h4>
+            <ul>
+                <li><strong>Light Emitting Diode (LED):</strong> Emits light when forward biased.</li>
+                <li><strong>Photodiode:</strong> Generates current when exposed to light.</li>
+                <li><strong>Phototransistor:</strong> Light-sensitive BJT with high sensitivity.</li>
+            </ul>
+
+            <h3>4. Integrated Circuits</h3>
+            <p>Integrated circuits (ICs) are miniaturized electronic circuits consisting of multiple semiconductor devices on a single chip.</p>
+            <h4>4.1 Types of ICs</h4>
+            <ul>
+                <li><strong>Analog ICs:</strong> Process continuous signals (e.g., operational amplifiers).</li>
+                <li><strong>Digital ICs:</strong> Process discrete signals (e.g., microprocessors, memory chips).</li>
+                <li><strong>Mixed-signal ICs:</strong> Combine both analog and digital functions.</li>
+            </ul>
+            <h4>4.2 IC Manufacturing Process</h4>
+            <ul>
+                <li>Wafer production</li>
+                <li>Photolithography</li>
+                <li>Etching and doping</li>
+                <li>Layer deposition</li>
+                <li>Testing and packaging</li>
+            </ul>
+            <h4>4.3 Advantages of ICs</h4>
+            <ul>
+                <li>Miniaturization</li>
+                <li>Improved reliability</li>
+                <li>Lower power consumption</li>
+                <li>Cost-effective mass production</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            <h3>Problem 1: BJT Common Emitter Amplifier</h3>
+            <p>Design a common emitter amplifier using a BJT with the following specifications:</p>
+            <ul>
+                <li>V<sub>CC</sub> = 12V</li>
+                <li>I<sub>C</sub> = 2mA</li>
+                <li>β = 100</li>
+                <li>V<sub>CE</sub> = 6V</li>
+            </ul>
+            <p>Calculate:</p>
+            <ol>
+                <li>The value of R<sub>C</sub></li>
+                <li>The value of R<sub>E</sub> for proper biasing</li>
+                <li>The value of R<sub>B</sub> for proper biasing</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Calculate R<sub>C</sub>:</p>
+                    <p>R<sub>C</sub> = (V<sub>CC</sub> - V<sub>CE</sub>) / I<sub>C</sub> = (12V - 6V) / 2mA = 3kΩ</p>
+                </li>
+                <li>
+                    <p>Calculate R<sub>E</sub> (assuming V<sub>E</sub> ≈ 1V for proper biasing):</p>
+                    <p>R<sub>E</sub> = V<sub>E</sub> / I<sub>E</sub> ≈ 1V / (2mA + 2mA/100) ≈ 485Ω</p>
+                    <p>Choose the nearest standard value: R<sub>E</sub> = 470Ω</p>
+                </li>
+                <li>
+                    <p>Calculate R<sub>B</sub>:</p>
+                    <p>V<sub>B</sub> = V<sub>E</sub> + 0.7V = 1V + 0.7V = 1.7V</p>
+                    <p>I<sub>B</sub> = I<sub>C</sub> / β = 2mA / 100 = 20µA</p>
+                    <p>R<sub>B</sub> = (V<sub>CC</sub> - V<sub>B</sub>) / I<sub>B</sub> = (12V - 1.7V) / 20µA = 515kΩ</p>
+                    <p>Choose the nearest standard value: R<sub>B</sub> = 510kΩ</p>
+                </li>
+            </ol>
+
+            <h3>Problem 2: MOSFET Switch</h3>
+            <p>Design a MOSFET switch to control a 12V LED with a current of 20mA. The MOSFET has the following specifications:</p>
+            <ul>
+                <li>V<sub>th</sub> = 2V</li>
+                <li>R<sub>DS(on)</sub> = 0.1Ω</li>
+            </ul>
+            <p>Calculate:</p>
+            <ol>
+                <li>The value of the current-limiting resistor for the LED</li>
+                <li>The minimum gate voltage required to turn on the MOSFET</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Calculate the current-limiting resistor:</p>
+                    <p>R<sub>LED</sub> = (V<sub>supply</sub> - V<sub>LED</sub> - I<sub>LED</sub> × R<sub>DS(on)</sub>) / I<sub>LED</sub></p>
+                    <p>Assuming V<sub>LED</sub> ≈ 2V:</p>
+                    <p>R<sub>LED</sub> = (12V - 2V - 20mA × 0.1Ω) / 20mA = 498Ω</p>
+                    <p>Choose the nearest standard value: R<sub>LED</sub> = 470Ω</p>
+                </li>
+                <li>
+                    <p>Minimum gate voltage:</p>
+                    <p>V<sub>GS(min)</sub> = V<sub>th</sub> + 2V (for saturation) = 2V + 2V = 4V</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button class="button" onclick="startQuiz('study')">Start Study Mode</button>
+                <button class="button" onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button class="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>1. BJT Common Emitter Amplifier Simulation</h3>
+                <p>This simulation demonstrates the operation of a BJT in a common emitter configuration. You can adjust the base current and observe how it affects the collector current and voltage.</p>
+                <div>
+                    <label for="base-current">Base Current (µA):</label>
+                    <input type="number" id="base-current" value="50" min="0" max="200" step="10">
+                    <button class="button" onclick="updateTransistorSimulation()">Update Simulation</button>
+                </div>
+                <canvas id="transistor-simulation"></canvas>
+            </div>
+
+            <div class="simulation-container">
+                <h3>2. PhET Transistor Simulation</h3>
+                <p>Explore the behavior of transistors with this interactive simulation from PhET. Build circuits and observe how transistors amplify and switch signals.</p>
+                <a href="https://phet.colorado.edu/sims/cheerpj/semiconductor/latest/semiconductor.html?simulation=semiconductor" target="_blank" class="button">Launch Transistor Simulation</a>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Video Tutorials</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=7ukDKVHnac4" target="_blank">Bipolar Junction Transistors - BJT Characteristics</a></li>
+                <li><a href="https://www.youtube.com/watch?v=stM6V_vnBRk" target="_blank">MOSFET Transistors Explained</a></li>
+                <li><a href="https://www.youtube.com/watch?v=1xicZF9glH0" target="_blank">Integrated Circuits & Moore's Law</a></li>
+            </ul>
+            <h3>Online Courses</h3>
+            <ul>
+                <li><a href="https://www.edx.org/course/semiconductor-devices" target="_blank">Semiconductor Devices (edX)</a></li>
+                <li><a href="https://www.coursera.org/learn/semiconductor-devices" target="_blank">Introduction to CMOS VLSI Design (Coursera)</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Microelectronic Circuits" by Adel S. Sedra and Kenneth C. Smith</li>
+                <li>"Fundamentals of Microelectronics" by Behzad Razavi</li>
+                <li>"CMOS VLSI Design: A Circuits and Systems Perspective" by Neil Weste and David Harris</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. BJT Audio Amplifier</h3>
+            <p>Design and build a simple audio amplifier using a BJT in common emitter configuration.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>NPN transistor (e.g., 2N3904)</li>
+                <li>Resistors (various values)</li>
+                <li>Capacitors (electrolytic and ceramic)</li>
+                <li>Audio input jack</li>
+                <li>Speaker or headphones</li>
+                <li>Breadboard and connecting wires</li>
+                <li>9V battery and connector</li>
+            </ul>
+
+            <h3>2. MOSFET-based LED Dimmer</h3>
+            <p>Create an LED dimmer circuit using a MOSFET and a potentiometer for brightness control.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>N-channel MOSFET (e.g., IRFZ44N)</li>
+                <li>Potentiometer (10kΩ)</li>
+                <li>LED strip or high-power LED</li>
+                <li>Resistors</li>
+                <li>Breadboard and connecting wires</li>
+                <li>12V power supply</li>
+            </ul>
+
+            <h3>3. Simple Digital Logic Gates using BJTs</h3>
+            <p>Build basic logic gates (AND, OR, NOT) using BJTs and test their functionality.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>NPN transistors (e.g., 2N3904)</li>
+                <li>Resistors (various values)</li>
+                <li>LEDs</li>
+                <li>Push buttons or switches</li>
+                <li>Breadboard and connecting wires</li>
+                <li>5V power supply</li>
+            </ul>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What are the three terminals of a bipolar junction transistor?",
+                options: [
+                    "Source, Gate, Drain",
+                    "Emitter, Base, Collector",
+                    "Anode, Cathode, Gate",
+                    "Drain, Source, Body"
+                ],
+                correctAnswer: "b",
+                topic: "transistor-bipolar"
+            },
+            {
+                question: "Which type of transistor uses an electric field to control the flow of current?",
+                options: [
+                    "Bipolar Junction Transistor (BJT)",
+                    "Unijunction Transistor (UJT)",
+                    "Field-Effect Transistor (FET)",
+                    "Insulated Gate Bipolar Transistor (IGBT)"
+                ],
+                correctAnswer: "c",
+                topic: "unipolar-transistor"
+            },
+            {
+                question: "What is the main advantage of MOSFETs over BJTs in digital circuits?",
+                options: [
+                    "Higher current gain",
+                    "Lower input impedance",
+                    "Faster switching speed",
+                    "Better temperature stability"
+                ],
+                correctAnswer: "c",
+                topic: "unipolar-transistor"
+            },
+            {
+                question: "Which of the following is NOT a type of thyristor?",
+                options: [
+                    "Silicon Controlled Rectifier (SCR)",
+                    "TRIAC",
+                    "DIAC",
+                    "MOSFET"
+                ],
+                correctAnswer: "d",
+                topic: "other-semiconductor-devices"
+            },
+            {
+                question: "What is the main advantage of integrated circuits over discrete components?",
+                options: [
+                    "Higher power handling capability",
+                    "Easier to replace individual components",
+                    "Miniaturization and improved reliability",
+                    "Lower initial cost for small-scale production"
+                ],
+                correctAnswer: "c",
+                topic: "integrated-circuits"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the operation of a BJT in the active region and how it can be used as an amplifier.",
+                keywords: ["forward-biased", "reverse-biased", "current gain", "beta", "small-signal", "voltage gain", "common emitter"],
+                topic: "transistor-bipolar",
+                modelAnswer: "In the active region, a BJT operates with its base-emitter junction forward-biased and its base-collector junction reverse-biased. This configuration allows the transistor to act as a current-controlled current source. The small base current is amplified to produce a larger collector current, with the ratio between them defined as the current gain (β). In a common emitter configuration, which is widely used for amplification, a small change in base current produces a larger change in collector current. This current variation, when passed through a load resistor, results in a voltage gain. The relationship between input and output signals is approximately linear for small signals, making BJTs suitable for analog amplification. The voltage gain in a common emitter amplifier is typically much greater than unity, allowing weak signals to be amplified to usable levels."
+            },
+            {
+                question: "Compare and contrast JFETs and MOSFETs, discussing their structure, operation, and applications.",
+                keywords: ["junction", "insulated gate", "depletion mode", "enhancement mode", "channel", "threshold voltage", "input impedance", "switching speed"],
+                topic: "unipolar-transistor",
+                modelAnswer: "JFETs (Junction Field-Effect Transistors) and MOSFETs (Metal-Oxide-Semiconductor Field-Effect Transistors) are both unipolar devices that use an electric field to control current flow. JFETs have a simpler structure with a channel of semiconductor material whose conductivity is controlled by varying the depletion region of a reverse-biased PN junction. They operate in depletion mode and are normally-on devices. MOSFETs, on the other hand, have an insulated gate structure and can operate in both enhancement (normally-off) and depletion (normally-on) modes. The insulated gate gives MOSFETs extremely high input impedance. In terms of operation, JFETs are voltage-controlled resistors, while MOSFETs can be thought of as voltage-controlled switches. MOSFETs generally offer faster switching speeds and lower on-resistance, making them preferred for digital circuits and power switching applications. JFETs are often used in analog circuits, particularly in the input stages of operational amplifiers, due to their low noise characteristics. Both types have high input impedance, but MOSFETs are more susceptible to static electricity damage due to the insulated gate."
+            },
+            {
+                question: "Describe the structure and operation of a Silicon Controlled Rectifier (SCR) and explain its applications in power electronics.",
+                keywords: ["four-layer", "PNPN", "anode", "cathode", "gate", "latching", "turn-on", "turn-off", "power control"],
+                topic: "other-semiconductor-devices",
+                modelAnswer: "A Silicon Controlled Rectifier (SCR) is a four-layer PNPN semiconductor device with three terminals: anode, cathode, and gate. Its structure can be thought of as a combination of a PNP and an NPN transistor. In its normal state, the SCR blocks current flow in both directions. When a positive voltage is applied to the anode with respect to the cathode, the device remains off until a positive pulse is applied to the gate. This pulse triggers the device into conduction, and it continues to conduct even after the gate pulse is removed, a property known as latching. The SCR will only turn off when the anode current falls below a certain holding current level. This behavior makes SCRs ideal for power control applications. They are widely used in AC power control, such as in light dimmers, motor speed controls, and soft starters for large motors. SCRs can handle high voltages and currents, making them suitable for power transmission systems (HVDC) and industrial motor drives. Their ability to switch large currents with a small control signal and their natural commutation in AC circuits make them valuable in many power electronics applications."
+            },
+            {
+                question: "Explain the basic manufacturing process of integrated circuits and discuss the challenges in continuing to increase circuit density.",
+                keywords: ["wafer", "photolithography", "etching", "doping", "deposition", "Moore's Law", "lithography resolution", "heat dissipation", "quantum effects"],
+                topic: "integrated-circuits",
+                modelAnswer: "The manufacturing process of integrated circuits (ICs) involves several key steps: 1) Wafer production: Ultra-pure silicon is grown into large single crystals and sliced into thin wafers. 2) Photolithography: A photoresist is applied to the wafer and exposed to light through a mask, defining the circuit patterns. 3) Etching: The exposed areas are etched away, creating the basic structure of the circuit. 4) Doping: Impurities are introduced into specific regions to alter the semiconductor's electrical properties. 5) Deposition: Layers of conducting and insulating materials are deposited to create interconnects. 6) Repeating: Steps 2-5 are repeated multiple times to create complex, multi-layer circuits. 7) Testing and packaging: The wafer is cut into individual chips, which are then tested and packaged. Challenges in increasing circuit density include: 1) Lithography resolution: As feature sizes approach the wavelength of light used in photolithography, more advanced techniques like extreme ultraviolet (EUV) lithography are required. 2) Heat dissipation: As more transistors are packed into a smaller area, managing heat becomes crucial. 3) Quantum effects: At extremely small scales, quantum tunneling and other effects begin to interfere with transistor operation. 4) Interconnect delays: As transistors shrink, the relative impact of interconnect delays increases. 5) Cost: The equipment and processes required for manufacturing at smaller nodes become increasingly expensive. These challenges have led to a slowdown in the pace of Moore's Law, prompting exploration of alternative approaches like 3D chip stacking, new materials, and novel computing paradigms."
+            },
+            {
+                question: "Discuss the advantages and disadvantages of bipolar junction transistors (BJTs) compared to field-effect transistors (FETs) in analog circuit design.",
+                keywords: ["current-controlled", "voltage-controlled", "input impedance", "noise", "linearity", "temperature sensitivity", "bandwidth", "power consumption"],
+                topic: "transistor-bipolar",
+                modelAnswer: "Bipolar Junction Transistors (BJTs) and Field-Effect Transistors (FETs) each have unique characteristics that make them suitable for different aspects of analog circuit design. Advantages of BJTs: 1) Higher transconductance, leading to higher gain-bandwidth products. 2) Better linearity in voltage-to-current conversion, important for low-distortion amplifiers. 3) More predictable behavior across different manufacturing processes. 4) Higher current-handling capability per unit area. Disadvantages of BJTs: 1) Lower input impedance, which can load the previous stage. 2) Higher noise, especially at low frequencies due to base current shot noise. 3) More temperature-sensitive, requiring careful biasing. 4) Higher power consumption due to constant base current. Advantages of FETs: 1) Very high input impedance, minimizing loading effects. 2) Lower noise, especially in JFETs at low frequencies. 3) Voltage-controlled devices, simplifying biasing in some circuits. 4) Lower power consumption in many applications due to negligible gate current. Disadvantages of FETs: 1) Lower transconductance, potentially requiring more stages for high gain. 2) More susceptible to manufacturing variations. 3) Poorer linearity in some configurations, leading to higher distortion. 4) More sensitive to electrostatic discharge. In practice, many analog designs use both types of transistors to leverage their respective strengths. For example, JFETs or MOSFETs are often used in the input stages of operational amplifiers for their high input impedance and low noise, while BJTs might be used in the output stages for their higher current capability and linearity."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            } else {
+                document.getElementById('timer').style.display = 'none';
+            }
+
+            displayQuestions();
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeRemaining === 0) {
+                clearInterval(timer);
+                submitQuiz();
+            } else {
+                timeRemaining--;
+            }
+        }
+
+        function displayQuestions() {
+            let questionsHTML = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHTML += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHTML += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea id="q${index + objectiveQuestions.length}" rows="4" cols="50"></textarea>
+                        ${quizMode === 'study' ? `
+                            <div>
+                                <button class="button show-answer" onclick="toggleModelAnswer(${index + objectiveQuestions.length})">Show Model Answer</button>
+                                <div class="model-answer" id="model-answer-${index + objectiveQuestions.length}">
+                                    <strong>Model Answer:</strong> ${q.modelAnswer}
+                                    <br><br>
+                                    <strong>Keywords:</strong> ${q.keywords.join(', ')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHTML;
+        }
+
+        function toggleModelAnswer(index) {
+            const modelAnswer = document.getElementById(`model-answer-${index}`);
+            const button = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none') {
+                modelAnswer.style.display = 'block';
+                button.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                button.textContent = 'Show Model Answer';
+            }
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            let score = 0;
+            let feedback = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === q.correctAnswer) {
+                    score += 3;
+                    feedback += `<p class="correct">Question ${index + 1}: Correct (3 points)</p>`;
+                } else {
+                    feedback += `<p class="incorrect">Question ${index + 1}: Incorrect (0 points)</p>`;
+                    if (quizMode === 'study') {
+                        feedback += `<p>Correct answer: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.getElementById(`q${index + objectiveQuestions.length}`).value.toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    feedback += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent (${questionScore} points)</p>`;
+                } else if (questionScore > 0) {
+                    feedback += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Partial (${questionScore} points)</p>`;
+                } else {
+                    feedback += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Insufficient (0 points)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    feedback += `<p>Keywords: ${q.keywords.join(', ')}</p>`;
+                    feedback += `<p>Model Answer: ${q.modelAnswer}</p>`;
+                }
+            });
+
+            const totalPossibleScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            const percentageScore = (score / totalPossibleScore) * 100;
+
+            let resultHTML = `<h3>Quiz Results</h3>
+                              <p>Your score: ${score}/${totalPossibleScore} (${percentageScore.toFixed(2)}%)</p>`;
+
+            if (percentageScore >= 70) {
+                resultHTML += '<p class="correct">Congratulations! You have passed the quiz.</p>';
+            } else {
+                resultHTML += '<p class="incorrect">You need to score at least 70% to pass. Please review the material and try again.</p>';
+            }
+
+            resultHTML += '<h4>Feedback:</h4>' + feedback;
+
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = resultHTML;
+            document.getElementById('quiz-menu').style.display = 'block';
+        }
+
+        // Dictionary
+        const dictionary = [
+            { term: "Bipolar Junction Transistor (BJT)", definition: "A three-terminal semiconductor device that amplifies or switches electronic signals and electrical power." },
+            { term: "Field-Effect Transistor (FET)", definition: "A transistor that uses an electric field to control the flow of current in an electrical circuit." },
+            { term: "MOSFET", definition: "Metal-Oxide-Semiconductor Field-Effect Transistor, a type of FET used in digital and analog circuits." },
+            { term: "Thyristor", definition: "A four-layer semiconductor device that acts as a bistable switch, conducting when triggered and continuing to conduct while forward biased." },
+            { term: "Integrated Circuit (IC)", definition: "A set of electronic circuits on a small chip of semiconductor material, typically silicon." },
+            { term: "Emitter", definition: "One of the three terminals of a BJT, which emits charge carriers into the base region." },
+            { term: "Base", definition: "The control terminal of a BJT, located between the emitter and collector." },
+            { term: "Collector", definition: "The terminal of a BJT that collects charge carriers from the base." },
+            { term: "Gate", definition: "The control terminal of a FET that modulates the channel conductivity." },
+            { term: "Source", definition: "One of the main terminals of a FET, from which majority carriers flow." },
+            { term: "Drain", definition: "One of the main terminals of a FET, to which majority carriers flow." },
+            { term: "Current Gain (β)", definition: "The ratio of collector current to base current in a BJT." },
+            { term: "Transconductance", definition: "A measure of the change in drain current with respect to gate-source voltage in a FET." },
+            { term: "Threshold Voltage", definition: "The minimum gate-to-source voltage required to create a conducting path between source and drain in a MOSFET." },
+            { term: "Silicon Controlled Rectifier (SCR)", definition: "A four-layer solid-state current-controlling device, a type of thyristor." },
+            { term: "TRIAC", definition: "A three-terminal semiconductor device for controlling current, similar to two SCRs connected in inverse parallel." },
+            { term: "DIAC", definition: "A two-terminal bidirectional thyristor used for triggering TRIACs." },
+            { term: "Light Emitting Diode (LED)", definition: "A semiconductor device that emits light when an electric current passes through it." },
+            { term: "Photodiode", definition: "A semiconductor device that converts light into electrical current." },
+            { term: "Moore's Law", definition: "An observation that the number of transistors in a dense integrated circuit doubles about every two years." }
+        ];
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            dictionary.forEach(entry => {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = entry.term;
+                definitionCell.textContent = entry.definition;
+            });
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredDictionary = dictionary.filter(entry =>
+                entry.term.toLowerCase().includes(searchTerm) ||
+                entry.definition.toLowerCase().includes(searchTerm)
+            );
+
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+
+            if (filteredDictionary.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            } else {
+                const resultList = document.createElement('ul');
+                filteredDictionary.forEach(entry => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${entry.term}:</strong> ${entry.definition}`;
+                    resultList.appendChild(listItem);
+                });
+                resultsContainer.appendChild(resultList);
+            }
+        }
+
+        document.getElementById('search-input').addEventListener('input', searchDictionary);
+
+        // Transistor Simulation
+        let transistorChart;
+
+        function updateTransistorSimulation() {
+            const baseCurrent = parseFloat(document.getElementById('base-current').value);
+            const collectorCurrent = baseCurrent * 100; // Assuming β = 100
+            const collectorVoltage = 12 - (collectorCurrent * 0.001); // Assuming 1kΩ collector resistor
+
+            const data = {
+                labels: ['0', '2', '4', '6', '8', '10', '12'],
+                datasets: [{
+                    label: 'Collector Current (mA)',
+                    data: [0, collectorCurrent * 0.2, collectorCurrent * 0.4, collectorCurrent * 0.6, collectorCurrent * 0.8, collectorCurrent, collectorCurrent],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+
+            if (transistorChart) {
+                transistorChart.data = data;
+                transistorChart.update();
+            } else {
+                const ctx = document.getElementById('transistor-simulation').getContext('2d');
+                transistorChart = new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Collector-Emitter Voltage (V)'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Collector Current (mA)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementsByClassName('tab-button')[0].click();
+            populateDictionary();
+            updateTransistorSimulation();
+        });
+    </script>
+</body>
+</html>

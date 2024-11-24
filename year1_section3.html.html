@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Electricity Course - Year 1: Direct Current Circuit Theory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .unit-container {
+            margin-bottom: 20px;
+        }
+        .unit-title {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .unit-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #3498db;
+        }
+        .phet-simulation {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Applied Electricity Course - Year 1</h1>
+    <h2>Section 3: Direct Current Circuit Theory</h2>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit1')">Unit 1: Resistors</div>
+                <div id="unit1" class="unit-content">
+                    <h3>1.1 Introduction to Resistors</h3>
+                    <p>Resistors are fundamental components in electrical circuits that oppose the flow of electric current. They are used to control voltage and current in circuits.</p>
+                    
+                    <h3>1.2 Types of Resistors</h3>
+                    <ul>
+                        <li>Fixed Resistors: Carbon film, Metal film, Wire wound</li>
+                        <li>Variable Resistors: Potentiometers, Rheostats</li>
+                        <li>Special Resistors: Thermistors, Light Dependent Resistors (LDRs)</li>
+                    </ul>
+
+                    <h3>1.3 Resistor Color Code</h3>
+                    <p>The resistor color code is a system used to indicate the resistance value and tolerance of a resistor. It consists of colored bands on the resistor body.</p>
+
+                    <h3>1.4 Resistors in Series and Parallel</h3>
+                    <p>Resistors can be connected in series, parallel, or a combination of both. The total resistance depends on the connection type:</p>
+                    <ul>
+                        <li>Series: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ...</li>
+                        <li>Parallel: 1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub> + ...</li>
+                    </ul>
+
+                    <h3>1.5 Recent Advancements in Resistor Technology</h3>
+                    <ul>
+                        <li>Thin Film Resistors: Offer high precision and stability</li>
+                        <li>Surface Mount Resistors: Enable miniaturization of electronic devices</li>
+                        <li>Quantum Tunneling Composite (QTC) Resistors: Pressure-sensitive variable resistors</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit2')">Unit 2: Insulators and Conductors</div>
+                <div id="unit2" class="unit-content">
+                    <h3>2.1 Conductors</h3>
+                    <p>Conductors are materials that allow the flow of electric current with minimal resistance. Examples include metals like copper, aluminum, and silver.</p>
+
+                    <h3>2.2 Insulators</h3>
+                    <p>Insulators are materials that strongly oppose the flow of electric current. Examples include rubber, glass, and plastic.</p>
+
+                    <h3>2.3 Semiconductors</h3>
+                    <p>Semiconductors have properties between those of conductors and insulators. Their conductivity can be controlled by doping or applying external fields. Examples include silicon and germanium.</p>
+
+                    <h3>2.4 Band Theory of Solids</h3>
+                    <p>The band theory explains the electrical properties of materials based on their electron energy bands:</p>
+                    <ul>
+                        <li>Conductors: Overlapping valence and conduction bands</li>
+                        <li>Insulators: Large band gap between valence and conduction bands</li>
+                        <li>Semiconductors: Small band gap between valence and conduction bands</li>
+                    </ul>
+
+                    <h3>2.5 Recent Advancements</h3>
+                    <ul>
+                        <li>Topological Insulators: Materials that are insulators in their interior but conduct electricity on their surface</li>
+                        <li>High-Temperature Superconductors: Materials that conduct electricity with zero resistance at relatively high temperatures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit3')">Unit 3: Resistivity of a Conductor</div>
+                <div id="unit3" class="unit-content">
+                    <h3>3.1 Definition of Resistivity</h3>
+                    <p>Resistivity (ρ) is an intrinsic property of a material that quantifies its resistance to electrical current flow. It is measured in ohm-meters (Ω⋅m).</p>
+
+                    <h3>3.2 Resistivity Formula</h3>
+                    <p>ρ = RA / L</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>ρ = Resistivity (Ω⋅m)</li>
+                        <li>R = Resistance (Ω)</li>
+                        <li>A = Cross-sectional area (m²)</li>
+                        <li>L = Length (m)</li>
+                    </ul>
+
+                    <h3>3.3 Factors Affecting Resistivity</h3>
+                    <ul>
+                        <li>Temperature: Generally, resistivity increases with temperature for metals</li>
+                        <li>Impurities: Increase resistivity</li>
+                        <li>Mechanical strain: Can increase or decrease resistivity</li>
+                    </ul>
+
+                    <h3>3.4 Conductivity</h3>
+                    <p>Conductivity (σ) is the reciprocal of resistivity: σ = 1 / ρ</p>
+
+                    <h3>3.5 Recent Advancements</h3>
+                    <ul>
+                        <li>Nanomaterials: Exhibit unique resistivity properties at the nanoscale</li>
+                        <li>Graphene: Extremely low resistivity and high electron mobility</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit4')">Unit 4: Power and Energy</div>
+                <div id="unit4" class="unit-content">
+                    <h3>4.1 Electrical Power</h3>
+                    <p>Power is the rate at which energy is transferred or converted. In electrical circuits, it's the product of voltage and current.</p>
+                    <p>P = VI = I²R = V² / R</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>P = Power (Watts, W)</li>
+                        <li>V = Voltage (Volts, V)</li>
+                        <li>I = Current (Amperes, A)</li>
+                        <li>R = Resistance (Ohms, Ω)</li>
+                    </ul>
+
+                    <h3>4.2 Electrical Energy</h3>
+                    <p>Electrical energy is the energy converted from electrical power over a period of time.</p>
+                    <p>E = P × t</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>E = Energy (Joules, J or Watt-hours, Wh)</li>
+                        <li>P = Power (Watts, W)</li>
+                        <li>t = Time (seconds, s or hours, h)</li>
+                    </ul>
+
+                    <h3>4.3 Power Dissipation in Resistors</h3>
+                    <p>When current flows through a resistor, electrical energy is converted to heat energy. This is known as Joule heating or resistive heating.</p>
+
+                    <h3>4.4 Energy Efficiency</h3>
+                    <p>Energy efficiency is the ratio of useful output energy to input energy, often expressed as a percentage.</p>
+
+                    <h3>4.5 Recent Advancements</h3>
+                    <ul>
+                        <li>Energy Harvesting: Converting small amounts of ambient energy into electrical energy</li>
+                        <li>Wireless Power Transfer: Transmitting electrical energy without wires</li>
+                        <li>Smart Grids: Advanced power networks that use digital technology to efficiently manage electricity distribution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h3>Problem 1: Resistors in Series and Parallel</h3>
+            <p><strong>Question:</strong> Three resistors R1 = 10Ω, R2 = 20Ω, and R3 = 30Ω are connected in (a) series and (b) parallel. Calculate the total resistance in each case.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>For series connection:
+                    <br>R<sub>total</sub> = R1 + R2 + R3 = 10Ω + 20Ω + 30Ω = 60Ω</li>
+                <li>For parallel connection:
+                    <br>1/R<sub>total</sub> = 1/R1 + 1/R2 + 1/R3
+                    <br>1/R<sub>total</sub> = 1/10 + 1/20 + 1/30 = 6/60 + 3/60 + 2/60 = 11/60
+                    <br>R<sub>total</sub> = 60/11 ≈ 5.45Ω</li>
+            </ol>
+
+            <h3>Problem 2: Resistivity Calculation</h3>
+            <p><strong>Question:</strong> A wire has a resistance of 5Ω, a length of 10m, and a cross-sectional area of 2mm². Calculate its resistivity.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the formula: ρ = RA / L</li>
+                <li>Given:
+                    <br>R = 5Ω
+                    <br>L = 10m
+                    <br>A = 2mm² = 2 × 10⁻⁶ m²</li>
+                <li>Substituting the values:
+                    <br>ρ = (5Ω × 2 × 10⁻⁶ m²) / 10m
+                    <br>ρ = 1 × 10⁻⁶ Ω⋅m = 1 µΩ⋅m</li>
+            </ol>
+
+            <h3>Problem 3: Power and Energy Calculation</h3>
+            <p><strong>Question:</strong> A 120V power supply delivers a current of 2A to a resistor for 5 minutes. Calculate (a) the power dissipated by the resistor and (b) the energy consumed.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>Power calculation:
+                    <br>P = VI = 120V × 2A = 240W</li>
+                <li>Energy calculation:
+                    <br>Time in seconds = 5 minutes × 60 s/min = 300s
+                    <br>E = P × t = 240W × 300s = 72,000J = 72kJ
+                    <br>Or in watt-hours: E = 240W × (5/60)h = 20Wh</li>
+            </ol>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <div class="simulation-container">
+                <h3>PhET Circuit Construction Kit Simulation</h3>
+                <iframe class="phet-simulation" src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" allowfullscreen></iframe>
+            </div>
+            <div class="simulation-container">
+                <h3>Resistor Color Code Calculator</h3>
+                <div>
+                    <label for="band1">Band 1:</label>
+                    <select id="band1">
+                        <option value="0">Black</option>
+                        <option value="1">Brown</option>
+                        <option value="2">Red</option>
+                        <option value="3">Orange</option>
+                        <option value="4">Yellow</option>
+                        <option value="5">Green</option>
+                        <option value="6">Blue</option>
+                        <option value="7">Violet</option>
+                        <option value="8">Gray</option>
+                        <option value="9">White</option>
+                    </select>
+                    <label for="band2">Band 2:</label>
+                    <select id="band2">
+                        <option value="0">Black</option>
+                        <option value="1">Brown</option>
+                        <option value="2">Red</option>
+                        <option value="3">Orange</option>
+                        <option value="4">Yellow</option>
+                        <option value="5">Green</option>
+                        <option value="6">Blue</option>
+                        <option value="7">Violet</option>
+                        <option value="8">Gray</option>
+                        <option value="9">White</option>
+                    </select>
+                    <label for="multiplier">Multiplier:</label>
+                    <select id="multiplier">
+                        <option value="1">Black (×1)</option>
+                        <option value="10">Brown (×10)</option>
+                        <option value="100">Red (×100)</option>
+                        <option value="1000">Orange (×1k)</option>
+                        <option value="10000">Yellow (×10k)</option>
+                        <option value="100000">Green (×100k)</option>
+                        <option value="1000000">Blue (×1M)</option>
+                    </select>
+                    <button onclick="calculateResistance()">Calculate Resistance</button>
+                </div>
+                <div id="resistance-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=VnnpLaKsqGU" target="_blank">Introduction to Resistors</a></li>
+                <li><a href="https://www.youtube.com/watch?v=G3H5lKoWPpY" target="_blank">Conductors and Insulators</a></li>
+                <li><a href="https://www.youtube.com/watch?v=0ZCSQGB3Vzw" target="_blank">Resistivity and Conductivity</a></li>
+                <li><a href="https://www.youtube.com/watch?v=TBt-kxYfync" target="_blank">Electric Power and Energy</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.electronics-tutorials.ws/resistor/res_1.html" target="_blank">Electronics Tutorials: Resistors</a></li>
+                <li><a href="https://www.khanacademy.org/science/physics/circuits-topic" target="_blank">Khan Academy: Circuits</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Fundamentals of Electric Circuits" by Charles K. Alexander and Matthew N. O. Sadiku</li>
+                <li>"Practical Electronics for Inventors" by Paul Scherz and Simon Monk</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h3>1. Build a Voltage Divider Circuit</h3>
+            <p><strong>Objective:</strong> Construct a voltage divider circuit and measure the output voltage for different input voltages.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Breadboard</li>
+                <li>Two resistors (e.g., 1kΩ and 2kΩ)</li>
+                <li>Variable DC power supply or batteries</li>
+                <li>Multimeter</li>
+                <li>Jumper wires</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Connect the two resistors in series on the breadboard.</li>
+                <li>Connect the power supply across the series combination.</li>
+                <li>Measure the voltage across each resistor for different input voltages.</li>
+                <li>Compare the measured values with the calculated values using the voltage divider formula: V<sub>out</sub> = V<sub>in</sub> × (R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>))</li>
+            </ol>
+
+            <h3>2. Investigate the Temperature Dependence of Resistance</h3>
+            <p><strong>Objective:</strong> Observe how the resistance of a conductor changes with temperature.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Copper wire</li>
+                <li>Multimeter</li>
+                <li>Heat source (e.g., hot water bath)</li>
+                <li>Thermometer</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Measure the resistance of the copper wire at room temperature.</li>
+                <li>Heat the wire using the heat source, measuring its temperature.</li>
+                <li>Measure the resistance at different temperatures.</li>
+                <li>Plot a graph of resistance vs. temperature.</li>
+                <li>Calculate the temperature coefficient of resistance for the copper wire.</li>
+            </ol>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h3>Dictionary</h3>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function toggleUnit(unitId) {
+            var unit = document.getElementById(unitId);
+            if (unit.style.display === "none" || unit.style.display === "") {
+                unit.style.display = "block";
+            } else {
+                unit.style.display = "none";
+            }
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the total resistance of two 10Ω resistors connected in series?",
+                options: [
+                    "5Ω",
+                    "10Ω",
+                    "20Ω",
+                    "40Ω"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which of the following is NOT a good conductor of electricity?",
+                options: [
+                    "Copper",
+                    "Aluminum",
+                    "Silver",
+                    "Rubber"
+                ],
+                correctAnswer: "d"
+            },
+            {
+                question: "What is the unit of resistivity?",
+                options: [
+                    "Ohm (Ω)",
+                    "Ohm-meter (Ω⋅m)",
+                    "Siemens (S)",
+                    "Ampere (A)"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "If a 12V battery supplies 2A of current to a circuit, what is the power consumed?",
+                options: [
+                    "6W",
+                    "10W",
+                    "24W",
+                    "48W"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which color band represents the multiplier '×1000' in a resistor color code?",
+                options: [
+                    "Brown",
+                    "Red",
+                    "Orange",
+                    "Yellow"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the difference between conductors, insulators, and semiconductors in terms of their band structure.",
+                keywords: ["valence band", "conduction band", "band gap", "electron mobility", "energy levels"],
+                modelAnswer: "Conductors, insulators, and semiconductors differ in their electronic band structure: 1) Conductors have overlapping valence and conduction bands or a partially filled band, allowing electrons to move freely. This results in high electrical conductivity. 2) Insulators have a large band gap (typically > 3 eV) between the valence and conduction bands. This large energy barrier prevents electrons from easily moving to the conduction band, resulting in very low electrical conductivity. 3) Semiconductors have a small band gap (typically < 3 eV) between the valence and conduction bands. This allows some electrons to be thermally excited into the conduction band, resulting in moderate electrical conductivity that can be controlled by temperature, doping, or applied fields. The band structure determines the material's electrical properties and its behavior in electronic devices."
+            },
+            {
+                question: "Describe how the resistance of a wire changes when its length is doubled and its cross-sectional area is halved. Explain your reasoning using the resistivity formula.",
+                keywords: ["resistivity", "length", "cross-sectional area", "directly proportional", "inversely proportional", "quadruple"],
+                modelAnswer: "To analyze how the resistance changes, we'll use the resistivity formula: R = ρL/A, where R is resistance, ρ is resistivity, L is length, and A is cross-sectional area. 1) When the length is doubled, the new length is 2L. This change alone would double the resistance. 2) When the cross-sectional area is halved, the new area is A/2. Since resistance is inversely proportional to area, this change alone would double the resistance. 3) Combining these effects: R_new = ρ(2L)/(A/2) = 4ρL/A = 4R. Therefore, doubling the length and halving the cross-sectional area results in quadrupling the resistance. This demonstrates that resistance is directly proportional to length and inversely proportional to cross-sectional area, assuming the resistivity remains constant."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}" rows="6" cols="50"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 1800; // 30 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length + subjectiveQuestions.length * 5;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct!</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect.</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 5);
+                score += questionScore;
+
+                if (questionScore === 5) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/5 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/5 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/5 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Well done! You have a good understanding of Direct Current Circuit Theory.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You might want to review the material on Direct Current Circuit Theory and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateResistance() {
+            const band1 = parseInt(document.getElementById('band1').value);
+            const band2 = parseInt(document.getElementById('band2').value);
+            const multiplier = parseInt(document.getElementById('multiplier').value);
+            
+            const resistance = (band1 * 10 + band2) * multiplier;
+            
+            let resistanceString;
+            if (resistance >= 1000000) {
+                resistanceString = (resistance / 1000000).toFixed(1) + " MΩ";
+            } else if (resistance >= 1000) {
+                resistanceString = (resistance / 1000).toFixed(1) + " kΩ";
+            } else {
+                resistanceString = resistance + " Ω";
+            }
+            
+            document.getElementById('resistance-result').innerHTML = `Resistance: ${resistanceString}`;
+        }
+
+        const dictionary = {
+            "Resistor": "An electrical component that opposes the flow of electric current.",
+            "Conductor": "A material that allows electric current to flow easily through it.",
+            "Insulator": "A material that strongly opposes the flow of electric current.",
+            "Semiconductor": "A material with electrical properties between those of conductors and insulators.",
+            "Resistivity": "An intrinsic property of a material that quantifies its resistance to electrical current flow.",
+            "Conductivity": "The reciprocal of resistivity, measuring a material's ability to conduct electric current.",
+            "Ohm's Law": "The relationship between voltage, current, and resistance in an electrical circuit: V = IR.",
+            "Power": "The rate at which electrical energy is transferred or converted, measured in watts.",
+            "Energy": "The capacity to do work, measured in joules or watt-hours in electrical systems.",
+            "Series Circuit": "A circuit where components are connected end-to-end, forming a single path for current.",
+            "Parallel Circuit": "A circuit where components are connected across each other, forming multiple paths for current."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+</body>
+</html>

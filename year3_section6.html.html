@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 3 Applied Electricity - Electrical Wiring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 3 Applied Electricity - Electrical Wiring</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Electrical Wiring</h2>
+            
+            <h3>1. Wiring</h3>
+            <p>Electrical wiring is the foundation of any electrical system, providing the pathways for electrical current to flow safely and efficiently. Proper wiring is crucial for the safety, reliability, and efficiency of electrical installations.</p>
+            
+            <h4>1.1 Types of Wiring Systems</h4>
+            <ul>
+                <li><strong>Cleat Wiring:</strong> An older method using porcelain cleats to support and insulate wires.</li>
+                <li><strong>Casing and Capping Wiring:</strong> Uses wooden casing with a cap to enclose and protect wires.</li>
+                <li><strong>Conduit Wiring:</strong> Wires are run through protective pipes or tubes, either surface-mounted or concealed.</li>
+                <li><strong>Batten Wiring:</strong> Wires are run on wooden battens fixed to walls or ceilings.</li>
+                <li><strong>Lead Sheathed Wiring:</strong> Cables with a protective lead sheath, suitable for damp conditions.</li>
+                <li><strong>Structured Cabling:</strong> Modern method for data and voice communication wiring.</li>
+            </ul>
+
+            <h4>1.2 Cable Types and Selection</h4>
+            <p>Choosing the right cable is essential for safety and performance:</p>
+            <ul>
+                <li><strong>PVC Insulated and Sheathed:</strong> Common for domestic and light commercial use.</li>
+                <li><strong>XLPE (Cross-Linked Polyethylene):</strong> Higher temperature rating, suitable for industrial applications.</li>
+                <li><strong>Mineral Insulated Copper Clad (MICC):</strong> Fire-resistant, used in critical circuits.</li>
+                <li><strong>Armored Cables:</strong> For underground or exposed outdoor installations.</li>
+                <li><strong>Fiber Optic Cables:</strong> For high-speed data transmission.</li>
+            </ul>
+
+            <h4>1.3 Recent Advancements in Wiring Technology</h4>
+            <ul>
+                <li><strong>Smart Wiring Systems:</strong> Integrate with home automation and IoT devices.</li>
+                <li><strong>Power Line Communication (PLC):</strong> Uses existing electrical wiring for data transmission.</li>
+                <li><strong>Wireless Power Transfer:</strong> Emerging technology for cord-free power delivery.</li>
+                <li><strong>Energy Harvesting Wires:</strong> Cables that can generate small amounts of electricity from ambient sources.</li>
+            </ul>
+
+            <h3>2. Protection</h3>
+            <p>Electrical protection is vital to prevent damage to equipment and ensure safety for users. It involves devices and techniques to detect and respond to faults and overloads in electrical systems.</p>
+
+            <h4>2.1 Overcurrent Protection</h4>
+            <ul>
+                <li><strong>Fuses:</strong> Sacrificial devices that melt when excessive current flows.</li>
+                <li><strong>Circuit Breakers:</strong> Reusable devices that trip to interrupt excessive current flow.</li>
+                <li><strong>Miniature Circuit Breakers (MCBs):</strong> Combine overcurrent and short-circuit protection.</li>
+            </ul>
+
+            <h4>2.2 Earth Fault Protection</h4>
+            <ul>
+                <li><strong>Residual Current Devices (RCDs):</strong> Detect current imbalances and disconnect the circuit.</li>
+                <li><strong>Ground Fault Circuit Interrupters (GFCIs):</strong> Similar to RCDs, commonly used in North America.</li>
+            </ul>
+
+            <h4>2.3 Surge Protection</h4>
+            <p>Devices to protect against voltage spikes and transients:</p>
+            <ul>
+                <li><strong>Surge Protective Devices (SPDs):</strong> Divert excess voltage to ground.</li>
+                <li><strong>Transient Voltage Surge Suppressors (TVSS):</strong> Protect sensitive electronic equipment.</li>
+            </ul>
+
+            <h4>2.4 Advanced Protection Technologies</h4>
+            <ul>
+                <li><strong>Arc Fault Detection Devices (AFDDs):</strong> Detect and mitigate electrical arcs that can cause fires.</li>
+                <li><strong>Smart Circuit Breakers:</strong> Provide remote monitoring and control capabilities.</li>
+                <li><strong>Adaptive Protection Systems:</strong> Adjust protection settings based on real-time system conditions.</li>
+            </ul>
+
+            <h3>3. Earthing</h3>
+            <p>Earthing (or grounding) is a crucial safety measure in electrical systems, providing a safe path for fault currents and helping to stabilize voltage levels.</p>
+
+            <h4>3.1 Purpose of Earthing</h4>
+            <ul>
+                <li>Protect people from electric shock</li>
+                <li>Protect equipment from damage due to fault currents</li>
+                <li>Provide a reference point for voltage measurements</li>
+                <li>Dissipate lightning and static charges</li>
+            </ul>
+
+            <h4>3.2 Types of Earthing Systems</h4>
+            <ul>
+                <li><strong>TT System:</strong> Separate earth electrodes for power source and consumer installation.</li>
+                <li><strong>TN System:</strong> Power source and consumer earth are combined. Variants include TN-C, TN-S, and TN-C-S.</li>
+                <li><strong>IT System:</strong> No direct connection between live parts and earth, used in special installations.</li>
+            </ul>
+
+            <h4>3.3 Earthing Methods</h4>
+            <ul>
+                <li><strong>Plate Earthing:</strong> Using a metal plate buried in the ground.</li>
+                <li><strong>Pipe Earthing:</strong> Using a metal pipe driven into the ground.</li>
+                <li><strong>Rod Earthing:</strong> Using copper-clad steel rods driven into the ground.</li>
+                <li><strong>Strip or Wire Earthing:</strong> Using copper strip or wire buried horizontally.</li>
+            </ul>
+
+            <h4>3.4 Modern Earthing Techniques</h4>
+            <ul>
+                <li><strong>Chemical Earthing:</strong> Uses hygroscopic compounds to improve soil conductivity.</li>
+                <li><strong>Maintenance-Free Earthing:</strong> Long-lasting solutions that require minimal upkeep.</li>
+                <li><strong>Smart Grounding Systems:</strong> Incorporate monitoring and diagnostic capabilities.</li>
+            </ul>
+
+            <h4>3.5 Earthing in Renewable Energy Systems</h4>
+            <p>Special considerations for solar PV systems, wind turbines, and energy storage systems.</p>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+
+            <h3>Problem 1: Cable Selection</h3>
+            <p>A single-phase circuit is to supply a load of 8 kW at 230 V, 50 Hz. The circuit length is 30 meters. Select an appropriate cable size if the voltage drop should not exceed 2.5%.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>Calculate the current:
+                    <br>I = P / V = 8000 / 230 = 34.78 A</li>
+                <li>Calculate the maximum allowable voltage drop:
+                    <br>Vdrop = 2.5% of 230 V = 0.025 × 230 = 5.75 V</li>
+                <li>Using the formula: Vdrop = (2 × ρ × L × I) / A
+                    <br>Where ρ (resistivity of copper) = 1.68 × 10^-8 Ω·m
+                    <br>Rearranging to solve for A (cross-sectional area):
+                    <br>A = (2 × ρ × L × I) / Vdrop
+                    <br>A = (2 × 1.68 × 10^-8 × 30 × 34.78) / 5.75
+                    <br>A = 6.12 mm²</li>
+                <li>The next standard size up is 10 mm². This size will ensure the voltage drop is within limits.</li>
+            </ol>
+            <p>Therefore, select a 10 mm² copper cable for this circuit.</p>
+
+            <h3>Problem 2: RCD Selection</h3>
+            <p>A domestic installation has a main supply rated at 100 A. Calculate the rating of the main RCD if it's required to disconnect within 40 ms for a touch voltage not exceeding 50 V.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>The maximum earth fault loop impedance (Zs) for a 50 V touch voltage is:
+                    <br>Zs = 50 V / IΔn
+                    <br>Where IΔn is the rated residual operating current of the RCD</li>
+                <li>For a 40 ms disconnection time, we typically use an RCD with IΔn = 30 mA</li>
+                <li>Check if this meets the requirement:
+                    <br>Zs = 50 / 0.03 = 1666.67 Ω</li>
+                <li>This high impedance value means that a 30 mA RCD will provide adequate protection</li>
+                <li>The RCD must also have a current rating equal to or higher than the main supply:
+                    <br>Required rating ≥ 100 A</li>
+            </ol>
+            <p>Therefore, select a 100 A, 30 mA RCD for the main protection.</p>
+
+            <h3>Problem 3: Earthing Calculation</h3>
+            <p>Calculate the resistance of a 3-meter copper rod earth electrode with a diameter of 16 mm, driven vertically into soil with a resistivity of 100 Ω·m.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>Use the formula for rod electrode resistance:
+                    <br>R = (ρ / 2πL) × [ln(4L/d) - 1]
+                    <br>Where:
+                    <br>R = Resistance of the earth electrode (Ω)
+                    <br>ρ = Soil resistivity (Ω·m)
+                    <br>L = Length of the rod (m)
+                    <br>d = Diameter of the rod (m)</li>
+                <li>Substituting the values:
+                    <br>R = (100 / 2π×3) × [ln(4×3/0.016) - 1]
+                    <br>R = (5.31) × [ln(750) - 1]
+                    <br>R = (5.31) × [6.62 - 1]
+                    <br>R = (5.31) × 5.62
+                    <br>R = 29.84 Ω</li>
+            </ol>
+            <p>The resistance of the earth electrode is approximately 29.84 Ω.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>Voltage Drop Calculator</h3>
+                <p>Calculate the voltage drop in a cable:</p>
+                <label for="cable-length">Cable Length (m):</label>
+                <input type="number" id="cable-length" step="0.1">
+                <label for="cable-csa">Cable Cross-sectional Area (mm²):</label>
+                <input type="number" id="cable-csa" step="0.1">
+                <label for="current">Current (A):</label>
+                <input type="number" id="current" step="0.1">
+                <label for="material">Conductor Material:</label>
+                <select id="material">
+                    <option value="copper">Copper</option>
+                    <option value="aluminum">Aluminum</option>
+                </select>
+                <button onclick="calculateVoltageDrop()">Calculate Voltage Drop</button>
+                <div id="voltage-drop-result" class="result"></div>
+            </div>
+            <div class="simulation-container">
+                <h3>Earth Electrode Resistance Calculator</h3>
+                <p>Calculate the resistance of a rod earth electrode:</p>
+                <label for="rod-length">Rod Length (m):</label>
+                <input type="number" id="rod-length" step="0.1">
+                <label for="rod-diameter">Rod Diameter (mm):</label>
+                <input type="number" id="rod-diameter" step="1">
+                <label for="soil-resistivity">Soil Resistivity (Ω·m):</label>
+                <input type="number" id="soil-resistivity" step="1">
+                <button onclick="calculateElectrodeResistance()">Calculate Resistance</button>
+                <div id="electrode-resistance-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=P-W42tk-fWc" target="_blank">How to Wire a Room</a></li>
+                <li><a href="https://www.youtube.com/watch?v=7Vq-mVFZqTA" target="_blank">Understanding Earthing Systems</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.electricalsafetyfirst.org.uk/guidance/safety-around-the-home/" target="_blank">Electrical Safety First - Home Safety</a></li>
+                <li><a href="https://www.niceic.com/householder/guides" target="_blank">NICEIC Electrical Guides</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Electrical Installation Work" by Brian Scaddan</li>
+                <li>"Wiring Simplified" by H.P. Richter, W.C. Schwan, and F.P. Hartwell</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Design and Install a Basic Lighting Circuit</h3>
+            <p><strong>Objective:</strong> Create a simple lighting circuit with switches and outlets.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Wire (14/2 NM cable)</li>
+                <li>Light switches</li>
+                <li>Electrical boxes</li>
+                <li>Light fixtures</li>
+                <li>Wire nuts</li>
+                <li>Circuit breaker</li>
+                <li>Electrical tape</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Plan the circuit layout</li>
+                <li>Install electrical boxes for switches and fixtures</li>
+                <li>Run cable between boxes</li>
+                <li>Connect switches and fixtures</li>
+                <li>Install the circuit breaker in the panel</li>
+                <li>Test the circuit</li>
+            </ol>
+
+            <h3>2. Build a Simple Ground Fault Circuit Interrupter (GFCI) Tester</h3>
+            <p><strong>Objective:</strong> Construct a device to test GFCI outlets.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Plastic enclosure</li>
+                <li>Three-prong plug</li>
+                <li>Push button switch</li>
+                <li>470 kΩ resistor</li>
+                <li>LED</li>
+                <li>Wire</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Wire the resistor between the hot and ground prongs of the plug</li>
+                <li>Add the push button switch in series with the resistor</li>
+                <li>Connect the LED between hot and neutral for indication</li>
+                <li>Assemble components in the enclosure</li>
+                <li>Test on a known good GFCI outlet</li>
+            </ol>
+
+            <h3>3. Smart Home Wiring Project</h3>
+            <p><strong>Objective:</strong> Integrate smart home devices into an existing electrical system.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Smart switches</li>
+                <li>Smart outlets</li>
+                <li>Smart hub</li>
+                <li>Wi-Fi router</li>
+                <li>Smartphone or tablet</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Plan the smart home layout</li>
+                <li>Replace standard switches with smart switches</li>
+                <li>Install smart outlets</li>
+                <li>Set up the smart hub and connect devices</li>
+                <li>Configure the smartphone app</li>
+                <li>Create automation routines</li>
+            </ol>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the purpose of a Residual Current Device (RCD)?",
+                options: [
+                    "To protect against overcurrent",
+                    "To detect current imbalances and disconnect the circuit",
+                    "To regulate voltage",
+                    "To increase current flow"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which of the following is NOT a type of earthing system?",
+                options: [
+                    "TT System",
+                    "TN System",
+                    "IT System",
+                    "TS System"
+                ],
+                correctAnswer: "d"
+            },
+            {
+                question: "What does XLPE stand for in cable insulation?",
+                options: [
+                    "Extra Low Polyethylene",
+                    "Cross-Linked Polyethylene",
+                    "Extended Life Polymer Elastomer",
+                    "X-ray Laminated Plastic Enclosure"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which wiring system uses wooden casing with a cap to enclose and protect wires?",
+                options: [
+                    "Cleat Wiring",
+                    "Conduit Wiring",
+                    "Casing and Capping Wiring",
+                    "Batten Wiring"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "What is the main advantage of using Arc Fault Detection Devices (AFDDs)?",
+                options: [
+                    "They increase current flow",
+                    "They reduce energy consumption",
+                    "They detect and mitigate electrical arcs that can cause fires",
+                    "They improve power factor"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the importance of proper earthing in electrical installations and describe the TT earthing system.",
+                keywords: ["safety", "fault current", "shock protection", "separate electrodes", "consumer", "supplier", "RCD"],
+                modelAnswer: "Proper earthing is crucial in electrical installations for several reasons: 1) Safety: It provides a safe path for fault currents to flow, reducing the risk of electric shock. 2) Equipment Protection: It helps protect sensitive equipment from damage due to voltage spikes or lightning strikes. 3) Stability: It provides a reference point for voltage measurements and helps stabilize the electrical system. The TT earthing system is one of the main types of earthing arrangements. In this system, the power supplier's earthing (T) is separate from the consumer's earthing (second T). The neutral point of the transformer is connected directly to earth at the substation. At the consumer's end, all exposed conductive parts are connected to a separate earth electrode. This system relies on Residual Current Devices (RCDs) for fault protection, as the earth fault loop impedance can be relatively high. The main advantage of the TT system is that it's simple and doesn't require the power supplier to distribute an earth conductor. However, it requires effective RCD protection and regular testing of the earth electrode resistance."
+            },
+            {
+                question: "Discuss the factors to consider when selecting cables for an electrical installation, including recent technological advancements in cable design.",
+                keywords: ["current carrying capacity", "voltage drop", "environmental conditions", "installation method", "XLPE", "smart cables", "fire resistance"],
+                modelAnswer: "Selecting the appropriate cables for an electrical installation involves considering several factors: 1) Current Carrying Capacity: The cable must be able to handle the maximum current that will flow through it without overheating. This depends on the cross-sectional area of the conductor and the insulation material. 2) Voltage Drop: Cables have inherent resistance, causing voltage drop over long distances. The cable size must ensure that the voltage drop at the furthest point doesn't exceed regulatory limits (typically 3-5%). 3) Environmental Conditions: Factors like ambient temperature, exposure to sunlight, moisture, or chemicals can affect cable performance and lifespan. 4) Installation Method: Whether the cable is buried, in conduit, or exposed affects its current-carrying capacity and the type of cable required. 5) Mechanical Protection: The cable may need armoring or other protection against physical damage. 6) Fire Performance: In certain applications, fire-resistant or low-smoke zero-halogen (LSZH) cables may be required. Recent technological advancements have introduced new options and improvements: 1) XLPE Insulation: Cross-linked polyethylene offers better temperature resistance and electrical properties compared to PVC. 2) Smart Cables: Integrated with sensors to monitor temperature, current flow, and detect faults. 3) Improved Fire Resistance: Development of cables that maintain circuit integrity for longer periods in fire conditions. 4) Sustainable Materials: Cables made from recycled or bio-based materials to reduce environmental impact. 5) Higher Efficiency Conductors: Use of materials like carbon nanotubes to reduce resistance and increase current-carrying capacity. 6) EMI Shielding: Advanced shielding techniques to reduce electromagnetic interference in sensitive installations. When selecting cables, it's crucial to consider both the immediate requirements and future needs, as well as any specific regulations or standards applicable to the installation."
+            },
+            {
+                question: "Explain the concept of selective coordination in electrical protection systems and its importance in ensuring reliable power distribution.",
+                keywords: ["overcurrent protection", "fault clearance", "discrimination", "time-current curves", "upstream", "downstream", "reliability"],
+                modelAnswer: "Selective coordination, also known as discrimination, is a crucial concept in electrical protection systems that ensures only the protective device closest to a fault operates to clear the fault, while upstream devices remain closed to maintain power to unaffected circuits. The importance of selective coordination lies in its ability to minimize the extent of an outage, enhance system reliability, and improve safety. Key aspects of selective coordination include: 1) Time-Current Coordination: Protective devices are selected and set so that the device nearest to the fault operates before upstream devices. This is typically achieved by setting longer time delays or higher current thresholds for upstream devices. 2) Types of Coordination: a) Full Selective Coordination: Ensures discrimination under all fault conditions. b) Partial Selective Coordination: Provides discrimination up to a certain fault current level. 3) Coordination Study: A detailed analysis of the electrical system is performed to determine the appropriate settings for each protective device. This involves examining time-current curves of all devices to ensure proper separation. 4) Benefits: a) Minimizes power interruptions to unaffected areas. b) Simplifies fault location and reduces downtime. c) Prevents unnecessary tripping of main breakers, which can affect critical loads. d) Enhances overall system reliability and safety. 5) Challenges: Achieving selective coordination can be complex, especially in systems with multiple voltage levels or parallel power sources. It may require compromises between protection sensitivity and coordination. 6) Modern Approaches: Advanced microprocessor-based protective relays allow for more sophisticated coordination schemes, including zone-selective interlocking and adaptive protection systems. These can provide faster fault clearance while maintaining selectivity. 7) Standards and Regulations: Many electrical codes now require selective coordination for critical systems, such as emergency and legally required standby systems. Implementing effective selective coordination requires careful planning, detailed system analysis, and sometimes the use of specialized software tools. It's an essential aspect of electrical system design that significantly contributes to the overall reliability and safety of power distribution systems."
+            },
+            {
+                question: "Describe the concept of smart grounding systems and how they can improve the safety and efficiency of electrical installations.",
+                keywords: ["monitoring", "real-time data", "fault detection", "predictive maintenance", "remote management", "IoT", "data analytics"],
+                modelAnswer: "Smart grounding systems represent a significant advancement in electrical safety and efficiency by incorporating modern technology into traditional earthing methods. These systems combine sensors, data analytics, and communication technologies to provide real-time monitoring and management of grounding performance. Key features and benefits of smart grounding systems include: 1) Continuous Monitoring: Smart grounding systems use sensors to continuously measure key parameters such as ground resistance, stray currents, and soil moisture content. This allows for real-time assessment of the grounding system's effectiveness. 2) Early Fault Detection: By analyzing data patterns, these systems can detect potential faults or degradation in the grounding system before they become critical issues. This proactive approach enhances safety and reduces the risk of electrical accidents. 3) Remote Management: Through internet connectivity, operators can monitor and manage grounding systems remotely, allowing for quick response to issues and reducing the need for on-site inspections. 4) Data Analytics and Reporting: Advanced analytics tools process the collected data to provide insights into system performance, identify trends, and generate automated reports for compliance and maintenance purposes. 5) Predictive Maintenance: By analyzing historical data and current trends, smart grounding systems can predict when maintenance will be required, allowing for more efficient scheduling of inspections and repairs. 6) Integration with Building Management Systems: Smart grounding can be integrated with broader building management systems, contributing to overall energy efficiency and safety management. 7) Adaptive Protection: Some advanced systems can automatically adjust protection settings based on real-time grounding conditions, optimizing safety and performance. 8) Environmental Monitoring: These systems often include sensors for monitoring environmental factors that can affect grounding performance, such as soil moisture and temperature. 9) Compliance Assurance: Automated logging and reporting features help ensure compliance with safety standards and regulations, simplifying audits and inspections. 10) Cost Efficiency: While initial installation costs may be higher, smart grounding systems can lead to long-term cost savings through improved energy efficiency, reduced maintenance needs, and prevention of costly electrical faults. Implementing smart grounding systems requires careful planning and integration with existing electrical infrastructure. However, the benefits in terms of enhanced safety, improved reliability, and increased operational efficiency make them an increasingly attractive option for modern electrical installations, particularly in critical facilities like data centers, hospitals, and industrial plants."
+            },
+            {
+                question: "Explain the principles and applications of Power Line Communication (PLC) in modern electrical wiring systems.",
+                keywords: ["data transmission", "existing power lines", "modulation", "smart grid", "home automation", "broadband", "noise reduction"],
+                modelAnswer: "Power Line Communication (PLC) is a technology that enables data transmission over existing power lines, effectively turning the electrical wiring into a communication network. This technology has gained significant attention in recent years due to its potential to simplify network installation and expand connectivity without additional wiring. Key aspects of PLC include: 1) Principle of Operation: PLC works by superimposing a modulated carrier signal on the existing power line. This signal can be extracted and decoded at any point on the network. 2) Frequency Ranges: a) Narrowband PLC: Operates at lower frequencies (3-500 kHz) and is used for control applications and smart metering. b) Broadband PLC: Uses higher frequencies (2-250 MHz) for high-speed data transmission. 3) Modulation Techniques: Various modulation schemes are used, including OFDM (Orthogonal Frequency Division Multiplexing), which is effective in dealing with the noise and interference typical in power lines. 4) Applications: a) Smart Grid: PLC enables two-way communication between utility companies and consumers, facilitating smart metering, load management, and demand response. b) Home Automation: Used for controlling smart home devices, lighting, and appliances. c) Internet Access: In some areas, PLC is used to provide broadband internet access, especially where traditional infrastructure is lacking. d) Electric Vehicle Charging: PLC can be used for communication between electric vehicles and charging stations. 5) Advantages: a) Utilizes existing infrastructure, reducing installation costs. b) Can reach areas where wireless signals may be weak. c) Suitable for both indoor and outdoor applications. 6) Challenges: a) Signal attenuation over long distances. b) Interference from electrical noise and appliances. c) Variability in network characteristics due to changing loads. 7) Standards: Several standards exist for PLC, including IEEE 1901 for broadband over power lines and G3-PLC for smart grid applications. 8) Recent Advancements: a) Improved noise cancellation techniques. b) Higher data rates, now reaching hundreds of Mbps. c) Integration with other networking technologies for hybrid solutions. 9) Security Considerations: As PLC can extend network access beyond the confines of a building, robust encryption and authentication mechanisms are crucial. 10) Future Prospects: PLC is expected to play a significant role in the development of smart cities, industrial IoT, and advanced energy management systems. The integration of PLC in modern electrical wiring systems offers a versatile solution for data communication, leveraging existing infrastructure to support a wide range of applications from basic control to high-speed data transfer. As the technology continues to evolve, it's likely to become an increasingly important component in smart buildings and energy management systems."
+    }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateVoltageDrop() {
+            const length = parseFloat(document.getElementById('cable-length').value);
+            const csa = parseFloat(document.getElementById('cable-csa').value);
+            const current = parseFloat(document.getElementById('current').value);
+            const material = document.getElementById('material').value;
+
+            const resistivity = material === 'copper' ? 1.68e-8 : 2.82e-8; // Ω·m
+            const voltageDrop = (2 * resistivity * length * current) / (csa * 1e-6);
+
+            document.getElementById('voltage-drop-result').innerHTML = `Voltage Drop: ${voltageDrop.toFixed(2)} V`;
+        }
+
+        function calculateElectrodeResistance() {
+            const length = parseFloat(document.getElementById('rod-length').value);
+            const diameter = parseFloat(document.getElementById('rod-diameter').value) / 1000; // Convert mm to m
+            const resistivity = parseFloat(document.getElementById('soil-resistivity').value);
+
+            const resistance = (resistivity / (2 * Math.PI * length)) * (Math.log((4 * length) / diameter) - 1);
+
+            document.getElementById('electrode-resistance-result').innerHTML = `Electrode Resistance: ${resistance.toFixed(2)} Ω`;
+        }
+
+        const dictionary = {
+            "RCD": "Residual Current Device - a safety device that quickly breaks an electrical circuit to prevent serious harm from an ongoing electric shock.",
+            "GFCI": "Ground Fault Circuit Interrupter - similar to an RCD, it protects against ground faults and is commonly used in North America.",
+            "MCB": "Miniature Circuit Breaker - an automatically operated electrical switch designed to protect an electrical circuit from damage caused by overcurrent or short circuit.",
+            "XLPE": "Cross-Linked Polyethylene - a thermoset material used as electrical insulation in high-voltage cables.",
+            "TT System": "An earthing system where the neutral point of the transformer and the installation earth are separated.",
+            "TN System": "An earthing system where the neutral point of the transformer is connected to the installation earth.",
+            "Armored Cable": "A cable with a protective layer of metal (usually steel) wrapped around it to protect against mechanical damage.",
+            "Conduit": "A tube used to protect and route electrical wiring in a building or structure.",
+            "Voltage Drop": "The reduction in voltage in an electrical circuit between the source and load.",
+            "Earth Electrode": "A metal plate or rod embedded in the earth to provide a low resistance path to ground for electrical systems.",
+            "Power Factor": "The ratio of real power to apparent power in an electrical system.",
+            "Smart Grid": "An electricity network that uses digital technology to monitor and manage the transport of electricity from all generation sources to meet the varying electricity demands of end users.",
+            "Arc Fault Detection Device (AFDD)": "A circuit protection device that uses advanced electronic technology to detect the presence of dangerous electrical arcs and disconnect the circuit.",
+            "Surge Protective Device (SPD)": "A device designed to protect electrical devices from voltage spikes.",
+            "Power Line Communication (PLC)": "A communication technology that uses electrical wiring to simultaneously carry both data and electric power."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Set the default tab to 'content'
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+</body>
+</html>

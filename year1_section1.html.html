@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Electricity Course - Year 1: Health, Safety, and Protection in Ghana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Applied Electricity Course - Year 1</h1>
+    <h2>Section 1: Health, Safety, and Protection in Ghana</h2>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h3>1. Protective Devices</h3>
+            <h4>1.1 Electrical Protective Devices in Ghana</h4>
+            <p>In Ghana, electrical protective devices are crucial for ensuring the safety of electrical installations and preventing accidents. The following devices are commonly used:</p>
+            <ul>
+                <li><strong>Rewirable fuse:</strong> A traditional protective device still used in some older installations in Ghana. It consists of a fuse wire that melts when excessive current flows through it.</li>
+                <li><strong>Cartridge fuse:</strong> A more modern and reliable alternative to rewirable fuses, widely used in Ghanaian households and businesses.</li>
+                <li><strong>Miniature Circuit Breaker (MCB):</strong> An automatically operated electrical switch that protects an electrical circuit from damage caused by overload or short circuit. MCBs are becoming increasingly common in new installations across Ghana.</li>
+                <li><strong>Residual Current Device (RCD):</strong> A life-saving device that quickly breaks an electrical circuit to prevent serious harm from an ongoing electric shock. The Ghana Electrical Wiring Regulations mandate the use of RCDs in certain installations.</li>
+            </ul>
+            <h4>1.2 Earthing of Premises in Ghana</h4>
+            <p>Earthing is a fundamental safety system that provides a safe path for fault currents to flow to the ground, protecting both equipment and people from electrical hazards. In Ghana, the following aspects of earthing are important:</p>
+            <ul>
+                <li><strong>TN-C-S System:</strong> This is the most common earthing system used in Ghana, where the neutral and protective earth functions are combined in a single conductor in part of the system.</li>
+                <li><strong>Earth Electrodes:</strong> Typically, copper rods are driven into the ground to provide a low-resistance path for fault currents. The high mineral content in much of Ghana's soil helps in achieving good earth resistance values.</li>
+                <li><strong>Bonding:</strong> All exposed conductive parts of electrical installations must be bonded to the main earthing terminal to ensure safety.</li>
+                <li><strong>Testing:</strong> Regular testing of earth resistance is crucial, especially considering Ghana's varied soil conditions from the coastal areas to the northern regions.</li>
+            </ul>
+
+            <h3>2. General Safety</h3>
+            <h4>2.1 Electrical Safety Regulations in Ghana</h4>
+            <p>Electrical safety in Ghana is governed by several regulations and standards:</p>
+            <ul>
+                <li><strong>Ghana Electrical Wiring Regulations, 2011 (LI 2008):</strong> These regulations provide comprehensive guidelines for electrical installations in Ghana.</li>
+                <li><strong>Energy Commission Act, 1997 (Act 541):</strong> This act established the Energy Commission, which oversees electrical safety standards in Ghana.</li>
+                <li><strong>Factories, Offices and Shops Act, 1970 (Act 328):</strong> This act includes provisions for electrical safety in workplaces.</li>
+            </ul>
+            <h4>2.2 Safe Working Procedures in the Ghanaian Context</h4>
+            <ul>
+                <li><strong>Lock-Out/Tag-Out (LOTO) Procedures:</strong> While not as widely implemented as in some countries, LOTO is gaining importance in Ghana's industrial sector, particularly in mining and manufacturing.</li>
+                <li><strong>Personal Protective Equipment (PPE):</strong> The use of appropriate PPE is crucial in Ghana's electrical industry. This includes insulating gloves, safety glasses, and flame-resistant clothing.</li>
+                <li><strong>Proper Tool Usage:</strong> Using the right tools for electrical work is emphasized in training programs across Ghana's technical institutions.</li>
+                <li><strong>Working in Hot and Humid Conditions:</strong> Given Ghana's climate, special consideration is given to working safely in hot and humid conditions, including proper hydration and rest periods.</li>
+            </ul>
+
+            <h3>3. Fire Safety</h3>
+            <h4>3.1 Types of Fire Extinguishers Available in Ghana</h4>
+            <ul>
+                <li><strong>Dry Powder Extinguishers:</strong> Widely available and suitable for electrical fires. They are effective but can cause significant cleanup.</li>
+                <li><strong>CO2 Extinguishers:</strong> Ideal for electrical fires and commonly found in offices and industrial settings in Ghana.</li>
+                <li><strong>Foam Extinguishers:</strong> While not suitable for electrical fires, they are common in Ghana for other types of fires.</li>
+                <li><strong>Water Extinguishers:</strong> Not suitable for electrical fires but commonly available. It's crucial to educate people about their inappropriate use on electrical fires.</li>
+            </ul>
+            <h4>3.2 Fire Safety in Electrical Environments in Ghana</h4>
+            <p>Understanding common causes of electrical fires and prevention measures is crucial in the Ghanaian context:</p>
+            <ul>
+                <li><strong>Overloaded Circuits:</strong> A common issue in many Ghanaian households and businesses due to the increasing use of electrical appliances.</li>
+                <li><strong>Faulty Wiring:</strong> Substandard wiring materials and poor installation practices contribute to fire risks in Ghana.</li>
+                <li><strong>Improper Use of Extension Cords:</strong> Educating the public on the proper use of extension cords is an ongoing challenge in Ghana.</li>
+                <li><strong>Regular Inspections:</strong> The Ghana National Fire Service emphasizes the importance of regular electrical system inspections, especially in public buildings and industries.</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h3>Problem 1: Fuse Selection for a Ghanaian Household</h3>
+            <p><strong>Question:</strong> A typical Ghanaian household has the following appliances: 2 fans (60W each), 5 LED bulbs (10W each), a refrigerator (150W), and a television (80W). Calculate the total current drawn and recommend an appropriate fuse rating for the main circuit.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>Calculate the total power:
+                    <br>(2 × 60W) + (5 × 10W) + 150W + 80W = 370W</li>
+                <li>Calculate the current using P = VI, where V is 230V (standard voltage in Ghana):
+                    <br>I = P / V = 370W / 230V = 1.61A</li>
+                <li>The fuse rating should be the next standard size up from the calculated current.
+                    <br>Standard fuse ratings in Ghana are typically 5A, 10A, 13A, etc.</li>
+                <li>Therefore, a 5A fuse would be appropriate for this circuit.</li>
+            </ol>
+            <p>Recommendation: Use a 5A fuse for the main circuit of this Ghanaian household.</p>
+
+            <h3>Problem 2: Earthing Calculation for a Ghanaian Building</h3>
+            <p><strong>Question:</strong> Calculate the resistance of an earth electrode for a building in Accra. The electrode is a copper rod 2.4 meters long and 15 mm in diameter, driven vertically into the ground. The soil resistivity in this area of Accra is measured to be 50 Ω-m.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the formula: R = (ρ / 2πL) * (ln(4L/d) - 1)
+                    <br>Where:
+                    <br>R = Resistance of the earth electrode (Ω)
+                    <br>ρ = Soil resistivity (50 Ω-m for this area in Accra)
+                    <br>L = Length of the electrode (2.4 m)
+                    <br>d = Diameter of the electrode (0.015 m)</li>
+                <li>Substituting the values:
+                    <br>R = (50 / (2π * 2.4)) * (ln((4 * 2.4) / 0.015) - 1)
+                    <br>R ≈ 18.7 Ω</li>
+            </ol>
+            <p>The resistance of the earth electrode is approximately 18.7 Ω. This is within the acceptable range for Ghana, where the standard typically requires the earth electrode resistance to be less than 10 Ω for domestic installations and less than 5 Ω for industrial installations. However, for better safety, consider adding a second electrode in parallel to further reduce the resistance.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <div class="simulation-container">
+                <h3>Fuse Rating Calculator for Ghanaian Households</h3>
+                <p>Calculate the appropriate fuse rating for a Ghanaian household circuit:</p>
+                <label for="total-power">Total Power Consumption (Watts):</label>
+                <input type="number" id="total-power" step="1" min="0">
+                <label for="voltage">Voltage (V):</label>
+                <input type="number" id="voltage" value="230" readonly>
+                <button onclick="calculateFuseRating()">Calculate Fuse Rating</button>
+                <div id="fuse-rating-result" class="result"></div>
+            </div>
+            <div class="simulation-container">
+                <h3>Earth Electrode Resistance Calculator</h3>
+                <p>Calculate the resistance of an earth electrode in Ghana:</p>
+                <label for="soil-resistivity">Soil Resistivity (Ω-m):</label>
+                <input type="number" id="soil-resistivity" step="0.1" min="0">
+                <label for="electrode-length">Electrode Length (m):</label>
+                <input type="number" id="electrode-length" step="0.1" min="0">
+                <label for="electrode-diameter">Electrode Diameter (mm):</label>
+                <input type="number" id="electrode-diameter" step="0.1" min="0">
+                <button onclick="calculateElectrodeResistance()">Calculate Resistance</button>
+                <div id="electrode-resistance-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=9OS3hJvCQhI" target="_blank">Electrical Safety in the Workplace - Ghana</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Ww5OVYr4FFg" target="_blank">Fire Safety Training Video (Ghanaian Context)</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.energycom.gov.gh/files/LI%202008.pdf" target="_blank">Ghana Electrical Wiring Regulations, 2011 (LI 2008)</a></li>
+                <li><a href="https://www.purc.com.gh/attachment/1566473604.pdf" target="_blank">PURC Electricity Supply and Distribution (Standards of Performance) Regulations, 2008</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Electrical Installation Work" by Brian Scaddan (While not specific to Ghana, it covers principles applicable to Ghanaian electrical work)</li>
+                <li>"Safety and Health for Engineers" by Roger L. Brauer (Provides a comprehensive overview of safety principles)</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h3>1. Build a Simple Circuit with Fuse Protection (Ghanaian Context)</h3>
+            <p><strong>Objective:</strong> Construct a basic electrical circuit incorporating a fuse for overcurrent protection, using components commonly available in Ghana.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Breadboard (available at electronics shops in Accra and other major cities)</li>
+                <li>9V battery (commonly used in Ghana)</li>
+                <li>Battery connector</li>
+                <li>LED (preferably energy-efficient ones promoted in Ghana)</li>
+                <li>220Ω resistor</li>
+                <li>Fuse holder (can be found in local electrical supply stores)</li>
+                <li>0.5A fuse (standard size available in Ghana)</li>
+                <li>Jumper wires</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Connect the positive terminal of the battery to one end of the fuse holder.</li>
+                <li>Connect the other end of the fuse holder to the anode (longer leg) of the LED.</li>
+                <li>Connect the cathode (shorter leg) of the LED to one end of the resistor.</li>
+                <li>Connect the other end of the resistor to the negative terminal of the battery.</li>
+                <li>Insert the fuse into the fuse holder.</li>
+                <li>Observe the LED light up.</li>
+                <li>To test the fuse, carefully create a short circuit by connecting the positive and negative terminals directly. The fuse should blow, protecting the circuit.</li>
+            </ol>
+            <p>Remember to exercise caution when working with electrical circuits and always follow proper safety procedures. Dispose of any blown fuses properly, following local waste management guidelines in Ghana.</p>
+
+            <h3>2. Design a Basic Earthing System Model</h3>
+            <p><strong>Objective:</strong> Create a model to demonstrate the principles of earthing in a Ghanaian context.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Large plastic container</li>
+                <li>Soil (preferably from different regions of Ghana to show varying resistivity)</li>
+                <li>Copper rod (simulating earth electrode)</li>
+                <li>Wires</li>
+                <li>Small light bulb or LED</li>
+                <li>Battery</li>
+                <li>Multimeter (if available)</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Fill the plastic container with soil.</li>
+                <li>Insert the copper rod into the soil, leaving a portion exposed.</li>
+                <li>Connect one end of a wire to the exposed part of the copper rod.</li>
+                <li>Connect the other end of this wire to one terminal of the light bulb or LED.</li>
+                <li>Connect the battery's negative terminal to the other terminal of the light bulb.</li>
+                <li>Touch the positive terminal of the battery to different points in the soil.</li>
+                <li>Observe how the brightness of the bulb changes based on the distance from the copper rod, demonstrating the concept of earth resistance.</li>
+                <li>If a multimeter is available, measure the resistance between different points in the soil and the copper rod.</li>
+            </ol>
+            <p>This project helps visualize how earthing works and how soil conditions (which vary across Ghana) affect earth resistance.</p>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h3>Dictionary</h3>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "Which of the following is NOT a type of electrical protective device commonly used in Ghana?",
+                options: [
+                    "Rewirable fuse",
+                    "Cartridge fuse",
+                    "Miniature Circuit Breaker (MCB)",
+                    "Ground Fault Circuit Interrupter (GFCI)"
+                ],
+                correctAnswer: "d"
+            },
+            {
+                question: "What is the standard voltage in Ghanaian households?",
+                options: [
+                    "110V",
+                    "220V",
+                    "230V",
+                    "240V"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which regulation governs electrical wiring in Ghana?",
+                options: [
+                    "Ghana Electrical Wiring Regulations, 2011 (LI 2008)",
+                    "Ghana Electricity Act, 1997",
+                    "National Electric Code (NEC)",
+                    "International Electrotechnical Commission (IEC) Standards"
+                ],
+                correctAnswer: "a"
+            },
+            {
+                question: "What type of earthing system is most commonly used in Ghana?",
+                options: [
+                    "TT System",
+                    "TN-S System",
+                    "TN-C-S System",
+                    "IT System"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which type of fire extinguisher is most suitable for electrical fires in Ghana?",
+                options: [
+                    "Water",
+                    "Foam",
+                    "CO2",
+                    "Wet Chemical"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the importance of earthing in electrical installations, particularly in the context of Ghana's climate and soil conditions.",
+                keywords: ["safety", "fault current", "shock prevention", "equipment protection", "soil resistivity", "seasonal variations", "TN-C-S system"],
+                modelAnswer: "Earthing is crucial in electrical installations in Ghana for several reasons: 1) Safety: It provides a safe path for fault currents to flow to the ground, reducing the risk of electric shock. 2) Equipment Protection: It helps protect sensitive electrical equipment from damage due to voltage spikes or lightning strikes, which are common in Ghana's tropical climate. 3) Compliance: It's a requirement under the Ghana Electrical Wiring Regulations. In the Ghanaian context, earthing is particularly important due to: a) Varied Soil Conditions: Ghana's diverse geography means soil resistivity can vary greatly, affecting earthing effectiveness. Coastal areas may have lower resistance due to higher moisture content, while northern regions might require more complex earthing solutions. b) Seasonal Variations: The distinct dry and rainy seasons in Ghana can affect soil moisture content and, consequently, earth resistance. Regular testing and maintenance are crucial. c) TN-C-S System: This is the most common earthing system in Ghana, where the neutral and protective earth functions are combined in part of the system. Understanding this system is crucial for proper installation and maintenance. d) Lightning Protection: Ghana experiences frequent thunderstorms, making effective earthing essential for lightning protection. e) Corrosion: The high humidity in many parts of Ghana can lead to corrosion of earthing components, necessitating the use of corrosion-resistant materials and regular inspections."
+            },
+            {
+                question: "Discuss the challenges and solutions in implementing proper Lock-Out/Tag-Out (LOTO) procedures in Ghana's industrial sector.",
+                keywords: ["awareness", "training", "equipment availability", "cultural factors", "regulatory enforcement", "standardization", "multilingual"],
+                modelAnswer: "Implementing proper Lock-Out/Tag-Out (LOTO) procedures in Ghana's industrial sector faces several challenges but also has potential solutions: 1) Awareness: Many workers and even some managers in Ghana are not fully aware of LOTO procedures. Solution: Conduct widespread awareness campaigns and include LOTO in basic safety training for all industrial workers. 2) Training: There's a lack of comprehensive training programs on LOTO. Solution: Develop standardized LOTO training programs, possibly in collaboration with the Ghana Standards Authority and international safety organizations. 3) Equipment Availability: Proper LOTO devices may not be readily available or may be seen as too expensive. Solution: Encourage local manufacturing of LOTO devices and educate companies on the cost-benefit analysis of implementing LOTO. 4) Cultural Factors: There might be resistance to change or a tendency to take shortcuts. Solution: Emphasize the importance of safety culture and involve workers in developing LOTO procedures to increase buy-in. 5) Regulatory Enforcement: Weak enforcement of safety regulations in some sectors. Solution: Strengthen the capacity of regulatory bodies like the Factories Inspectorate Department and increase penalties for non-compliance. 6) Language Barriers: Ghana's multilingual environment can complicate training and implementation. Solution: Develop LOTO materials in multiple languages, including local languages, and use pictorial guides where possible. 7) Inconsistent Procedures: Different companies may have different LOTO procedures, causing confusion for contractors. Solution: Work towards standardization of LOTO procedures across industries in Ghana. 8) Power Reliability: Frequent power outages in some areas of Ghana may lead to complacency about equipment suddenly becoming energized. Solution: Emphasize that LOTO is crucial even in areas with unreliable power supply. 9) Small and Medium Enterprises (SMEs): Many SMEs in Ghana may view LOTO as unnecessary or too complex. Solution: Develop simplified LOTO procedures for SMEs and provide government incentives for implementation. By addressing these challenges with targeted solutions, Ghana can significantly improve the implementation of LOTO procedures, enhancing workplace safety in its growing industrial sector."
+            },
+            {
+                question: "Analyze the fire safety challenges in Ghana's urban areas, particularly related to electrical fires, and propose strategies for improvement.",
+                keywords: ["overcrowding", "illegal connections", "substandard materials", "public education", "regular inspections", "building codes", "firefighting infrastructure"],
+                modelAnswer: "Fire safety challenges in Ghana's urban areas, especially related to electrical fires, are significant and multifaceted: 1) Overcrowding: Many urban areas, particularly in Accra and Kumasi, face overcrowding issues, leading to overloaded electrical systems. 2) Illegal Electrical Connections: Unauthorized connections are common in some areas, posing severe fire risks. 3) Substandard Electrical Materials: The use of low-quality or counterfeit electrical products is widespread. 4) Lack of Regular Inspections: Many buildings lack regular electrical system inspections. 5) Inadequate Firefighting Infrastructure: Some urban areas have limited access to water supply and fire stations. 6) Poor Adherence to Building Codes: Many structures are built without proper consideration of fire safety regulations. 7) Limited Public Awareness: There's a general lack of awareness about electrical fire safety among the public. Strategies for improvement: 1) Enhanced Regulation and Enforcement: Strengthen and strictly enforce electrical safety regulations. Increase penalties for illegal connections and use of substandard materials. 2) Public Education Campaigns: Launch comprehensive awareness programs about electrical fire safety, targeting both formal and informal sectors. 3) Improve Inspection Regimes: Implement mandatory regular electrical inspections for all buildings, especially in high-risk areas. 4) Upgrade Firefighting Infrastructure: Invest in modern firefighting equipment and improve water supply systems in urban areas. 5) Training and Capacity Building: Enhance the training of electricians and increase the number of certified professionals. 6) Incentivize Compliance: Offer incentives (e.g., tax breaks) for businesses and homeowners who upgrade their electrical systems to meet safety standards. 7) Community Involvement: Establish community-based fire safety committees to promote local vigilance and quick response. 8) Modernize Building Codes: Update and enforce building codes to ensure new constructions meet international fire safety standards. 9) Improve Product Standards: Strengthen the Ghana Standards Authority's capacity to test and certify electrical products. 10) Technology Adoption: Encourage the use of modern safety technologies like arc fault detection devices and smart circuit breakers. 11) Address Informal Settlements: Develop specific strategies for improving electrical safety in informal settlements and slum areas. 12) Collaboration with Electricity Providers: Work with electricity distribution companies to improve the safety of the overall power distribution system. By implementing these strategies, Ghana can significantly reduce the risk of electrical fires in urban areas, protecting lives and property while promoting sustainable urban development."
+            },
+            {
+                question: "Evaluate the effectiveness of Ghana's current electrical safety regulations and suggest improvements, considering both formal and informal sectors.",
+                keywords: ["LI 2008", "enforcement", "informal sector", "capacity building", "public awareness", "technology integration", "regular updates", "stakeholder engagement"],
+                modelAnswer: "Ghana's current electrical safety regulations, primarily governed by the Ghana Electrical Wiring Regulations, 2011 (LI 2008), have made significant strides in improving electrical safety, but there are areas for improvement: Effectiveness of Current Regulations: 1) Comprehensive Coverage: LI 2008 provides a solid framework for electrical installations, covering various aspects of wiring and safety. 2) Certification System: The introduction of certified electrical wiring professionals has improved the quality of installations. 3) Standardization: The regulations have helped standardize electrical practices across the country. Areas for Improvement: 1) Enforcement: There's a lack of consistent enforcement, especially in rural and informal urban areas. 2) Informal Sector: The regulations don't adequately address the informal sector, where many electrical works are carried out. 3) Outdated Aspects: Some technical specifications may need updating to reflect current technologies. 4) Limited Public Awareness: Many Ghanaians are unaware of these regulations and their importance. 5) Capacity Issues: There's a shortage of qualified inspectors to ensure compliance. Suggested Improvements: 1) Strengthen Enforcement: Increase the number of inspectors and provide them with better resources. Implement stricter penalties for non-compliance. 2) Address the Informal Sector: Develop simplified guidelines for the informal sector. Implement outreach programs to bring informal electricians into the formal system. 3) Regular Updates: Establish a system for regular review and update of the regulations to keep pace with technological advancements. 4) Public Awareness Campaigns: Launch nationwide awareness programs about electrical safety and the importance of using certified professionals. 5) Capacity Building: Invest in training more electrical professionals and inspectors. Partner with technical institutions to integrate the regulations into their curricula. 6) Technology Integration: Incorporate the use of technology for inspections and compliance monitoring, such as digital reporting systems. 7) Stakeholder Engagement: Involve a wider range of stakeholders, including consumer groups and informal sector representatives, in the development and review of regulations. 8) Incentive Programs: Introduce incentives for compliance, such as tax breaks or preferential treatment in government contracts for compliant businesses. 9) Localization: Adapt certain aspects of the regulations to suit different regions of Ghana, considering local conditions and practices. 10) Coordination with Other Policies: Ensure alignment with other relevant policies, such as building codes and energy efficiency standards. 11) Informal Sector Integration: Develop a phased approach to bring informal sector operators into compliance, possibly through a temporary 'grace period' with reduced requirements. 12) Consumer Protection: Strengthen provisions for consumer protection and introduce clear mechanisms for reporting unsafe installations. By implementing these improvements, Ghana can enhance the effectiveness of its electrical safety regulations, ensuring better coverage across both formal and informal sectors, and ultimately improving electrical safety throughout the country."
+            },
+            {
+                question: "Describe the role of the Energy Commission of Ghana in ensuring electrical safety and propose ways to enhance its effectiveness in this area.",
+                keywords: ["regulation", "licensing", "standards", "inspections", "public education", "collaboration", "capacity building", "technology adoption"],
+                modelAnswer: "The Energy Commission of Ghana plays a crucial role in ensuring electrical safety across the country: Current Roles: 1) Regulation: Develops and enforces regulations related to electrical safety, including the Ghana Electrical Wiring Regulations (LI 2008). 2) Licensing: Issues licenses to electrical wiring professionals and inspectors, ensuring a standard of competence. 3) Standard Setting: Establishes standards for electrical equipment and installations. 4) Inspections: Conducts inspections of electrical installations, though primarily focused on larger installations. 5) Public Education: Provides some public education on electrical safety, though this could be expanded. Proposals to Enhance Effectiveness: 1) Strengthen Regulatory Framework: Regularly review and update electrical safety regulations to keep pace with technological advancements and international best practices. 2) Expand Inspection Capacity: Increase the number of qualified inspectors and implement a more comprehensive inspection regime, including residential and small commercial properties. 3) Enhance Public Awareness: Launch more extensive public education campaigns on electrical safety, utilizing various media channels and community outreach programs. 4) Improve Licensing System: Implement a more rigorous licensing system for electrical professionals, including mandatory continuing education requirements. 5) Collaborate with Educational Institutions: Partner with universities and technical schools to integrate advanced electrical safety courses into relevant curricula. 6) Leverage Technology: Adopt digital tools for inspections, licensing, and public reporting of safety concerns. Implement an online database of certified professionals accessible to the public. 7) Strengthen Enforcement: Increase penalties for safety violations and improve mechanisms for identifying and prosecuting offenders. 8) Informal Sector Engagement: Develop strategies to engage with and regulate the informal electrical sector, possibly through a phased approach to compliance. 9) Inter-agency Collaboration: Strengthen partnerships with other relevant agencies like the Ghana Standards Authority and local government bodies for more effective implementation of safety measures. 10) Research and Development: Establish a research unit focused on electrical safety, studying local challenges and innovative solutions. 11) Industry Partnerships: Collaborate with private sector entities, including power distribution companies and large industrial users, to promote best practices in electrical safety. 12) Regional Coordination: Take a leading role in coordinating electrical safety standards and practices across West Africa, promoting regional safety harmonization. 13) Consumer Empowerment: Develop easy-to-use guides and tools for consumers to assess the safety of their electrical installations and make informed decisions when hiring electrical professionals. 14) Incident Analysis: Establish a comprehensive system for analyzing electrical accidents and near-misses to inform future safety measures. 15) Green Energy Integration: As Ghana moves towards more renewable energy sources, ensure that safety regulations and practices are updated to address new technologies like solar PV systems and battery storage. By implementing these enhancements, the Energy Commission of Ghana can significantly improve its effectiveness in ensuring electrical safety, contributing to a safer electrical environment across the country."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}" rows="6" cols="50"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 3600; // 60 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length + subjectiveQuestions.length * 5;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct!</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect.</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 5);
+                score += questionScore;
+
+                if (questionScore === 5) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/5 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/5 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/5 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have a good understanding of electrical safety in the Ghanaian context.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You might want to review the material, focusing on areas specific to Ghana\'s electrical safety practices.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateFuseRating() {
+            const power = parseFloat(document.getElementById('total-power').value);
+            const voltage = parseFloat(document.getElementById('voltage').value);
+            const current = power / voltage;
+            let fuseRating;
+
+            if (current <= 5) fuseRating = 5;
+            else if (current <= 10) fuseRating = 10;
+            else if (current <= 13) fuseRating = 13;
+            else if (current <= 15) fuseRating = 15;
+            else if (current <= 20) fuseRating = 20;
+            else if (current <= 30) fuseRating = 30;
+            else fuseRating = Math.ceil(current / 10) * 10;
+
+            document.getElementById('fuse-rating-result').innerHTML = `Recommended fuse rating: ${fuseRating}A`;
+        }
+
+        function calculateElectrodeResistance() {
+            const soilResistivity = parseFloat(document.getElementById('soil-resistivity').value);
+            const electrodeLength = parseFloat(document.getElementById('electrode-length').value);
+            const electrodeDiameter = parseFloat(document.getElementById('electrode-diameter').value) / 1000; // Convert mm to m
+
+            const resistance = (soilResistivity / (2 * Math.PI * electrodeLength)) * (Math.log((4 * electrodeLength) / electrodeDiameter) - 1);
+
+            document.getElementById('electrode-resistance-result').innerHTML = `Electrode Resistance: ${resistance.toFixed(2)} Ω`;
+        }
+
+        const dictionary = {
+            "MCB": "Miniature Circuit Breaker - An automatically operated electrical switch designed to protect an electrical circuit from damage caused by overcurrent or short circuit.",
+            "Earthing": "The process of connecting the exposed metal parts of electrical equipment to the ground, providing a safe path for fault currents.",
+            "LOTO": "Lock-Out/Tag-Out - A safety procedure used to ensure that dangerous machines are properly shut off and not started up again prior to the completion of maintenance or repair work.",
+            "PPE": "Personal Protective Equipment - Protective clothing, helmets, goggles, or other garments or equipment designed to protect the wearer's body from injury or infection.",
+            "Arc Flash": "A type of electrical explosion or discharge that results from a low-impedance connection through air to ground or another voltage phase in an electrical system.",
+            "RCD": "Residual Current Device - A life-saving device that quickly breaks an electrical circuit to prevent serious harm from an ongoing electric shock.",
+            "Fuse": "A safety device that protects an electric circuit from excessive current, containing a metal wire that melts when too much current flows through it.",
+            "Voltage": "The difference in electric potential between two points, which causes electric charges to flow.",
+            "Current": "The flow of electric charge through a conductor.",
+            "Resistance": "A measure of the opposition to current flow in an electrical circuit.",
+            "TN-C-S System": "An earthing arrangement used in electrical installations where the neutral and protective earth functions are combined in a single conductor in part of the system.",
+            "Ghana Electrical Wiring Regulations": "Legal instrument (LI 2008) that provides the framework for electrical wiring practices in Ghana.",
+            "Energy Commission": "The regulatory body in Ghana responsible for technical regulation of the energy sector, including electrical safety standards.",
+            "Soil Resistivity": "A measure of how much the soil resists the flow of electricity. It's crucial for designing effective earthing systems.",
+            "Cartridge Fuse": "A type of fuse consisting of a cartridge containing a wire or strip that melts when too much current flows, widely used in Ghana for its reliability.",
+            "Illegal Connection": "Unauthorized and dangerous practice of connecting to the electricity supply without proper metering or safety measures, a significant problem in some areas of Ghana.",
+            "Harmattan": "A dry and dusty wind that affects Ghana, potentially impacting electrical equipment and necessitating special maintenance considerations.",
+            "PURC": "Public Utilities Regulatory Commission - The body responsible for regulating public utilities in Ghana, including aspects of electrical safety in utility services."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Set the default tab to 'content'
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+</body>
+</html>

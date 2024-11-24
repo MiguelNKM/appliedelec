@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 3 Applied Electricity - Communication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .project-steps {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .project-step {
+            margin-bottom: 10px;
+        }
+        .modulation-diagram {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        .simulation-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .digital-modulation-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .constellation-diagram {
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            border: 1px solid #ddd;
+        }
+        #waveCanvas {
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 3 Applied Electricity - Communication</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Communication: Electromagnetic Waves and Modulation</h2>
+            
+            <h3>1. Electromagnetic Waves</h3>
+            <p>Electromagnetic waves are energy propagations through space in the form of oscillating electric and magnetic fields.</p>
+            
+            <h4>1.1 Properties of Electromagnetic Waves</h4>
+            <ul>
+                <li>Propagate at the speed of light in vacuum (c ≈ 3 × 10⁸ m/s)</li>
+                <li>Consist of oscillating electric and magnetic fields perpendicular to each other and to the direction of propagation</li>
+                <li>Can travel through vacuum</li>
+                <li>Exhibit wave-particle duality</li>
+            </ul>
+
+            <h4>1.2 Electromagnetic Spectrum</h4>
+            <p>The electromagnetic spectrum includes (from lowest to highest frequency):</p>
+            <ul>
+                <li>Radio waves</li>
+                <li>Microwaves</li>
+                <li>Infrared radiation</li>
+                <li>Visible light</li>
+                <li>Ultraviolet radiation</li>
+                <li>X-rays</li>
+                <li>Gamma rays</li>
+            </ul>
+
+            <h3>2. Modulation</h3>
+            <p>Modulation is the process of encoding information onto a carrier wave for transmission.</p>
+
+            <h4>2.1 Types of Modulation</h4>
+            <ul>
+                <li>Amplitude Modulation (AM): Varies the amplitude of the carrier wave</li>
+                <li>Frequency Modulation (FM): Varies the frequency of the carrier wave</li>
+                <li>Phase Modulation (PM): Varies the phase of the carrier wave</li>
+            </ul>
+
+            <h4>2.2 Digital Modulation Techniques</h4>
+            <div class="digital-modulation-section">
+                <h5>Amplitude Shift Keying (ASK)</h5>
+                <p>ASK represents digital data as variations in the amplitude of a carrier wave. In its simplest form (Binary ASK):</p>
+                <ul>
+                    <li>Binary 1: Carrier wave transmitted at fixed amplitude</li>
+                    <li>Binary 0: Carrier wave transmitted at zero or reduced amplitude</li>
+                </ul>
+                <div class="modulation-diagram">
+                    <img src="/placeholder.svg?height=200&width=400" alt="ASK Modulation Diagram">
+                </div>
+                <p>Advantages:</p>
+                <ul>
+                    <li>Simple to implement</li>
+                    <li>Requires less bandwidth</li>
+                </ul>
+                <p>Disadvantages:</p>
+                <ul>
+                    <li>Susceptible to noise and distortion</li>
+                    <li>Poor power efficiency</li>
+                </ul>
+            </div>
+
+            <div class="digital-modulation-section">
+                <h5>Frequency Shift Keying (FSK)</h5>
+                <p>FSK represents digital data by varying the frequency of the carrier wave:</p>
+                <ul>
+                    <li>Binary 1: Higher frequency</li>
+                    <li>Binary 0: Lower frequency</li>
+                </ul>
+                <div class="modulation-diagram">
+                    <img src="/placeholder.svg?height=200&width=400" alt="FSK Modulation Diagram">
+                </div>
+                <p>Advantages:</p>
+                <ul>
+                    <li>Better noise immunity than ASK</li>
+                    <li>Constant envelope - good for nonlinear channels</li>
+                </ul>
+                <p>Disadvantages:</p>
+                <ul>
+                    <li>Requires more bandwidth than ASK</li>
+                    <li>More complex to implement</li>
+                </ul>
+            </div>
+
+            <div class="digital-modulation-section">
+                <h5>Phase Shift Keying (PSK)</h5>
+                <p>PSK represents digital data by changing the phase of the carrier wave:</p>
+                <ul>
+                    <li>Binary PSK (BPSK): Uses two phases (0° and 180°)</li>
+                    <li>Quadrature PSK (QPSK): Uses four phases (0°, 90°, 180°, 270°)</li>
+                </ul>
+                <div class="modulation-diagram">
+                    <img src="/placeholder.svg?height=200&width=400" alt="PSK Modulation Diagram">
+                </div>
+                <p>Advantages:</p>
+                <ul>
+                    <li>Good noise immunity</li>
+                    <li>Efficient use of bandwidth</li>
+                    <li>Constant envelope in BPSK</li>
+                </ul>
+                <p>Disadvantages:</p>
+                <ul>
+                    <li>More complex to implement than ASK or FSK</li>
+                    <li>Requires coherent detection</li>
+                </ul>
+            </div>
+
+            <div class="digital-modulation-section">
+                <h5>Quadrature Amplitude Modulation (QAM)</h5>
+                <p>QAM combines amplitude and phase modulation to transmit more bits per symbol:</p>
+                <ul>
+                    <li>Uses both I (In-phase) and Q (Quadrature) components</li>
+                    <li>Common formats: 16-QAM, 64-QAM, 256-QAM</li>
+                    <li>Each symbol represents multiple bits</li>
+                </ul>
+                <div class="constellation-diagram">
+                    <img src="/placeholder.svg?height=200&width=200" alt="16-QAM Constellation Diagram">
+                </div>
+                <p>Advantages:</p>
+                <ul>
+                    <li>Very high spectral efficiency</li>
+                    <li>Increased data rate in limited bandwidth</li>
+                </ul>
+                <p>Disadvantages:</p>
+                <ul>
+                    <li>More susceptible to noise and distortion</li>
+                    <li>Requires good signal-to-noise ratio</li>
+                    <li>Complex implementation</li>
+                </ul>
+            </div>
+
+            <h4>2.3 Importance of Modulation</h4>
+            <ul>
+                <li>Allows multiple signals to be transmitted simultaneously over the same medium</li>
+                <li>Improves signal-to-noise ratio</li>
+                <li>Reduces antenna size requirements</li>
+                <li>Enables efficient use of the available frequency spectrum</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            
+            <h3>Problem 1: Wavelength Calculation</h3>
+            <p>Calculate the wavelength of a radio wave with a frequency of 100 MHz.</p>
+            <h4>Solution:</h4>
+            <p>Using the formula: c = f × λ, where c is the speed of light, f is frequency, and λ is wavelength.</p>
+            <p>λ = c / f = (3 × 10⁸ m/s) / (100 × 10⁶ Hz) = 3 m</p>
+
+            <h3>Problem 2: Modulation Index</h3>
+            <p>In an AM system, the carrier amplitude is 10V and the modulating signal amplitude is 6V. Calculate the modulation index.</p>
+            <h4>Solution:</h4>
+            <p>Modulation Index (m) = Modulating Signal Amplitude / Carrier Amplitude</p>
+            <p>m = 6V / 10V = 0.6 or 60%</p>
+
+            <h3>Problem 3: FM Deviation</h3>
+            <p>An FM signal has a carrier frequency of 100 MHz and a maximum deviation of ±75 kHz. What is the maximum instantaneous frequency of the modulated signal?</p>
+            <h4>Solution:</h4>
+            <p>Maximum instantaneous frequency = Carrier frequency + Maximum deviation</p>
+            <p>= 100 MHz + 75 kHz = 100.075 MHz</p>
+
+            <h3>Problem 4: Bandwidth of AM Signal</h3>
+            <p>An AM signal has a carrier frequency of 1000 kHz and is modulated by an audio signal with a maximum frequency of 5 kHz. Calculate the bandwidth of the AM signal.</p>
+            <h4>Solution:</h4>
+            <p>For AM, Bandwidth = 2 × Maximum frequency of modulating signal</p>
+            <p>Bandwidth = 2 × 5 kHz = 10 kHz</p>
+
+            <h3>Problem 5: Signal-to-Noise Ratio</h3>
+            <p>A communication system has a signal power of 1 mW and a noise power of 10 µW. Calculate the Signal-to-Noise Ratio (SNR) in dB.</p>
+            <h4>Solution:</h4>
+            <p>SNR = 10 log₁₀(Signal Power / Noise Power)</p>
+            <p>SNR = 10 log₁₀(1 mW / 10 µW) = 10 log₁₀(100) = 20 dB</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>Electromagnetic Wave Simulation</h3>
+                <p>This simulation demonstrates the propagation of electromagnetic waves.</p>
+                <canvas id="waveCanvas" width="600" height="400"></canvas>
+                <div>
+                    <label for="waveFrequency">Frequency (Hz):</label>
+                    <input type="range" id="waveFrequency" min="1" max="10" value="1" step="0.1">
+                    <span id="frequencyValue">1 Hz</span>
+                </div>
+                <div>
+                    <label for="waveAmplitude">Amplitude:</label>
+                    <input type="range" id="waveAmplitude" min="10" max="100" value="50">
+                    <span id="amplitudeValue">50</span>
+                </div>
+                <button onclick="startWaveSimulation()">Start</button>
+                <button onclick="stopWaveSimulation()">Stop</button>
+            </div>
+            
+            <div class="simulation-container">
+                <h3>Digital Modulation Simulator</h3>
+                <p>Explore different digital modulation techniques:</p>
+                <select id="modulationType">
+                    <option value="ask">Amplitude Shift Keying (ASK)</option>
+                    <option value="fsk">Frequency Shift Keying (FSK)</option>
+                    <option value="psk">Phase Shift Keying (PSK)</option>
+                    <option value="qam">Quadrature Amplitude Modulation (QAM)</option>
+                </select>
+                <div id="modulationDisplay">
+                    <!-- Simulation display area -->
+                </div>
+                <div id="modulationControls">
+                    <button onclick="startSimulation()">Start</button>
+                    <button onclick="stopSimulation()">Stop</button>
+                    <input type="text" id="binaryInput" placeholder="Enter binary data (0s and 1s)">
+                </div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=FWCN_uI5ygY" target="_blank">Introduction to Electromagnetic Waves</a></li>
+                <li><a href="https://www.youtube.com/watch?v=HfnYHcI3MSo" target="_blank">Amplitude Modulation and Frequency Modulation</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.electronics-tutorials.ws/category/modulation" target="_blank">Electronics Tutorials: Modulation Techniques</a></li>
+                <li><a href="https://www.nde-ed.org/Physics/Electromagnetics/electromagnetics_index.xhtml" target="_blank">NDT Resource Center: Electromagnetics</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Principles of Electronic Communication Systems" by Louis E. Frenzel</li>
+                <li>"Electromagnetic Waves and Radiating Systems" by Edward C. Jordan and Keith G. Balmain</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build a Simple AM Radio Receiver</h3>
+            <p>Create a basic AM radio receiver to detect and demodulate AM signals.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Germanium diode (1N34A or similar)</li>
+                <li>Variable capacitor (10-365 pF)</li>
+                <li>Inductor coil (about 200 turns of enameled wire on a ferrite rod)</li>
+                <li>High-impedance earphone or small speaker</li>
+                <li>Breadboard and connecting wires</li>
+                <li>Long wire for antenna</li>
+            </ul>
+            <h4>Step-by-step process:</h4>
+            <div class="project-steps">
+                <div class="project-step">1. Wind the inductor coil on the ferrite rod (about 200 turns).</div>
+                <div class="project-step">2. Connect one end of the coil to one terminal of the variable capacitor.</div>
+                <div class="project-step">3. Connect the other terminal of the variable capacitor to the antenna wire.</div>
+                <div class="project-step">4. Connect the germanium diode between the junction of the coil and capacitor, and one terminal of the earphone.</div>
+                <div class="project-step">5. Connect the other end of the coil to the other terminal of the earphone.</div>
+                <div class="project-step">6. Attach a long wire as an antenna to the free end of the variable capacitor.</div>
+                <div class="project-step">7. Tune the variable capacitor to pick up AM radio stations.</div>
+                <div class="project-step">8. Experiment with different coil sizes and antenna lengths to improve reception.</div>
+            </div>
+
+            <h3>2. FM Signal Generator</h3>
+            <p>Build a simple FM signal generator using a voltage-controlled oscillator (VCO).</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>555 timer IC</li>
+                <li>Varactor diode (e.g., BB909A)</li>
+                <li>Resistors and capacitors</li>
+                <li>Potentiometer</li>
+                <li>9V battery</li>
+                <li>Breadboard and connecting wires</li>
+                <li>Oscilloscope (for observing the output)</li>
+            </ul>
+            <h4>Step-by-step process:</h4>
+            <div class="project-steps">
+                <div class="project-step">1. Set up the 555 timer IC on the breadboard in astable mode.</div>
+                <div class="project-step">2. Connect the varactor diode in parallel with the timing capacitor of the 555 circuit.</div>
+                <div class="project-step">3. Add a potentiometer to control the voltage across the varactor diode.</div>
+                <div class="project-step">4. Connect the 9V battery to power the circuit.</div>
+                <div class="project-step">5. Use the oscilloscope to observe the output frequency of the 555 timer.</div>
+                <div class="project-step">6. Adjust the potentiometer to change the capacitance of the varactor diode, thus modulating the frequency.</div>
+                <div class="project-step">7. Experiment with different resistor and capacitor values to change the frequency range.</div>
+                <div class="project-step">8. Try inputting an audio signal instead of using the potentiometer for automatic frequency modulation.</div>
+            </div>
+
+            <h3>3. Electromagnetic Wave Detector</h3>
+            <p>Create a simple device to detect the presence of electromagnetic waves.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>LED</li>
+                <li>Two long wires (about 1 meter each)</li>
+                <li>Small breadboard</li>
+                <li>9V battery (optional, for increased sensitivity)</li>
+            </ul>
+            <h4>Step-by-step process:</h4>
+            <div class="project-steps">
+                <div class="project-step">1. Strip the insulation from both ends of the two long wires.</div>
+                <div class="project-step">2. Connect one wire to the anode (longer leg) of the LED.</div>
+                <div class="project-step">3. Connect the other wire to the cathode (shorter leg) of the LED.</div>
+                <div class="project-step">4. Spread the wires apart to form a "V" shape.</div>
+                <div class="project-step">5. For increased sensitivity, connect a 9V battery in series with the LED (positive to anode, negative to cathode).</div>
+                <div class="project-step">6. Move the detector near various electronic devices (e.g., mobile phones, microwaves, fluorescent lights) to observe the LED's response.</div>
+                <div class="project-step">7. Experiment with different wire lengths and configurations to detect different frequencies.</div>
+                <div class="project-step">8. Try using different colored LEDs to see if they have different sensitivities.</div>
+            </div>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the speed of electromagnetic waves in vacuum?",
+                options: ["3 × 10⁶ m/s", "3 × 10⁷ m/s", "3 × 10⁸ m/s", "3 × 10⁹ m/s"],
+                correctAnswer: "3 × 10⁸ m/s"
+            },
+            {
+                question: "Which type of modulation varies the amplitude of the carrier wave?",
+                options: ["FM", "PM", "AM", "FSK"],
+                correctAnswer: "AM"
+            },
+            {
+                question: "What is the relationship between frequency (f) and wavelength (λ) of an electromagnetic wave?",
+                options: ["f = λ", "f = c/λ", "f = λ/c", "f = c × λ"],
+                correctAnswer: "f = c/λ"
+            },
+            {
+                question: "Which part of the electromagnetic spectrum has the highest frequency?",
+                options: ["Radio waves", "Visible light", "X-rays", "Gamma rays"],
+                correctAnswer: "Gamma rays"
+            },
+            {
+                question: "In digital communication, what does QAM stand for?",
+                options: ["Quadrature Amplitude Modulation", "Quick Amplitude Modification", "Quantized Analog Modulation", "Quality Assurance Mechanism"],
+                correctAnswer: "Quadrature Amplitude Modulation"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the concept of wave-particle duality in electromagnetic waves.",
+                keywords: ["quantum mechanics", "photon", "wave", "particle", "double-slit experiment", "energy", "momentum"],
+                modelAnswer: "Wave-particle duality is a fundamental concept in quantum mechanics that describes the nature of electromagnetic waves. It states that electromagnetic radiation exhibits both wave-like and particle-like properties. As waves, they can interfere, diffract, and be described by wavelength and frequency. As particles (photons), they carry discrete amounts of energy and momentum. The famous double-slit experiment demonstrates this duality: individual photons create an interference pattern over time, showing both particle behavior (individual detections) and wave behavior (interference). This duality challenges classical physics and is essential for understanding phenomena like the photoelectric effect and the behavior of light in various contexts."
+            },
+            {
+                question: "Compare and contrast Amplitude Modulation (AM) and Frequency Modulation (FM).",
+                keywords: ["carrier wave", "sidebands", "bandwidth", "noise immunity", "signal quality", "power efficiency", "applications"],
+                modelAnswer: "Amplitude Modulation (AM) and Frequency Modulation (FM) are two fundamental techniques for encoding information in a carrier wave. In AM, the amplitude of the carrier wave is varied in proportion to the modulating signal, while the frequency remains constant. This results in sidebands that contain the information. AM is simpler to implement and detect but is more susceptible to noise and interference. It has a smaller bandwidth requirement but lower signal quality. In contrast, FM varies the frequency of the carrier wave while keeping the amplitude constant. FM provides better noise immunity and higher signal quality, as noise typically affects amplitude more than frequency. However, FM requires a larger bandwidth. AM is often used for long-distance broadcasting and aircraft communications, while FM is preferred for high-fidelity audio broadcasting and some types of data transmission. FM is generally more power-efficient for transmitters but requires more complex receiver circuitry."
+            },
+            {
+                question: "Describe the electromagnetic spectrum and its applications in communication.",
+                keywords: ["radio waves", "microwaves", "infrared", "visible light", "ultraviolet", "X-rays", "gamma rays", "frequency", "wavelength", "energy"],
+                modelAnswer: "The electromagnetic spectrum is the range of all types of electromagnetic radiation, organized by frequency and wavelength. It includes, from lowest to highest frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays. In communication, different parts of the spectrum are used for various applications. Radio waves are used for AM/FM radio broadcasting, television, and mobile phone communications. Microwaves are employed in satellite communications, Wi-Fi, and Bluetooth. Infrared is used in remote controls and short-range wireless communications. Visible light is increasingly used in fiber-optic communications and Li-Fi (Light Fidelity) technology. Higher frequency bands like ultraviolet, X-rays, and gamma rays are generally not used for communication due to their ionizing properties and difficulty in generation and detection, but they have applications in other fields like medicine and astronomy. The choice of which part of the spectrum to use depends on factors such as required bandwidth, atmospheric absorption, power requirements, and regulatory constraints."
+            },
+            {
+                question: "Explain the importance of modulation in wireless communication systems.",
+                keywords: ["carrier wave", "information signal", "frequency allocation", "noise reduction", "antenna efficiency", "multiplexing", "bandwidth utilization"],
+                modelAnswer: "Modulation is a crucial process in wireless communication systems for several reasons. Firstly, it allows the information signal to be transmitted over long distances by superimposing it onto a high-frequency carrier wave. This is necessary because low-frequency information signals (like audio or baseband data) cannot be efficiently radiated by practical antennas. Modulation shifts the information to a higher frequency band where it can be effectively transmitted. Secondly, modulation enables efficient use of the frequency spectrum. Different signals can be modulated onto different carrier frequencies, allowing multiple channels to coexist without interference (frequency division multiplexing). This is essential for accommodating numerous users and services in the limited available spectrum. Thirdly, modulation can improve the signal-to-noise ratio and reduce the effects of interference. For example, FM is less susceptible to amplitude noise than AM. Additionally, some modulation techniques allow for error correction and improved data integrity. Modulation also allows for the miniaturization of antennas, as the wavelength of the transmitted signal is reduced. Finally, different modulation schemes can be optimized for specific requirements such as power efficiency, bandwidth efficiency, or robustness against channel impairments, making communication systems more versatile and adaptable to various applications and environments."
+            },
+            {
+                question: "Discuss the principles and applications of digital modulation techniques.",
+                keywords: ["ASK", "FSK", "PSK", "QAM", "bandwidth efficiency", "noise immunity", "data rate", "symbol", "constellation diagram"],
+                modelAnswer: "Digital modulation techniques are methods of encoding digital information onto a carrier signal for transmission. The main types include Amplitude Shift Keying (ASK), Frequency Shift Keying (FSK), Phase Shift Keying (PSK), and Quadrature Amplitude Modulation (QAM). ASK varies the amplitude of the carrier to represent different digital states, similar to AM. It's simple but susceptible to noise. FSK uses different frequencies to represent digital states, offering better noise immunity than ASK but requiring more bandwidth. PSK modulates the phase of the carrier, providing good noise immunity and bandwidth efficiency. QAM combines amplitude and phase modulation, allowing for higher data rates in a given bandwidth. Each symbol in QAM can represent multiple bits, increasing spectral efficiency. The choice of modulation technique depends on factors like required data rate, available bandwidth, noise environment, and power constraints. ASK is often used in optical fiber communications, FSK in low-frequency radio applications, PSK in satellite communications and Wi-Fi, and QAM in cable modems and digital television. More advanced techniques like OFDM (Orthogonal Frequency Division Multiplexing) combine multiple modulated carriers to achieve high data rates and robustness against multipath fading. Digital modulation enables efficient use of bandwidth, improved noise immunity, and the ability to apply error correction techniques, making it fundamental to modern wireless communication systems, including cellular networks, Wi-Fi, and satellite communications."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${option}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.correctAnswer}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        // Wave Simulation
+        let waveAnimationId;
+        const canvas = document.getElementById('waveCanvas');
+        const ctx = canvas.getContext('2d');
+        let time = 0;
+
+        function drawWave() {
+            const frequency = parseFloat(document.getElementById('waveFrequency').value);
+            const amplitude = parseFloat(document.getElementById('waveAmplitude').value);
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            
+            for (let x = 0; x < canvas.width; x++) {
+                const y = amplitude * Math.sin((x / canvas.width) * 2 * Math.PI * frequency + time) + canvas.height / 2;
+                if (x === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            
+            ctx.strokeStyle = 'blue';
+            ctx.stroke();
+            
+            time += 0.05;
+            waveAnimationId = requestAnimationFrame(drawWave);
+        }
+
+        function startWaveSimulation() {
+            if (!waveAnimationId) {
+                drawWave();
+            }
+        }
+
+        function stopWaveSimulation() {
+            if (waveAnimationId) {
+                cancelAnimationFrame(waveAnimationId);
+                waveAnimationId = null;
+            }
+        }
+
+        document.getElementById('waveFrequency').addEventListener('input', function() {
+            document.getElementById('frequencyValue').textContent = this.value + ' Hz';
+        });
+
+        document.getElementById('waveAmplitude').addEventListener('input', function() {
+            document.getElementById('amplitudeValue').textContent = this.value;
+        });
+
+        // Digital Modulation Simulation
+        function startSimulation() {
+            const modulationType = document.getElementById('modulationType').value;
+            const binaryInput = document.getElementById('binaryInput').value.replace(/[^01]/g, '');
+            
+            let simulationHtml = `<h4>${modulationType.toUpperCase()} Simulation</h4>`;
+            simulationHtml += `<p>Binary Input: ${binaryInput}</p>`;
+            simulationHtml += `<div style="width: 100%; height: 200px; background-color: #f0f0f0; border: 1px solid #ccc; margin-top: 10px;">`;
+            simulationHtml += `<p style="text-align: center; padding-top: 80px;">Simulation of ${modulationType.toUpperCase()} would be displayed here.</p>`;
+            simulationHtml += `</div>`;
+            
+            document.getElementById('modulationDisplay').innerHTML = simulationHtml;
+        }
+
+        function stopSimulation() {
+            document.getElementById('modulationDisplay').innerHTML = '';
+        }
+
+        // Dictionary functionality
+        const dictionary = [
+            { term: "Electromagnetic Wave", definition: "A type of wave that can travel through vacuum, consisting of oscillating electric and magnetic fields." },
+            { term: "Modulation", definition: "The process of varying one or more properties of a periodic waveform, called the carrier signal, with a modulating signal that typically contains information to be transmitted." },
+            { term: "Amplitude Modulation (AM)", definition: "A modulation technique where the amplitude of the carrier wave is varied in proportion to the modulating signal." },
+            { term: "Frequency Modulation (FM)", definition: "A modulation technique where the frequency of the carrier wave is varied in proportion to the modulating signal." },
+            { term: "Phase Modulation (PM)", definition: "A modulation technique where the phase of the carrier wave is varied in proportion to the modulating signal." },
+            { term: "Carrier Wave", definition: "A waveform (usually sinusoidal) that is modulated with an input signal for the purpose of conveying information." },
+            { term: "Bandwidth", definition: "The difference between the upper and lower frequencies in a continuous band of frequencies." },
+            { term: "Sideband", definition: "The band of frequencies above or below the carrier frequency that are produced by the modulation process." },
+            { term: "Demodulation", definition: "The process of extracting the original information-bearing signal from a modulated carrier wave." },
+            { term: "Signal-to-Noise Ratio (SNR)", definition: "The measure of signal strength relative to background noise." }
+        ];
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            for (const entry of dictionary) {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = entry.term;
+                definitionCell.textContent = entry.definition;
+            }
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const table = document.getElementById('dictionary-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const termCell = rows[i].getElementsByTagName('td')[0];
+                if (termCell) {
+                    const term = termCell.textContent || termCell.innerText;
+                    if (term.toLowerCase().indexOf(searchTerm) > -1) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Set the default tab to 'content' and initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+            populateDictionary();
+            document.getElementById('search-input').addEventListener('keyup', searchDictionary);
+        });
+    </script>
+</body>
+</html>

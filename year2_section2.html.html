@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 2: Transformers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #2196F3;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: #2196F3;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #2196F3;
+            color: white;
+        }
+        .button {
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #0b7dda;
+        }
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Section 2: Transformers</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Transformers</h2>
+            <p>Transformers are static electrical devices that transfer electrical energy between two or more circuits through electromagnetic induction. They are crucial components in power distribution systems and various electronic applications.</p>
+            
+            <h3>1. Construction of Transformers</h3>
+            <p>Transformers consist of the following main components:</p>
+            <ul>
+                <li>Core: Made of laminated silicon steel to reduce eddy current losses</li>
+                <li>Primary Winding: Receives input power</li>
+                <li>Secondary Winding: Delivers output power</li>
+                <li>Insulation: Separates windings and core</li>
+                <li>Tank and Cooling System: For larger transformers</li>
+            </ul>
+
+            <h3>2. Principles of Operation of Transformers</h3>
+            <p>Transformers operate on the principle of electromagnetic induction:</p>
+            <ol>
+                <li>An alternating current in the primary winding creates a changing magnetic field in the core.</li>
+                <li>This changing magnetic field induces a voltage in the secondary winding.</li>
+                <li>The ratio of primary to secondary voltage is equal to the ratio of the number of turns in each winding.</li>
+            </ol>
+            <p>The voltage transformation ratio is given by: V<sub>p</sub> / V<sub>s</sub> = N<sub>p</sub> / N<sub>s</sub></p>
+
+            <h3>3. Losses and Temperature Rise in Transformers</h3>
+            <p>Transformer losses can be categorized into two main types:</p>
+            <ul>
+                <li>Core Losses (Iron Losses):
+                    <ul>
+                        <li>Hysteresis Loss: Due to magnetization and demagnetization of the core</li>
+                        <li>Eddy Current Loss: Due to induced currents in the core material</li>
+                    </ul>
+                </li>
+                <li>Copper Losses (I²R Losses): Due to resistance in the windings</li>
+            </ul>
+            <p>These losses lead to temperature rise in the transformer, which must be managed to prevent insulation breakdown and reduce efficiency.</p>
+
+            <h3>4. Efficiency of Transformers</h3>
+            <p>Transformer efficiency is the ratio of output power to input power:</p>
+            <p>η = (Output Power / Input Power) × 100%</p>
+            <p>Efficiency can be improved by:</p>
+            <ul>
+                <li>Using high-quality core materials</li>
+                <li>Optimizing winding design</li>
+                <li>Improving cooling systems</li>
+            </ul>
+
+            <h3>5. Cooling of Transformers</h3>
+            <p>Cooling methods for transformers include:</p>
+            <ul>
+                <li>Oil Natural Air Natural (ONAN)</li>
+                <li>Oil Natural Air Forced (ONAF)</li>
+                <li>Oil Forced Air Forced (OFAF)</li>
+                <li>Oil Directed Air Forced (ODAF)</li>
+            </ul>
+            <p>The choice of cooling method depends on the transformer's size, power rating, and operating conditions.</p>
+
+            <h3>6. Voltage Regulation</h3>
+            <p>Voltage regulation in transformers is the change in secondary voltage from no-load to full-load conditions, expressed as a percentage of the full-load voltage:</p>
+            <p>% Regulation = ((V<sub>nl</sub> - V<sub>fl</sub>) / V<sub>fl</sub>) × 100%</p>
+            <p>Where V<sub>nl</sub> is the no-load voltage and V<sub>fl</sub> is the full-load voltage.</p>
+            <p>Factors affecting voltage regulation include:</p>
+            <ul>
+                <li>Winding resistance</li>
+                <li>Leakage reactance</li>
+                <li>Load power factor</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            <h3>Problem 1: Transformer Turns Ratio and Voltage</h3>
+            <p>A transformer has 500 turns in its primary winding and 100 turns in its secondary winding. If the primary voltage is 230V, calculate:</p>
+            <ol>
+                <li>The turns ratio</li>
+                <li>The secondary voltage</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Turns ratio:</p>
+                    <p>a = N<sub>p</sub> / N<sub>s</sub> = 500 / 100 = 5:1</p>
+                </li>
+                <li>
+                    <p>Secondary voltage:</p>
+                    <p>V<sub>p</sub> / V<sub>s</sub> = N<sub>p</sub> / N<sub>s</sub></p>
+                    <p>230 / V<sub>s</sub> = 500 / 100</p>
+                    <p>V<sub>s</sub> = 230 × (100 / 500) = 46V</p>
+                </li>
+            </ol>
+
+            <h3>Problem 2: Transformer Efficiency</h3>
+            <p>A 50 kVA transformer has iron losses of 300W and full-load copper losses of 700W. Calculate the efficiency of the transformer at:</p>
+            <ol>
+                <li>Full load, 0.8 power factor lagging</li>
+                <li>Half load, 0.8 power factor lagging</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Full load efficiency:</p>
+                    <p>Output power = 50 × 0.8 = 40 kW</p>
+                    <p>Input power = Output power + Iron losses + Copper losses</p>
+                    <p>Input power = 40000 + 300 + 700 = 41000W</p>
+                    <p>Efficiency = (Output power / Input power) × 100%</p>
+                    <p>Efficiency = (40000 / 41000) × 100% = 97.56%</p>
+                </li>
+                <li>
+                    <p>Half load efficiency:</p>
+                    <p>Output power = 25 × 0.8 = 20 kW</p>
+                    <p>Copper losses at half load = 700 × (0.5)<sup>2</sup> = 175W</p>
+                    <p>Input power = 20000 + 300 + 175 = 20475W</p>
+                    <p>Efficiency = (20000 / 20475) × 100% = 97.68%</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button class="button" onclick="startQuiz('study')">Start Study Mode</button>
+                <button class="button" onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button class="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <h3>1. Transformer Voltage and Current Calculator</h3>
+            <div>
+                <label for="primary-voltage">Primary Voltage (V):</label>
+                <input type="number" id="primary-voltage" value="230" min="1">
+                <label for="primary-turns">Primary Turns:</label>
+                <input type="number" id="primary-turns" value="500" min="1">
+                <label for="secondary-turns">Secondary Turns:</label>
+                <input type="number" id="secondary-turns" value="100" min="1">
+                <label for="load-current">Load Current (A):</label>
+                <input type="number" id="load-current" value="2" min="0" step="0.1">
+                <button class="button" onclick="calculateTransformer()">Calculate</button>
+            </div>
+            <div id="transformer-results">
+                <p>Secondary Voltage: <span id="secondary-voltage-result">-</span> V</p>
+                <p>Primary Current: <span id="primary-current-result">-</span> A</p>
+                <p>Turns Ratio: <span id="turns-ratio-result">-</span></p>
+            </div>
+
+            <h3>2. PhET Transformer Simulation</h3>
+            <p>Explore transformer operation interactively with the PhET Faraday's Electromagnetic Lab simulation:</p>
+            <iframe src="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+            <p>This simulation allows you to explore electromagnetic induction and understand the principles behind transformer operation.</p>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Video Tutorials</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=vh_aCAHThTQ" target="_blank">How does a Transformer work - Working Principle electrical engineering</a></li>
+                <li><a href="https://www.youtube.com/watch?v=UchitHGF4n8" target="_blank">Transformer Losses (Core Losses and Copper Loss) | Electrical Engineering</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Lvp_a_JkD2o" target="_blank">Transformer Cooling System</a></li>
+            </ul>
+            <h3>Online Courses</h3>
+            <ul>
+                <li><a href="https://www.edx.org/course/fundamentals-of-electrical-engineering" target="_blank">Fundamentals of Electrical Engineering (edX)</a></li>
+                <li><a href="https://www.coursera.org/learn/power-electronics" target="_blank">Introduction to Power Electronics (Coursera)</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Electric Machinery Fundamentals" by Stephen J. Chapman</li>
+                <li>"Transformer Engineering: Design, Technology, and Diagnostics" by S.V. Kulkarni and S.A. Khaparde</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build a Simple Transformer</h3>
+            <p>Construct a basic transformer and measure its voltage transformation.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Iron core (e.g., iron nail or bolt)</li>
+                <li>Enameled copper wire</li>
+                <li>Cardboard or plastic tube</li>
+                <li>Multimeter</li>
+                <li>Low voltage AC power source</li>
+            </ul>
+
+            <h3>2. Investigate Transformer Losses</h3>
+            <p>Measure and analyze the core and copper losses in a small transformer.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Small power transformer</li>
+                <li>Wattmeter or power analyzer</li>
+                <li>Variable AC power source</li>
+                <li>Resistive load bank</li>
+                <li>Thermometer or infrared camera</li>
+            </ul>
+
+            <h3>3. Design a Transformer Cooling System</h3>
+            <p>Create a model to demonstrate different transformer cooling methods.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Small electric heater or resistor</li>
+                <li>Oil (mineral oil or vegetable oil)</li>
+                <li>Container or tank</li>
+                <li>Small fan</li>
+                <li>Temperature sensors</li>
+                <li>Arduino or similar microcontroller for control and monitoring</li>
+            </ul>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the primary function of a transformer?",
+                options: [
+                    "Generate electricity",
+                    "Store electrical energy",
+                    "Transfer electrical energy between circuits",
+                    "Convert AC to DC"
+                ],
+                correctAnswer: "c",
+                topic: "principles-of-operation"
+            },
+            {
+                question: "Which of the following is NOT a main component of a transformer?",
+                options: [
+                    "Core",
+                    "Primary winding",
+                    "Secondary winding",
+                    "Commutator"
+                ],
+                correctAnswer: "d",
+                topic: "construction-of-transformers"
+            },
+            {
+                question: "What is the relationship between the primary and secondary voltages in an ideal transformer?",
+                options: [
+                    "V<sub>p</sub> / V<sub>s</sub> = N<sub>p</sub> / N<sub>s</sub>",
+                    "V<sub>p</sub> / V<sub>s</sub> = N<sub>s</sub> / N<sub>p</sub>",
+                    "V<sub>p</sub> × V<sub>s</sub> = N<sub>p</sub> × N<sub>s</sub>",
+                    "V<sub>p</sub> + V<sub>s</sub> = N<sub>p</sub> + N<sub>s</sub>"
+                ],
+                correctAnswer: "a",
+                topic: "principles-of-operation"
+            },
+            {
+                question: "Which type of losses in a transformer are independent of the load?",
+                options: [
+                    "Copper losses",
+                    "Core losses",
+                    "Stray losses",
+                    "I<sup>2</sup>R losses"
+                ],
+                correctAnswer: "b",
+                topic: "losses-and-temperature-rise"
+            },
+            {
+                question: "What does OFAF stand for in transformer cooling methods?",
+                options: [
+                    "Oil Filled Air Forced",
+                    "Oil Free Air Filled",
+                    "Oil Forced Air Forced",
+                    "Oil Forced Air Free"
+                ],
+                correctAnswer: "c",
+                topic: "cooling-of-transformers"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the principle of operation of a transformer.",
+                keywords: ["electromagnetic induction", "faraday's law", "mutual induction", "changing magnetic field", "primary winding", "secondary winding"],
+                topic: "principles-of-operation",
+                modelAnswer: "A transformer operates on the principle of electromagnetic induction, as described by Faraday's law. When an alternating current flows through the primary winding, it creates a changing magnetic field in the transformer's core. This changing magnetic field induces a voltage in the secondary winding through mutual induction. The ratio of the number of turns in the primary and secondary windings determines the ratio of the voltages and currents in these windings, allowing the transformer to step up or step down the voltage."
+            },
+            {
+                question: "Describe the differences between core-type and shell-type transformers.",
+                keywords: ["core-type", "shell-type", "winding arrangement", "magnetic flux path", "leakage flux"],
+                topic: "construction-of-transformers",
+                modelAnswer: "Core-type and shell-type transformers differ in their construction and magnetic circuit arrangement. In a core-type transformer, the windings surround the core limbs. The magnetic flux path is primarily within the core, with some leakage flux in the air. This design is simpler and easier to manufacture. In a shell-type transformer, the core surrounds the windings. The magnetic flux path encloses the windings, resulting in lower leakage flux. Shell-type transformers generally have better magnetic coupling and are more suitable for high-current, low-voltage applications."
+            },
+            {
+                question: "What are the main types of losses in a transformer? Explain each briefly.",
+                keywords: ["core losses", "copper losses", "hysteresis loss", "eddy current loss", "I²R loss"],
+                topic: "losses-and-temperature-rise",
+                modelAnswer: "The main types of losses in a transformer are core losses and copper losses. Core losses, also known as iron losses, consist of hysteresis loss and eddy current loss. Hysteresis loss occurs due to the energy required to magnetize and demagnetize the core material with each AC cycle. Eddy current loss is caused by circulating currents induced in the core by the changing magnetic field. Copper losses, or I²R losses, occur in the primary and secondary windings due to their electrical resistance. These losses increase with the square of the current flowing through the windings and cause heating in the transformer."
+            },
+            {
+                question: "How does the efficiency of a transformer vary with load? Explain with a typical efficiency curve.",
+                keywords: ["efficiency curve", "load factor", "no-load losses", "copper losses", "maximum efficiency"],
+                topic: "efficiency-of-transformers",
+                modelAnswer: "The efficiency of a transformer varies with load, typically following a characteristic curve. At very low loads, the efficiency is low because the no-load losses (core losses) are significant compared to the output power. As the load increases, efficiency rises because the useful output power increases more rapidly than the losses. The efficiency reaches a maximum at a certain load, often around 50-75% of full load. Beyond this point, efficiency decreases slightly as copper losses, which increase with the square of the current, become more dominant. A typical efficiency curve resembles an inverted parabola, with the peak representing the point of maximum efficiency."
+            },
+            {
+                question: "Describe the various cooling methods used in transformers. When would you choose one method over another?",
+                keywords: ["ONAN", "ONAF", "OFAF", "ODAF", "heat dissipation", "rating"],
+                topic: "cooling-of-transformers",
+                modelAnswer: "Transformer cooling methods include: 1) ONAN (Oil Natural Air Natural): Suitable for small transformers, relies on natural convection of oil and air. 2) ONAF (Oil Natural Air Forced): Uses fans to enhance air circulation, suitable for medium-sized transformers. 3) OFAF (Oil Forced Air Forced): Oil is pumped through cooling tubes with forced air, used in larger transformers. 4) ODAF (Oil Directed Air Forced): Oil is directed through winding cooling ducts, used in very large transformers. The choice depends on the transformer's rating, expected load profile, and environmental conditions. ONAN is simplest but limited in cooling capacity. As transformer size and load increase, more advanced cooling methods (ONAF, OFAF, ODAF) are necessary to manage heat dissipation effectively and maintain acceptable operating temperatures."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button class="button" onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateTransformer() {
+            const primaryVoltage = parseFloat(document.getElementById('primary-voltage').value);
+            const primaryTurns = parseInt(document.getElementById('primary-turns').value);
+            const secondaryTurns = parseInt(document.getElementById('secondary-turns').value);
+            const loadCurrent = parseFloat(document.getElementById('load-current').value);
+
+            const turnsRatio = primaryTurns / secondaryTurns;
+            const secondaryVoltage = primaryVoltage / turnsRatio;
+            const primaryCurrent = loadCurrent / turnsRatio;
+
+            document.getElementById('secondary-voltage-result').textContent = secondaryVoltage.toFixed(2);
+            document.getElementById('primary-current-result').textContent = primaryCurrent.toFixed(2);
+            document.getElementById('turns-ratio-result').textContent = turnsRatio.toFixed(2);
+        }
+
+        const dictionary = [
+            { term: "Transformer", definition: "A static electrical device that transfers electrical energy between two or more circuits through electromagnetic induction." },
+            { term: "Primary Winding", definition: "The input winding of a transformer that receives electrical energy from the source." },
+            { term: "Secondary Winding", definition: "The output winding of a transformer that delivers electrical energy to the load." },
+            { term: "Core", definition: "The magnetic material in a transformer that provides a path for the magnetic flux." },
+            { term: "Turns Ratio", definition: "The ratio of the number of turns in the primary winding to the number of turns in the secondary winding." },
+            { term: "Electromagnetic Induction", definition: "The process by which a changing magnetic field induces a voltage in a conductor." },
+            { term: "Core Losses", definition: "Losses in a transformer due to the magnetic properties of the core material, including hysteresis and eddy current losses." },
+            { term: "Copper Losses", definition: "Losses in a transformer due to the resistance of the windings, also known as I²R losses." },
+            { term: "Efficiency", definition: "The ratio of output power to input power in a transformer, usually expressed as a percentage." },
+            { term: "Voltage Regulation", definition: "The change in secondary voltage from no-load to full-load conditions, expressed as a percentage of the full-load voltage." }
+        ];
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            dictionary.forEach(entry => {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = entry.term;
+                definitionCell.textContent = entry.definition;
+            });
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredDictionary = dictionary.filter(entry =>
+                entry.term.toLowerCase().includes(searchTerm) ||
+                entry.definition.toLowerCase().includes(searchTerm)
+            );
+            displaySearchResults(filteredDictionary);
+        }
+
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            } else {
+                const ul = document.createElement('ul');
+                results.forEach(entry => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${entry.term}:</strong> ${entry.definition}`;
+                    ul.appendChild(li);
+                });
+                resultsContainer.appendChild(ul);
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            openTab({ currentTarget: document.querySelector('.tab-button') }, 'content');
+            populateDictionary();
+            document.getElementById('search-input').addEventListener('input', searchDictionary);
+        });
+    </script>
+</body>
+</html>

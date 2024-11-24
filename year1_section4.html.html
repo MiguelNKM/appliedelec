@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Electricity Course - Year 1: Magnetic Field</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .unit-container {
+            margin-bottom: 20px;
+        }
+        .unit-title {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .unit-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #3498db;
+        }
+        .phet-simulation {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Applied Electricity Course - Year 1</h1>
+    <h2>Section 4: Magnetic Field</h2>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit1')">Unit 1: Fundamentals of Magnetism</div>
+                <div id="unit1" class="unit-content">
+                    <h3>1.1 Magnetic Fields</h3>
+                    <p>A magnetic field is a region around a magnetic material or a moving electric charge where magnetic force can be detected. It is represented by magnetic field lines, which show the direction and strength of the field.</p>
+                    
+                    <h3>1.2 Magnetic Poles</h3>
+                    <p>Magnets have two poles: North and South. Like poles repel, and unlike poles attract. Unlike electric charges, magnetic monopoles have not been observed in nature.</p>
+                    
+                    <h3>1.3 Magnetic Materials</h3>
+                    <ul>
+                        <li>Ferromagnetic: Strongly attracted to magnets (e.g., iron, nickel, cobalt)</li>
+                        <li>Paramagnetic: Weakly attracted to magnets (e.g., aluminum, platinum)</li>
+                        <li>Diamagnetic: Weakly repelled by magnets (e.g., copper, silver, gold)</li>
+                    </ul>
+                    
+                    <h3>1.4 Electromagnetic Induction</h3>
+                    <p>The process of generating an electric current in a conductor by moving it through a magnetic field, or by changing the magnetic field around the conductor.</p>
+                    
+                    <h3>1.5 Recent Advancements</h3>
+                    <ul>
+                        <li>Spintronics: Utilizes the spin of electrons for data storage and processing</li>
+                        <li>Magnetic Refrigeration: Uses magnetocaloric materials for more efficient cooling</li>
+                        <li>Magnetic Nanoparticles: Used in medical imaging and targeted drug delivery</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit2')">Unit 2: B/H Curve and Hysteresis Loop</div>
+                <div id="unit2" class="unit-content">
+                    <h3>2.1 B/H Curve (Magnetization Curve)</h3>
+                    <p>The B/H curve shows the relationship between the magnetic flux density (B) and the magnetizing force (H) in a material. It demonstrates how a material responds to an external magnetic field.</p>
+                    
+                    <h3>2.2 Hysteresis Loop</h3>
+                    <p>The hysteresis loop is formed when the B/H curve is traced in both directions, showing the lag in magnetization of a material as the magnetizing force is changed.</p>
+                    
+                    <h3>2.3 Key Points on the Hysteresis Loop</h3>
+                    <ul>
+                        <li>Saturation: The point where increasing H does not increase B significantly</li>
+                        <li>Remanence: The residual magnetization when H is reduced to zero</li>
+                        <li>Coercivity: The reverse field needed to reduce B to zero</li>
+                    </ul>
+                    
+                    <h3>2.4 Significance of Hysteresis</h3>
+                    <p>Hysteresis is important in many applications:</p>
+                    <ul>
+                        <li>Transformers: Minimizing hysteresis reduces energy losses</li>
+                        <li>Permanent Magnets: High remanence and coercivity are desirable</li>
+                        <li>Magnetic Recording: Controlled hysteresis is used for data storage</li>
+                    </ul>
+                    
+                    <h3>2.5 Recent Developments</h3>
+                    <ul>
+                        <li>Nanocrystalline Materials: Exhibit reduced hysteresis losses in transformers</li>
+                        <li>Magnetic Shape Memory Alloys: Show unique hysteresis properties for actuator applications</li>
+                        <li>Hysteresis Modeling: Advanced computational models for predicting material behavior</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h3>Problem 1: Magnetic Field Strength</h3>
+            <p><strong>Question:</strong> A solenoid with 500 turns and a length of 25 cm carries a current of 2 A. Calculate the magnetic field strength inside the solenoid.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the formula for magnetic field strength in a solenoid: B = μ₀nI</li>
+                <li>Where:
+                    <ul>
+                        <li>B is the magnetic field strength</li>
+                        <li>μ₀ is the permeability of free space (4π × 10⁻⁷ T·m/A)</li>
+                        <li>n is the number of turns per unit length</li>
+                        <li>I is the current</li>
+                    </ul>
+                </li>
+                <li>Calculate n: n = 500 turns / 0.25 m = 2000 turns/m</li>
+                <li>Substitute the values:
+                    <br>B = (4π × 10⁻⁷)(2000)(2)
+                    <br>B = 5.03 × 10⁻³ T or 5.03 mT
+                </li>
+            </ol>
+            <p>The magnetic field strength inside the solenoid is 5.03 mT.</p>
+
+            <h3>Problem 2: Hysteresis Loss</h3>
+            <p><strong>Question:</strong> A transformer core has a hysteresis loop area of 200 J/m³ and a volume of 0.05 m³. If it operates at 50 Hz, calculate the power loss due to hysteresis.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the formula: P = fAV</li>
+                <li>Where:
+                    <ul>
+                        <li>P is the power loss due to hysteresis</li>
+                        <li>f is the frequency</li>
+                        <li>A is the area of the hysteresis loop</li>
+                        <li>V is the volume of the core</li>
+                    </ul>
+                </li>
+                <li>Substitute the values:
+                    <br>P = (50 Hz)(200 J/m³)(0.05 m³)
+                    <br>P = 500 W
+                </li>
+            </ol>
+            <p>The power loss due to hysteresis is 500 W.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h3>PhET Magnets and Electromagnets Simulation</h3>
+            <iframe src="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_en.html" class="phet-simulation"></iframe>
+            
+            <div class="simulation-container">
+                <h3>Hysteresis Loop Simulator</h3>
+                <p>Adjust the parameters to see how they affect the hysteresis loop:</p>
+                <label for="coercivity">Coercivity (A/m):</label>
+                <input type="number" id="coercivity" value="1000" min="0" max="10000">
+                <label for="saturation">Saturation (T):</label>
+                <input type="number" id="saturation" value="1.5" min="0" max="3" step="0.1">
+                <button onclick="updateHysteresisLoop()">Update Loop</button>
+                <canvas id="hysteresisCanvas" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=1YSjRrijsRg" target="_blank">Introduction to Magnetism</a></li>
+                <li><a href="https://www.youtube.com/watch?v=pQp6bmJPU_0" target="_blank">Hysteresis Explained</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.nde-ed.org/Physics/Magnetism/Magnetism.htm" target="_blank">NDT Resource Center: Magnetism</a></li>
+                <li><a href="https://www.electronics-tutorials.ws/electromagnetism/magnetic-hysteresis.html" target="_blank">Magnetic Hysteresis Tutorial</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Introduction to Magnetism and Magnetic Materials" by David Jiles</li>
+                <li>"Magnetism: Fundamentals, Materials and Applications" by Étienne du Trémolet de Lacheisserie, Damien Gignoux, and Michel Schlenker</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h3>1. Build an Electromagnet</h3>
+            <p><strong>Objective:</strong> Construct a simple electromagnet and investigate factors affecting its strength.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Large nail or iron rod</li>
+                <li>Insulated copper wire</li>
+                <li>D-cell batteries</li>
+                <li>Battery holder</li>
+                <li>Small paper clips</li>
+                <li>Switch (optional)</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Wrap the insulated wire tightly around the nail, leaving a few inches of wire at each end.</li>
+                <li>Connect one end of the wire to the positive terminal of the battery (use the battery holder).</li>
+                <li>Connect the other end to the negative terminal (you can include a switch in this connection).</li>
+                <li>Test the electromagnet by trying to pick up paper clips.</li>
+                <li>Experiment with different numbers of wire turns and battery configurations to see how they affect the electromagnet's strength.</li>
+            </ol>
+            <p>This project helps students understand the relationship between electricity and magnetism, and how electromagnets work.</p>
+
+            <h3>2. Visualize Magnetic Fields</h3>
+            <p><strong>Objective:</strong> Create a visual representation of magnetic fields using iron filings.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Various magnets (bar magnet, horseshoe magnet, ring magnet)</li>
+                <li>Iron filings</li>
+                <li>White paper or clear plastic sheet</li>
+                <li>Cardboard</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Place a magnet under the paper or plastic sheet.</li>
+                <li>Sprinkle iron filings evenly over the surface.</li>
+                <li>Gently tap the paper or sheet to help the filings align with the magnetic field.</li>
+                <li>Observe and sketch the patterns formed by the iron filings.</li>
+                <li>Repeat with different magnets and configurations (e.g., two magnets with like or unlike poles facing each other).</li>
+                <li>For a permanent record, carefully spray the filings with clear lacquer (do this in a well-ventilated area).</li>
+            </ol>
+            <p>This project allows students to visualize magnetic fields and understand concepts like field lines and magnetic poles.</p>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h3>Dictionary</h3>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function toggleUnit(unitId) {
+            var unit = document.getElementById(unitId);
+            if (unit.style.display === "none" || unit.style.display === "") {
+                unit.style.display = "block";
+            } else {
+                unit.style.display = "none";
+            }
+        }
+
+        const objectiveQuestions = [
+            {
+                question: "Which of the following is NOT a type of magnetic material?",
+                options: [
+                    "Ferromagnetic",
+                    "Paramagnetic",
+                    "Diamagnetic",
+                    "Polymagnetic"
+                ],
+                correctAnswer: "d"
+            },
+            {
+                question: "What is the term for the residual magnetization when the external field is reduced to zero?",
+                options: [
+                    "Coercivity",
+                    "Remanence",
+                    "Saturation",
+                    "Permeability"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which recent technological advancement uses the spin of electrons for data storage and processing?",
+                options: [
+                    "Spintronics",
+                    "Magnetic Refrigeration",
+                    "Magnetic Nanoparticles",
+                    "Superconductivity"
+                ],
+                correctAnswer: "a"
+            },
+            {
+                question: "What does the area enclosed by a hysteresis loop represent?",
+                options: [
+                    "Magnetic permeability",
+                    "Saturation magnetization",
+                    "Energy loss per cycle",
+                    "Magnetic susceptibility"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which of the following is true about magnetic monopoles?",
+                options: [
+                    "They are commonly found in nature",
+                    "They have been artificially created in labs",
+                    "They are theoretically possible but not observed in nature",
+                    "They are the same as electric monopoles"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the process of electromagnetic induction and its practical applications.",
+                keywords: ["changing magnetic field", "conductor", "induced current", "Faraday's law", "generators", "transformers"],
+                modelAnswer: "Electromagnetic induction is the process of generating an electric current in a conductor by exposing it to a changing magnetic field. This phenomenon was discovered by Michael Faraday and is described by Faraday's law of induction. The key principles are: 1) A changing magnetic field induces an electromotive force (EMF) in a conductor. 2) The magnitude of the induced EMF is proportional to the rate of change of the magnetic flux. 3) The direction of the induced current opposes the change in the magnetic field (Lenz's law). Practical applications include: 1) Electrical generators, which convert mechanical energy into electrical energy by rotating a coil in a magnetic field. 2) Transformers, which use mutual induction between coils to step up or step down AC voltages. 3) Induction cooktops, which use rapidly changing magnetic fields to induce currents in cooking vessels. 4) Wireless charging systems for electronic devices. 5) Electromagnetic flow meters for measuring the flow of conductive liquids. Understanding and applying electromagnetic induction is crucial in many areas of electrical engineering and modern technology."
+            },
+            {
+                question: "Describe the B/H curve (magnetization curve) and explain its significance in understanding magnetic materials.",
+                keywords: ["magnetic flux density", "magnetizing force", "permeability", "saturation", "initial magnetization", "magnetic domains"],
+                modelAnswer: "The B/H curve, also known as the magnetization curve, is a graphical representation of the relationship between the magnetic flux density (B) and the magnetizing force (H) in a material. Key points about the B/H curve: 1) It shows how a material responds to an external magnetic field. 2) The slope of the curve represents the permeability of the material. 3) It typically has three main regions: initial magnetization, rapid increase, and saturation. The significance of the B/H curve includes: 1) Material Characterization: It helps classify materials as ferromagnetic, paramagnetic, or diamagnetic. 2) Permeability Analysis: The curve's slope indicates how easily a material can be magnetized. 3) Saturation Point: It shows the maximum magnetization a material can achieve. 4) Core Selection: In transformer and inductor design, the B/H curve helps in selecting appropriate core materials. 5) Loss Prediction: The area of the hysteresis loop (derived from the B/H curve) indicates energy losses in AC applications. 6) Non-linearity: It demonstrates the non-linear behavior of magnetic materials, crucial for accurate modeling and design. Understanding the B/H curve is essential for designing and optimizing magnetic devices and systems in various applications, from power generation to data storage."
+            },
+            {
+                question: "Discuss the concept of magnetic domains and their role in ferromagnetism.",
+                keywords: ["Weiss domains", "alignment", "magnetization", "domain walls", "exchange interaction", "magnetic anisotropy"],
+                modelAnswer: "Magnetic domains, also known as Weiss domains, are regions within a ferromagnetic material where the magnetic moments of atoms are aligned in the same direction. Key aspects of magnetic domains include: 1) Formation: Domains form to minimize the overall magnetic energy of the material. 2) Size and Shape: Typically microscopic, their size and shape depend on material properties and external conditions. 3) Domain Walls: Boundaries between domains where the magnetic orientation changes. The role of domains in ferromagnetism: 1) Magnetization Process: When an external field is applied, domains aligned with the field grow at the expense of others. 2) Hysteresis: Domain wall motion and rotation contribute to magnetic hysteresis. 3) Remanence: Some domains remain aligned after the external field is removed, causing residual magnetization. 4) Coercivity: Related to the energy required to move domain walls. 5) Magnetic Anisotropy: Preferred directions for domain alignment in crystals. 6) Temperature Effects: Domains become randomized as temperature approaches the Curie point. Understanding magnetic domains is crucial for: 1) Developing new magnetic materials. 2) Improving magnetic recording technologies. 3) Optimizing soft magnetic materials for transformers and motors. 4) Enhancing permanent magnets for various applications. The study of magnetic domains bridges microscopic magnetic interactions and macroscopic magnetic properties, playing a vital role in modern materials science and technology."
+            },
+            {
+                question: "Explain the principle of magnetic refrigeration and its potential advantages over conventional refrigeration methods.",
+                keywords: ["magnetocaloric effect", "adiabatic demagnetization", "entropy", "rare earth elements", "energy efficiency", "environmentally friendly"],
+                modelAnswer: "Magnetic refrigeration is based on the magnetocaloric effect, where certain materials change temperature when exposed to a changing magnetic field. The principle involves: 1) Adiabatic Magnetization: Applying a magnetic field causes the magnetic moments in the material to align, reducing magnetic entropy and increasing temperature. 2) Heat Removal: The heat is removed from the material by a heat transfer fluid. 3) Adiabatic Demagnetization: Removing the magnetic field causes the moments to randomize, increasing magnetic entropy and decreasing temperature. 4) Cooling: The cooled material absorbs heat from the space to be refrigerated. Potential advantages over conventional methods: 1) Energy Efficiency: Potentially 20-30% more efficient than vapor compression systems. 2) Environmentally Friendly: No harmful refrigerants or greenhouse gases used. 3) Quiet Operation: Fewer moving parts, resulting in less noise and vibration. 4) Compact Design: Possibility for more compact cooling systems. 5) Precise Temperature Control: Allows for fine-tuning of cooling power. Challenges and recent developments: 1) Materials Research: Focus on developing materials with large magnetocaloric effects near room temperature. 2) Magnetic Field Generation: Exploring efficient ways to create strong, varying magnetic fields. 3) System Design: Optimizing heat transfer and cycle frequency for maximum efficiency. 4) Cost Reduction: Making the technology economically competitive with conventional systems. Magnetic refrigeration shows promise for applications in household refrigerators, industrial cooling, and air conditioning, potentially offering a more sustainable cooling solution for the future."
+            },
+            {
+                question: "Describe the concept of spintronics and its potential impact on future electronic devices.",
+                keywords: ["electron spin", "magnetic moment", "data storage", "quantum computing", "spin-transfer torque", "magnetic RAM"],
+                modelAnswer: "Spintronics, short for spin electronics, is a field that exploits the intrinsic spin of electrons and its associated magnetic moment, in addition to its electric charge. Key concepts: 1) Spin States: Electrons can have 'up' or 'down' spin states, which can be manipulated and detected. 2) Spin Current: Flow of spin angular momentum, which can occur without net charge current. 3) Spin Injection: Introducing spin-polarized electrons into a material. 4) Spin Detection: Measuring the spin state of electrons. Potential impacts on future electronic devices: 1) Data Storage: Magnetic RAM (MRAM) using spin-transfer torque for faster, more energy-efficient memory. 2) Logic Devices: Spin-based transistors and logic gates for lower power consumption. 3) Quantum Computing: Spin qubits as a promising platform for quantum information processing. 4) Sensors: Highly sensitive magnetic field sensors based on giant magnetoresistance (GMR) or tunnel magnetoresistance (TMR). 5) Neuromorphic Computing: Spin-based artificial synapses and neurons for brain-like computing. 6) Energy Harvesting: Spin Seebeck effect for thermoelectric applications. Recent advancements: 1) 2D Materials: Exploring spintronic properties in graphene and other 2D materials. 2) Skyrmions: Topological spin structures for potential use in data storage and logic. 3) Antiferromagnetic Spintronics: Utilizing materials with zero net magnetization for faster operation. 4) Spin-Orbit Torque: New mechanism for manipulating magnetization in devices. Challenges: 1) Room Temperature Operation: Maintaining spin coherence at ambient conditions. 2) Integration: Combining spintronic components with conventional electronics. 3) Material Engineering: Developing materials with desired spin properties. Spintronics has the potential to revolutionize computing and electronics, offering devices with higher speed, lower power consumption, and new functionalities beyond conventional charge-based electronics."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}" rows="6" cols="50"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 3600; // 60 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length + subjectiveQuestions.length * 5;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct!</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect.</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 5);
+                score += questionScore;
+
+                if (questionScore === 5) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/5 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/5 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/5 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Well done! You have a good understanding of Magnetic Fields.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You might want to review the material on Magnetic Fields and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function updateHysteresisLoop() {
+            const canvas = document.getElementById('hysteresisCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const centerX = width / 2;
+            const centerY = height / 2;
+
+            const coercivity = parseFloat(document.getElementById('coercivity').value);
+            const saturation = parseFloat(document.getElementById('saturation').value);
+
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw axes
+            ctx.beginPath();
+            ctx.moveTo(0, centerY);
+            ctx.lineTo(width, centerY);
+            ctx.moveTo(centerX, 0);
+            ctx.lineTo(centerX, height);
+            ctx.strokeStyle = '#000';
+            ctx.stroke();
+
+            // Draw hysteresis loop
+            ctx.beginPath();
+            ctx.moveTo(centerX - coercivity / 20, centerY - saturation * 100);
+            ctx.bezierCurveTo(
+                centerX + coercivity / 20, centerY - saturation * 100,
+                centerX + coercivity / 10, centerY - saturation * 50,
+                centerX + coercivity / 10, centerY
+            );
+            ctx.bezierCurveTo(
+                centerX + coercivity / 10, centerY + saturation * 50,
+                centerX + coercivity / 20, centerY + saturation * 100,
+                centerX - coercivity / 20, centerY + saturation * 100
+            );
+            ctx.bezierCurveTo(
+                centerX - coercivity / 20, centerY + saturation * 100,
+                centerX - coercivity / 10, centerY + saturation * 50,
+                centerX - coercivity / 10, centerY
+            );
+            ctx.bezierCurveTo(
+                centerX - coercivity / 10, centerY - saturation * 50,
+                centerX - coercivity / 20, centerY - saturation * 100,
+                centerX + coercivity / 20, centerY - saturation * 100
+            );
+
+            ctx.strokeStyle = '#3498db';
+            ctx.stroke();
+        }
+
+        const dictionary = {
+            "Magnetic Field": "A region around a magnet or current-carrying conductor where magnetic force can be detected.",
+            "Ferromagnetic": "Materials strongly attracted to magnets, capable of being magnetized (e.g., iron, nickel, cobalt).",
+            "Paramagnetic": "Materials weakly attracted to magnets (e.g., aluminum, platinum).",
+            "Diamagnetic": "Materials weakly repelled by magnets (e.g., copper, silver, gold).",
+            "Electromagnetic Induction": "The process of generating an electric current in a conductor by moving it through a magnetic field or changing the magnetic field around it.",
+            "Hysteresis Loop": "A plot showing the relationship between the induced magnetic flux density (B) and the magnetizing force (H) in a ferromagnetic material.",
+            "Remanence": "The magnetic flux density that remains in a material after the external magnetic field is removed.",
+            "Coercivity": "The intensity of the magnetic field required to reduce the magnetization of a material to zero after it has been magnetized to saturation.",
+            "Spintronics": "A field of study focusing on the intrinsic spin of electrons and its associated magnetic moment for information processing and storage.",
+            "Magnetic Domain": "A region within a magnetic material in which the magnetic fields of atoms are grouped together and aligned.",
+            "Curie Temperature": "The temperature above which a ferromagnetic material loses its permanent magnetic properties.",
+            "Magnetocaloric Effect": "A phenomenon where certain materials change temperature when exposed to a changing magnetic field, used in magnetic refrigeration."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+            updateHysteresisLoop();
+        });
+    </script>
+</body>
+</html>

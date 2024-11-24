@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 2 Section 4: Power Supply</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: #4CAF50;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .simulation-container {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .simulation-container h3 {
+            margin-top: 0;
+        }
+        #rectifier-simulation {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 2 Section 4: Power Supply</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Power Supply</h2>
+            <h3>1. Power Supply Unit</h3>
+            <p>A Power Supply Unit (PSU) is an essential component in electronic systems that converts alternating current (AC) from the mains supply into stable direct current (DC) required by electronic devices.</p>
+            <h4>1.1 Components of a Power Supply Unit</h4>
+            <ul>
+                <li><strong>Transformer:</strong> Steps down the high voltage AC from the mains to a lower voltage AC.</li>
+                <li><strong>Rectifier:</strong> Converts AC to pulsating DC.</li>
+                <li><strong>Filter:</strong> Smooths out the pulsating DC to a steady DC.</li>
+                <li><strong>Voltage Regulator:</strong> Maintains a constant DC voltage regardless of input voltage variations or load current changes.</li>
+            </ul>
+
+            <h3>2. Rectification</h3>
+            <p>Rectification is the process of converting alternating current (AC) to direct current (DC).</p>
+            <h4>2.1 Types of Rectifiers</h4>
+            <ul>
+                <li><strong>Half-Wave Rectifier:</strong> Uses a single diode to convert AC to pulsating DC, but only utilizes one half of the AC cycle.</li>
+                <li><strong>Full-Wave Rectifier:</strong> Uses two diodes to convert both halves of the AC cycle to pulsating DC.</li>
+                <li><strong>Bridge Rectifier:</strong> Uses four diodes in a bridge configuration to convert both halves of the AC cycle to pulsating DC more efficiently.</li>
+            </ul>
+            <h4>2.2 Rectifier Efficiency</h4>
+            <p>The efficiency of a rectifier is determined by the ratio of DC output power to the AC input power. Full-wave rectifiers are more efficient than half-wave rectifiers as they utilize both halves of the AC cycle.</p>
+
+            <h3>3. Voltage Regulation and Stabilization</h3>
+            <p>Voltage regulation and stabilization ensure that the output voltage remains constant despite variations in input voltage or load current.</p>
+            <h4>3.1 Linear Voltage Regulators</h4>
+            <ul>
+                <li><strong>Series Regulators:</strong> Control element is in series with the load.</li>
+                <li><strong>Shunt Regulators:</strong> Control element is in parallel with the load.</li>
+            </ul>
+            <h4>3.2 Switching Voltage Regulators</h4>
+            <p>Use pulse-width modulation to achieve higher efficiency than linear regulators.</p>
+            <h4>3.3 Zener Diode Voltage Regulator</h4>
+            <p>A simple voltage regulator that uses the reverse breakdown characteristic of a Zener diode to maintain a constant voltage.</p>
+            <h4>3.4 Integrated Circuit (IC) Voltage Regulators</h4>
+            <p>Provide precise voltage regulation with additional features like current limiting and thermal shutdown protection.</p>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            <h3>Problem 1: Full-Wave Bridge Rectifier</h3>
+            <p>A full-wave bridge rectifier is connected to a 120V RMS, 60 Hz AC source. Calculate:</p>
+            <ol>
+                <li>The peak voltage of the AC source</li>
+                <li>The average DC output voltage (assuming ideal diodes)</li>
+                <li>The ripple frequency of the output</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Peak voltage of AC source:</p>
+                    <p>V<sub>peak</sub> = V<sub>RMS</sub> × √2 = 120V × √2 ≈ 169.7V</p>
+                </li>
+                <li>
+                    <p>Average DC output voltage:</p>
+                    <p>V<sub>DC</sub> = (2 × V<sub>peak</sub>) / π ≈ (2 × 169.7V) / π ≈ 108.0V</p>
+                </li>
+                <li>
+                    <p>Ripple frequency:</p>
+                    <p>f<sub>ripple</sub> = 2 × f<sub>input</sub> = 2 × 60 Hz = 120 Hz</p>
+                </li>
+            </ol>
+
+            <h3>Problem 2: Zener Diode Voltage Regulator</h3>
+            <p>A Zener diode voltage regulator circuit has an input voltage of 20V, a Zener voltage of 12V, and a load resistance of 240Ω. Calculate:</p>
+            <ol>
+                <li>The series resistor value if the maximum Zener current is 20mA</li>
+                <li>The load current</li>
+                <li>The actual Zener current</li>
+            </ol>
+
+            <h4>Solution:</h4>
+            <ol>
+                <li>
+                    <p>Series resistor value:</p>
+                    <p>R<sub>s</sub> = (V<sub>in</sub> - V<sub>z</sub>) / I<sub>z(max)</sub> = (20V - 12V) / 0.02A = 400Ω</p>
+                </li>
+                <li>
+                    <p>Load current:</p>
+                    <p>I<sub>L</sub> = V<sub>z</sub> / R<sub>L</sub> = 12V / 240Ω = 0.05A = 50mA</p>
+                </li>
+                <li>
+                    <p>Actual Zener current:</p>
+                    <p>I<sub>z</sub> = (V<sub>in</sub> - V<sub>z</sub>) / R<sub>s</sub> - I<sub>L</sub> = (20V - 12V) / 400Ω - 0.05A = 0.02A - 0.05A = -0.03A</p>
+                    <p>The negative value indicates that the Zener diode is not conducting. The circuit is operating in its linear region, and all current is flowing through the load.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button class="button" onclick="startQuiz('study')">Start Study Mode</button>
+                <button class="button" onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button class="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>1. Rectifier Circuit Simulation</h3>
+                <p>This simulation demonstrates the operation of half-wave and full-wave rectifiers. You can adjust the input voltage and frequency to see how they affect the output.</p>
+                <div>
+                    <label for="rectifier-type">Rectifier Type:</label>
+                    <select id="rectifier-type">
+                        <option value="half-wave">Half-Wave</option>
+                        <option value="full-wave">Full-Wave</option>
+                    </select>
+                    <label for="input-voltage">Input Voltage (V peak):</label>
+                    <input type="number" id="input-voltage" value="10" min="1" max="20">
+                    <label for="input-frequency">Input Frequency (Hz):</label>
+                    <input type="number" id="input-frequency" value="60" min="1" max="1000">
+                    <button class="button" onclick="updateRectifierSimulation()">Update Simulation</button>
+                </div>
+                <canvas id="rectifier-simulation"></canvas>
+            </div>
+
+            <div class="simulation-container">
+                <h3>2. PhET Circuit Construction Kit Simulation</h3>
+                <p>This interactive simulation allows you to build and explore various circuits, including power supplies, rectifiers, and voltage regulators.</p>
+                <ul>
+                    <li>Drag and drop components to build circuits</li>
+                    <li>Experiment with different rectifier configurations</li>
+                    <li>Observe current flow and voltage changes in real-time</li>
+                    <li>Test voltage regulation techniques</li>
+                </ul>
+                <a href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" target="_blank" class="button">Launch Circuit Construction Kit Simulation</a>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Video Tutorials</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=WytU5uj78-4" target="_blank">Power Supply and Rectifiers Explained</a></li>
+                <li><a href="https://www.youtube.com/watch?v=qDMvfRwf3Ow" target="_blank">Voltage Regulators - How do they work?</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Uy7GSqMT3Cc" target="_blank">Zener Diode as Voltage Regulator</a></li>
+            </ul>
+            <h3>Online Courses</h3>
+            <ul>
+                <li><a href="https://www.edx.org/course/electronic-interfaces-bridging-the-physical-and-digital-worlds" target="_blank">Electronic Interfaces: Bridging the Physical and Digital Worlds (edX)</a></li>
+                <li><a href="https://www.coursera.org/learn/power-electronics" target="_blank">Introduction to Power Electronics (Coursera)</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Power Electronics: Devices, Circuits, and Applications" by Muhammad H. Rashid</li>
+                <li>"Fundamentals of Power Electronics" by Robert W. Erickson and Dragan Maksimovic</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build a Simple Power Supply</h3>
+            <p>Construct a basic power supply that converts AC to DC and provides a stable output voltage.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Transformer (120V AC to 12V AC)</li>
+                <li>Bridge rectifier</li>
+                <li>Capacitors (1000μF and 0.1μF)</li>
+                <li>7812 voltage regulator IC</li>
+                <li>LED and current-limiting resistor</li>
+                <li>Breadboard and connecting wires</li>
+                <li>Multimeter</li>
+            </ul>
+
+            <h3>2. Zener Diode Voltage Regulator</h3>
+            <p>Build and test a simple voltage regulator using a Zener diode.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Zener diode (e.g., 1N4733 5.1V)</li>
+                <li>Resistors (470Ω and 1kΩ)</li>
+                <li>Variable DC power supply</li>
+                <li>Multimeter</li>
+                <li>Breadboard and connecting wires</li>
+            </ul>
+
+            <h3>3. Dual Power Supply with Voltage Regulation</h3>
+            <p>Design and build a dual power supply with positive and negative voltage outputs.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Center-tapped transformer</li>
+                <li>Bridge rectifier</li>
+                <li>Capacitors (1000μF and 0.1μF)</li>
+                <li>7812 and 7912 voltage regulator ICs</li>
+                <li>LEDs and current-limiting resistors</li>
+                <li>Breadboard and connecting wires</li>
+                <li>Multimeter</li>
+                <li>Oscilloscope (optional, for observing ripple)</li>
+            </ul>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the primary function of a transformer in a power supply unit?",
+                options: [
+                    "To convert AC to DC",
+                    "To step down the high voltage AC from the mains",
+                    "To filter out ripples in the DC output",
+                    "To regulate the output voltage"
+                ],
+                correctAnswer: "b",
+                topic: "power-supply-unit"
+            },
+            {
+                question: "Which type of rectifier utilizes both halves of the AC cycle?",
+                options: [
+                    "Half-wave rectifier",
+                    "Full-wave rectifier",
+                    "Bridge rectifier",
+                    "Both b and c"
+                ],
+                correctAnswer: "d",
+                topic: "rectification"
+            },
+            {
+                question: "What is the ripple frequency of a full-wave rectifier if the input frequency is 50 Hz?",
+                options: [
+                    "25 Hz",
+                    "50 Hz",
+                    "100 Hz",
+                    "200 Hz"
+                ],
+                correctAnswer: "c",
+                topic: "rectification"
+            },
+            {
+                question: "Which component in a power supply unit is responsible for smoothing out the pulsating DC?",
+                options: [
+                    "Transformer",
+                    "Rectifier",
+                    "Filter",
+                    "Voltage regulator"
+                ],
+                correctAnswer: "c",
+                topic: "power-supply-unit"
+            },
+            {
+                question: "What is the main advantage of a switching voltage regulator over a linear voltage regulator?",
+                options: [
+                    "Lower cost",
+                    "Simpler design",
+                    "Higher efficiency",
+                    "Lower noise"
+                ],
+                correctAnswer: "c",
+                topic: "voltage-regulation"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the operation of a full-wave bridge rectifier and how it differs from a half-wave rectifier.",
+                keywords: ["four diodes", "both half-cycles", "center-tapped transformer", "efficiency", "ripple frequency", "output voltage"],
+                topic: "rectification",
+                modelAnswer: "A full-wave bridge rectifier uses four diodes arranged in a bridge configuration to convert both positive and negative half-cycles of AC input into pulsating DC output. It differs from a half-wave rectifier in several ways: 1) It utilizes both half-cycles of the AC input, resulting in higher efficiency. 2) The output voltage is higher, approximately 0.9 times the RMS input voltage, compared to 0.45 times for a half-wave rectifier. 3) The ripple frequency is twice the input frequency, making filtering easier. 4) It doesn't require a center-tapped transformer, unlike a conventional full-wave rectifier. The bridge rectifier works by conducting current through two diodes during the positive half-cycle and the other two diodes during the negative half-cycle, ensuring that current always flows in the same direction through the load."
+            },
+            {
+                question: "Describe the principle of operation of a Zener diode voltage regulator and its limitations.",
+                keywords: ["reverse breakdown", "constant voltage", "series resistor", "power dissipation", "temperature sensitivity", "load regulation"],
+                topic: "voltage-regulation",
+                modelAnswer: "A Zener diode voltage regulator operates on the principle of the Zener diode's reverse breakdown characteristic. When reverse-biased beyond its Zener voltage, the diode maintains a nearly constant voltage across its terminals despite variations in current. In a typical circuit, the Zener diode is connected in parallel with the load, and a series resistor is used to limit the current. The Zener diode conducts enough current to maintain its Zener voltage, effectively regulating the output voltage. Limitations of this regulator include: 1) Power dissipation in the Zener diode and series resistor, leading to lower efficiency. 2) Temperature sensitivity of the Zener voltage. 3) Limited current capability, determined by the Zener diode's power rating. 4) Poor load regulation compared to more advanced regulators. 5) The input voltage must be higher than the Zener voltage by a sufficient margin to ensure proper operation."
+            },
+            {
+                question: "Compare and contrast linear voltage regulators and switching voltage regulators.",
+                keywords: ["efficiency", "heat dissipation", "noise", "size", "cost", "response time", "complexity"],
+                topic: "voltage-regulation",
+                modelAnswer: "Linear and switching voltage regulators are two main types of voltage regulation circuits, each with its own advantages and disadvantages. Linear regulators operate by dissipating excess power as heat, essentially acting as a variable resistor. They provide a very clean, low-noise output and have a fast response to load changes. However, they are inefficient, especially when the input-output voltage difference is large, and can require large heatsinks. Switching regulators, on the other hand, use pulse-width modulation to efficiently transfer power from input to output. They are much more efficient, often exceeding 90% efficiency, and generate less heat. This allows for smaller designs and longer battery life in portable devices. However, switching regulators are more complex, potentially more expensive, and can introduce high-frequency noise into the output. They also tend to have a slower response to rapid load changes. In summary: 1) Efficiency: Switching > Linear. 2) Output noise: Linear > Switching. 3) Size: Switching > Linear (for higher power applications). 4) Cost: Linear > Switching (for simple, low-power applications). 5) Design complexity: Linear > Switching. The choice between the two depends on the specific application requirements, balancing factors such as efficiency, noise, size, and cost."
+            },
+            {
+                question: "Explain the importance of filtering in a power supply unit and describe common filtering techniques.",
+                keywords: ["ripple reduction", "capacitor", "inductor", "LC filter", "pi filter", "smoothing", "reservoir capacitor"],
+                topic: "power-supply-unit",
+                modelAnswer: "Filtering is crucial in a power supply unit to reduce the ripple in the rectified DC output, providing a smoother DC voltage for the load. The pulsating DC from the rectifier contains significant AC components that can cause noise and malfunction in sensitive electronic circuits. Common filtering techniques include: 1) Capacitor filter: A large capacitor (reservoir capacitor) is placed across the rectifier output. It charges during voltage peaks and discharges during troughs, smoothing the output. This is the simplest and most common method. 2) Inductor filter: An inductor in series with the load resists rapid changes in current, smoothing the output. 3) LC filter: Combines an inductor and capacitor for more effective filtering. The inductor blocks high-frequency components while the capacitor shunts them to ground. 4) Pi filter: Named for its shape in circuit diagrams, it uses two capacitors and an inductor (C-L-C) for even better filtering. 5) Active filtering: Uses operational amplifiers and other active components for precise regulation and very low ripple. The choice of filtering technique depends on the required smoothness of the output, cost constraints, and the specific application. More sophisticated filters provide better smoothing but at the cost of increased complexity and price."
+            },
+            {
+                question: "Discuss the factors that affect the choice of components in a power supply design.",
+                keywords: ["input voltage range", "output voltage", "current requirements", "efficiency", "regulation", "ripple", "cost", "size", "heat dissipation"],
+                topic: "power-supply-unit",
+                modelAnswer: "Several factors influence the choice of components in power supply design: 1) Input voltage range: Determines the transformer specifications and the voltage ratings of components. 2) Output voltage and current requirements: Affect the choice of rectifier diodes, filter components, and regulator type. 3) Efficiency: Influences the decision between linear and switching regulators, and impacts component ratings due to heat dissipation. 4) Regulation requirements: Stricter regulation needs may necessitate more sophisticated regulator ICs or feedback systems. 5) Ripple and noise tolerance: Determines the complexity of the filtering stage and may influence the choice between linear and switching topologies. 6) Cost constraints: May limit the use of premium components or more complex designs. 7) Size and weight limitations: Particularly important in portable devices, affecting the choice of transformer, heatsinks, and regulator type. 8) Heat dissipation: Influences the need for heatsinks and may favor switching regulators in high-power applications. 9) Environmental factors: Temperature range, humidity, and vibration can affect component selection, particularly for industrial or automotive applications. 10) Safety and regulatory requirements: May necessitate the inclusion of protection circuits and influence component ratings. 11) Load characteristics: Constant vs. variable loads, or the presence of sensitive digital circuits, can impact filtering and regulation choices. Balancing these factors requires careful consideration of the application's specific needs and constraints, often involving trade-offs between performance, cost, and complexity."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                reviewContent += `<p class="${questionScore === 7 ? 'correct' : questionScore > 0 ? 'partial' : 'incorrect'}">Question ${index + objectiveQuestions.length + 1}: (${questionScore}/7 marks)</p>`;
+                
+                if (quizMode === 'study') {
+                    reviewContent += `
+                        <p>Keywords to include: ${q.keywords.join(', ')}</p>
+                        <p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>
+                        <div class="model-answer" id="model-answer-${index + objectiveQuestions.length + 1}">
+                            <strong>Model Answer:</strong> ${q.modelAnswer}
+                        </div>
+                    `;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            modelAnswer.style.display = modelAnswer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Dictionary functionality
+        const dictionary = [
+            { term: "Power Supply Unit (PSU)", definition: "An electronic device that supplies electrical energy to an electrical load, converting AC to DC and often regulating the output voltage." },
+            { term: "Rectifier", definition: "A device or circuit that converts alternating current (AC) to direct current (DC)." },
+            { term: "Transformer", definition: "An electrical device that transfers electrical energy between two or more circuits through electromagnetic induction." },
+            { term: "Filter", definition: "A circuit element used to remove ripple or unwanted frequencies from a signal." },
+            { term: "Voltage Regulator", definition: "A circuit that maintains a constant voltage level despite variations in input voltage or load current." },
+            { term: "Ripple", definition: "The residual periodic variation in the DC output of a power supply after rectification and filtering." },
+            { term: "Zener Diode", definition: "A type of diode that allows current to flow backwards when a certain voltage is reached, used for voltage regulation." },
+            { term: "Linear Regulator", definition: "A voltage regulator that uses an active device operating in its linear region to maintain a constant output voltage." },
+            { term: "Switching Regulator", definition: "A voltage regulator that uses a switching element to efficiently transfer energy from input to output." },
+            { term: "Bridge Rectifier", definition: "A type of rectifier that uses four diodes in a bridge configuration to convert AC to DC." }
+        ];
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            dictionary.forEach(entry => {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = entry.term;
+                definitionCell.textContent = entry.definition;
+            });
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const results = dictionary.filter(entry => 
+                entry.term.toLowerCase().includes(searchTerm) || 
+                entry.definition.toLowerCase().includes(searchTerm)
+            );
+            displaySearchResults(results);
+        }
+
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(entry => {
+                    const entryElement = document.createElement('div');
+                    entryElement.innerHTML = `<strong>${entry.term}:</strong> ${entry.definition}`;
+                    resultsContainer.appendChild(entryElement);
+                });
+            }
+        }
+
+        // Rectifier simulation
+        let rectifierChart;
+
+        function updateRectifierSimulation() {
+            const rectifierType = document.getElementById('rectifier-type').value;
+            const inputVoltage = parseFloat(document.getElementById('input-voltage').value);
+            const inputFrequency = parseFloat(document.getElementById('input-frequency').value);
+
+            const canvas = document.getElementById('rectifier-simulation');
+            const ctx = canvas.getContext('2d');
+
+            if (rectifierChart) {
+                rectifierChart.destroy();
+            }
+
+            const timePoints = Array.from({length: 100}, (_, i) => i / 100);
+            const inputWave = timePoints.map(t => inputVoltage * Math.sin(2 * Math.PI * inputFrequency * t));
+            const outputWave = rectifierType === 'half-wave' 
+                ? inputWave.map(v => v > 0 ? v : 0)
+                : inputWave.map(v => Math.abs(v));
+
+            rectifierChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: timePoints,
+                    datasets: [{
+                        label: 'Input AC',
+                        data: inputWave,
+                        borderColor: 'blue',
+                        fill: false
+                    }, {
+                        label: 'Output DC',
+                        data: outputWave,
+                        borderColor: 'red',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: `${rectifierType.charAt(0).toUpperCase() + rectifierType.slice(1)} Rectifier Simulation`
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Voltage'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            openTab(event, 'content');
+            populateDictionary();
+            document.getElementById('search-input').addEventListener('input', searchDictionary);
+            updateRectifierSimulation();
+        });
+    </script>
+</body>
+</html>

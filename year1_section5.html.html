@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Electricity Course - Year 1: Electric Field</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .unit-container {
+            margin-bottom: 20px;
+        }
+        .unit-title {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .unit-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #3498db;
+        }
+        .phet-simulation {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Applied Electricity Course - Year 1</h1>
+    <h2>Section 5: Electric Field</h2>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit1')">Unit 1: Concept of Electric Field</div>
+                <div id="unit1" class="unit-content">
+                    <h3>1.1 Definition of Electric Field</h3>
+                    <p>An electric field is a region around an electrically charged particle or object within which a force would be exerted on other charged particles or objects.</p>
+                    
+                    <h3>1.2 Electric Field Strength</h3>
+                    <p>Electric field strength (E) is defined as the force (F) per unit charge (q): E = F/q. It is measured in newtons per coulomb (N/C) or volts per meter (V/m).</p>
+                    
+                    <h3>1.3 Electric Field Lines</h3>
+                    <p>Electric field lines are imaginary lines used to visualize the direction and strength of an electric field. They always point from positive to negative charges and are perpendicular to equipotential surfaces.</p>
+                    
+                    <h3>1.4 Gauss's Law</h3>
+                    <p>Gauss's Law relates the electric field flux through a closed surface to the enclosed electric charge. It is one of Maxwell's equations and is fundamental to electromagnetism.</p>
+                    
+                    <h3>1.5 Recent Advancements</h3>
+                    <ul>
+                        <li>Quantum Electrodynamics: Advanced theory describing how light and matter interact</li>
+                        <li>Electrostatic Force Microscopy: Technique for imaging and measuring electric fields at the nanoscale</li>
+                        <li>Electromagnetic Cloaking: Technology to make objects "invisible" to electromagnetic fields</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="unit-container">
+                <div class="unit-title" onclick="toggleUnit('unit2')">Unit 2: Capacitors</div>
+                <div id="unit2" class="unit-content">
+                    <h3>2.1 Definition and Basic Principles</h3>
+                    <p>A capacitor is an electrical component that stores electrical energy in an electric field. It consists of two conductors separated by an insulating material called a dielectric.</p>
+                    
+                    <h3>2.2 Capacitance</h3>
+                    <p>Capacitance (C) is the ratio of the charge (Q) stored on one plate to the potential difference (V) between the plates: C = Q/V. It is measured in farads (F).</p>
+                    
+                    <h3>2.3 Types of Capacitors</h3>
+                    <ul>
+                        <li>Electrolytic Capacitors</li>
+                        <li>Ceramic Capacitors</li>
+                        <li>Film Capacitors</li>
+                        <li>Supercapacitors</li>
+                    </ul>
+                    
+                    <h3>2.4 Capacitors in Circuits</h3>
+                    <p>Capacitors can be connected in series or parallel, affecting the total capacitance of the circuit. They are used for energy storage, filtering, and timing in various electronic applications.</p>
+                    
+                    <h3>2.5 Recent Developments</h3>
+                    <ul>
+                        <li>Graphene-based Supercapacitors: Offering high energy density and rapid charge/discharge cycles</li>
+                        <li>Flexible and Stretchable Capacitors: For use in wearable electronics and soft robotics</li>
+                        <li>Quantum Capacitors: Exploiting quantum effects for enhanced performance in nanoelectronics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h3>Problem 1: Electric Field Strength</h3>
+            <p><strong>Question:</strong> A point charge of 2.0 × 10⁻⁶ C experiences a force of 0.4 N in an electric field. Calculate the electric field strength.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the formula: E = F/q</li>
+                <li>Where:
+                    <ul>
+                        <li>E is the electric field strength</li>
+                        <li>F is the force experienced by the charge</li>
+                        <li>q is the magnitude of the charge</li>
+                    </ul>
+                </li>
+                <li>Substitute the values:
+                    <br>E = 0.4 N / (2.0 × 10⁻⁶ C)
+                    <br>E = 2.0 × 10⁵ N/C
+                </li>
+            </ol>
+            <p>The electric field strength is 2.0 × 10⁵ N/C or 200 kN/C.</p>
+
+            <h3>Problem 2: Capacitor Charge</h3>
+            <p><strong>Question:</strong> A 470 μF capacitor is connected to a 12 V battery. Calculate the charge stored in the capacitor.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>We use the formula: Q = CV</li>
+                <li>Where:
+                    <ul>
+                        <li>Q is the charge stored</li>
+                        <li>C is the capacitance</li>
+                        <li>V is the voltage across the capacitor</li>
+                    </ul>
+                </li>
+                <li>Convert 470 μF to farads: 470 × 10⁻⁶ F</li>
+                <li>Substitute the values:
+                    <br>Q = (470 × 10⁻⁶ F)(12 V)
+                    <br>Q = 5.64 × 10⁻³ C
+                </li>
+            </ol>
+            <p>The charge stored in the capacitor is 5.64 mC (milliCoulombs).</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h3>PhET Charges and Fields Simulation</h3>
+            <iframe src="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_en.html" class="phet-simulation"></iframe>
+            
+            <div class="simulation-container">
+                <h3>Capacitor Simulator</h3>
+                <p>Adjust the parameters to see how they affect the capacitance:</p>
+                <label for="plate-area">Plate Area (m²):</label>
+                <input type="number" id="plate-area" value="1" min="0.1" max="10" step="0.1">
+                <label for="plate-distance">Distance between plates (m):</label>
+                <input type="number" id="plate-distance" value="0.001" min="0.0001" max="0.01" step="0.0001">
+                <label for="dielectric-constant">Dielectric Constant:</label>
+                <input type="number" id="dielectric-constant" value="1" min="1" max="10" step="0.1">
+                <button onclick="updateCapacitance()">Calculate Capacitance</button>
+                <div id="capacitance-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=mdulzEfQXDE" target="_blank">Introduction to Electric Fields</a></li>
+                <li><a href="https://www.youtube.com/watch?v=f_MZNsEqyQw" target="_blank">Capacitors Explained</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://openstax.org/books/university-physics-volume-2/pages/7-1-electric-field" target="_blank">OpenStax: Electric Field</a></li>
+                <li><a href="https://www.electronics-tutorials.ws/capacitor/cap_1.html" target="_blank">Basic Capacitor Theory</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Introduction to Electrodynamics" by David J. Griffiths</li>
+                <li>"Fundamentals of Applied Electromagnetics" by Fawwaz T. Ulaby and Umberto Ravaioli</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h3>1. Build a Simple Electroscope</h3>
+            <p><strong>Objective:</strong> Construct a device to detect electric charge and understand electric fields.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Glass jar with a lid</li>
+                <li>Copper wire</li>
+                <li>Aluminum foil</li>
+                <li>Plastic straw or wooden stick</li>
+                <li>Balloon</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Make a small hole in the jar lid and insert the copper wire through it.</li>
+                <li>Attach two small strips of aluminum foil to the end of the wire inside the jar.</li>
+                <li>Close the jar with the lid, ensuring the wire doesn't touch the sides of the jar.</li>
+                <li>Rub the balloon on your hair or a wool cloth to create a static charge.</li>
+                <li>Bring the charged balloon near the top of the wire and observe the aluminum foil strips.</li>
+            </ol>
+            <p>This project helps students visualize electric fields and understand how like charges repel each other.</p>
+
+            <h3>2. Create a Leyden Jar (Simple Capacitor)</h3>
+            <p><strong>Objective:</strong> Build a simple capacitor to store electric charge.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Glass jar</li>
+                <li>Aluminum foil</li>
+                <li>Cardboard</li>
+                <li>Wire</li>
+                <li>Metal rod or nail</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Line the inside of the glass jar with aluminum foil.</li>
+                <li>Cut a circular piece of cardboard to fit as a lid for the jar.</li>
+                <li>Push a metal rod or nail through the center of the cardboard lid.</li>
+                <li>Wrap the exposed part of the rod inside the jar with aluminum foil, ensuring it doesn't touch the foil lining the jar.</li>
+                <li>Connect a wire to the outer foil lining.</li>
+                <li>Charge the Leyden jar using an electrostatic generator or by rubbing a balloon on your hair and touching it to the metal rod.</li>
+                <li>Discharge the jar by connecting the outer wire to the metal rod (use insulated pliers for safety).</li>
+            </ol>
+            <p>This project demonstrates how capacitors store electric charge and the principles of electrostatics.</p>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h3>Dictionary</h3>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function toggleUnit(unitId) {
+            var unit = document.getElementById(unitId);
+            if (unit.style.display === "none" || unit.style.display === "") {
+                unit.style.display = "block";
+            } else {
+                unit.style.display = "none";
+            }
+        }
+
+        const objectiveQuestions = [
+            {
+                question: "What is the SI unit for electric field strength?",
+                options: [
+                    "Volts (V)",
+                    "Newtons per Coulomb (N/C)",
+                    "Coulombs (C)",
+                    "Tesla (T)"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "Which of the following is NOT a type of capacitor?",
+                options: [
+                    "Electrolytic",
+                    "Ceramic",
+                    "Magnetic",
+                    "Film"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "What does Gauss's Law relate?",
+                options: [
+                    "Magnetic field and electric current",
+                    "Electric field flux and enclosed charge",
+                    "Capacitance and voltage",
+                    "Electric field and magnetic field"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "What is the unit of capacitance?",
+                options: [
+                    "Ohm",
+                    "Volt",
+                    "Farad",
+                    "Henry"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "Which recent advancement allows for the 'invisibility' of objects to electromagnetic fields?",
+                options: [
+                    "Quantum Electrodynamics",
+                    "Electrostatic Force Microscopy",
+                    "Electromagnetic Cloaking",
+                    "Graphene-based Supercapacitors"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the concept of electric field lines and their significance in understanding electric fields.",
+                keywords: ["direction", "strength", "visualization", "positive to negative", "perpendicular", "equipotential", "density"],
+                modelAnswer: "Electric field lines are a visual representation used to understand and depict electric fields. Key points about electric field lines include: 1) Direction: They show the direction of the electric field, always pointing from positive to negative charges. 2) Strength: The density of the lines indicates the strength of the field; closer lines mean a stronger field. 3) Visualization: They provide a way to visualize the invisible electric field in space. 4) Positive to Negative: They start on positive charges and end on negative charges, or extend to infinity for isolated charges. 5) Perpendicular: Electric field lines are always perpendicular to equipotential surfaces. 6) No Crossing: Field lines never cross each other, as this would indicate two directions for the field at a single point, which is impossible. 7) Equipotential Surfaces: Lines crossing equipotential surfaces at right angles. The significance of electric field lines lies in their ability to provide intuitive understanding of electric fields, helping in the analysis of complex charge distributions and in predicting the behavior of charged particles in electric fields. They are particularly useful in education and in solving problems involving electrostatics and electromagnetic theory."
+            },
+            {
+                question: "Describe the working principle of a capacitor and explain its importance in electronic circuits.",
+                keywords: ["energy storage", "dielectric", "charge separation", "electric field", "capacitance", "voltage regulation", "filtering", "coupling/decoupling", "timing"],
+                modelAnswer: "A capacitor is an electronic component that stores electrical energy in an electric field. Its working principle is based on charge separation and involves the following key aspects: 1) Structure: Two conductive plates separated by an insulating material (dielectric). 2) Charge Separation: When a voltage is applied, electrons accumulate on one plate, leaving the other plate with a positive charge. 3) Electric Field: The separated charges create an electric field in the dielectric. 4) Energy Storage: The energy is stored in this electric field. 5) Capacitance: The amount of charge stored per unit voltage is the capacitance, measured in farads. The importance of capacitors in electronic circuits includes: 1) Energy Storage: They can rapidly release stored energy, useful in flash photography and power supplies. 2) Voltage Regulation: Smoothing out voltage fluctuations in power supplies. 3) Filtering: Blocking DC while allowing AC to pass, or vice versa. 4) Coupling/Decoupling: Transmitting AC signals between circuit stages while blocking DC. 5) Timing: In combination with resistors, capacitors can create time delays, useful in oscillators and timers. 6) Tuning: Variable capacitors are used to tune radio receivers. 7) Power Factor Correction: In AC power transmission systems. 8) Sensing: In touch screens and other sensors. Understanding capacitors is crucial for designing and troubleshooting a wide range of electronic devices, from simple circuits to complex computer systems."
+            },
+            {
+                question: "Discuss the concept of Gauss's Law and its applications in electromagnetism.",
+                keywords: ["flux", "enclosed charge", "Maxwell's equations", "symmetry", "field calculation", "Faraday cage", "electrostatic shielding"],
+                modelAnswer: "Gauss's Law is one of the fundamental principles of electromagnetism and one of Maxwell's equations. It relates the electric field flux through a closed surface to the enclosed electric charge. Key aspects of Gauss's Law include: 1) Mathematical Statement: The integral of the electric field over a closed surface is proportional to the enclosed charge divided by the permittivity of free space. 2) Flux Concept: It introduces the idea of electric flux, which is the flow of the electric field through a surface. 3) Enclosed Charge: Only the charge enclosed by the Gaussian surface matters, not the shape or location of the charge distribution. 4) Symmetry: It's particularly useful for charge distributions with high symmetry (spherical, cylindrical, planar). Applications of Gauss's Law include: 1) Field Calculations: Simplifying electric field calculations for symmetric charge distributions. 2) Faraday Cages: Explaining how a conductive shell can shield its interior from external electric fields. 3) Electrostatic Shielding: Designing effective shielding for sensitive electronic equipment. 4) Charge Distribution: Understanding how charge distributes itself on conductors. 5) Lightning Protection: Designing systems to protect buildings and aircraft from lightning strikes. 6) Electrostatic Precipitators: Used in pollution control to remove particles from gas streams. 7) Photocopiers and Laser Printers: In the charging and toner transfer processes. 8) Particle Accelerators: In designing beam focusing and steering systems. Gauss's Law is a powerful tool in electromagnetism, providing insights into charge behavior and field distributions that are crucial in many areas of physics and engineering."
+            },
+            {
+                question: "Explain the principle of electromagnetic cloaking and its potential applications.",
+                keywords: ["metamaterials", "wave manipulation", "invisibility", "stealth technology", "antennas", "medical imaging", "telecommunications"],
+                modelAnswer: "Electromagnetic cloaking is a technique that makes objects 'invisible' to electromagnetic waves, including visible light, radar, and other parts of the electromagnetic spectrum. The principle is based on manipulating the path of electromagnetic waves around an object, making it appear as if the waves passed through empty space. Key aspects include: 1) Metamaterials: Specially designed materials with properties not found in nature, capable of bending electromagnetic waves in unusual ways. 2) Wave Manipulation: The cloaking device guides waves around the object, reconstructing them on the other side as if they had passed through unimpeded. 3) Negative Refractive Index: Some cloaking techniques use materials with a negative refractive index to achieve the desired effect. Potential applications of electromagnetic cloaking include: 1) Military Stealth Technology: Making vehicles, ships, or aircraft invisible to radar. 2) Improved Antennas: Reducing interference between antenna elements in complex systems. 3) Medical Imaging: Cloaking medical devices to prevent them from interfering with imaging procedures. 4) Telecommunications: Reducing signal interference in densely packed communication systems. 5) Aesthetics in Architecture: Making structures like power lines or cell towers less visually obtrusive. 6) Acoustic Cloaking: Similar principles applied to sound waves for noise reduction. 7) Seismic Protection: Potentially guiding seismic waves around buildings or sensitive areas. 8) Privacy and Security: Creating 'invisible' zones for sensitive discussions or activities. Challenges in electromagnetic cloaking include: 1) Bandwidth Limitations: Most current cloaking devices work only for specific wavelengths. 2) Scalability: Difficulty in scaling up to larger objects. 3) Directionality: Many cloaking devices only work from certain angles. 4) Power Requirements: Some designs require significant power to operate. As research progresses, electromagnetic cloaking technology has the potential to revolutionize various fields, from communications to defense and beyond."
+            },
+            {
+                question: "Describe the advancements in supercapacitor technology and their potential impact on energy storage systems.",
+                keywords: ["high power density", "rapid charge/discharge", "long cycle life", "graphene", "carbon nanotubes", "hybrid supercapacitors", "electric vehicles", "renewable energy"],
+                modelAnswer: "Supercapacitors, also known as ultracapacitors or electric double-layer capacitors (EDLCs), are advanced energy storage devices that offer high power density and rapid charge/discharge capabilities. Recent advancements in supercapacitor technology include: 1) Graphene-based Supercapacitors: Utilizing graphene's high surface area and conductivity to dramatically increase energy density. 2) Carbon Nanotubes (CNTs): Incorporating CNTs to enhance conductivity and surface area. 3) Hybrid Supercapacitors: Combining features of batteries and supercapacitors for improved energy and power density. 4) Flexible and Stretchable Supercapacitors: For use in wearable electronics and flexible devices. 5) Pseudocapacitors: Incorporating fast, reversible redox reactions to increase energy density. 6) Solid-state Supercapacitors: Eliminating liquid electrolytes for improved safety and form factor. 7) Bio-derived Materials: Using sustainable, eco-friendly materials in supercapacitor construction. Potential impacts on energy storage systems: 1) Electric Vehicles: Supercapacitors can complement or potentially replace batteries, offering rapid acceleration and regenerative braking capabilities. 2) Renewable Energy Integration: Smoothing out power fluctuations in solar and wind energy systems. 3) Grid Stabilization: Providing instantaneous power to maintain grid frequency and voltage. 4) Consumer Electronics: Enabling faster charging and longer lifespan for mobile devices. 5) Industrial Applications: Powering heavy machinery with high power demands. 6) Aerospace: Lightweight energy storage for satellites and aircraft systems. 7) Medical Devices: Reliable power sources for implantable devices. 8) Smart Grids: Enhancing the efficiency and reliability of power distribution networks. Challenges and future directions: 1) Increasing Energy Density: To compete with batteries in long-term energy storage. 2) Cost Reduction: Making supercapacitors economically viable for widespread adoption. 3) Electrolyte Development: Improving the voltage window and temperature range of operation. 4) Scalability: Developing manufacturing processes for large-scale production. As supercapacitor technology continues to advance, it has the potential to revolutionize energy storage, enabling more efficient, sustainable, and responsive energy systems across various sectors."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}" rows="6" cols="50"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 3600; // 60 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length + subjectiveQuestions.length * 5;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct!</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect.</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 5);
+                score += questionScore;
+
+                if (questionScore === 5) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/5 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/5 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/5 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Well done! You have a good understanding of Electric Fields and Capacitors.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You might want to review the material on Electric Fields and Capacitors and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function updateCapacitance() {
+            const area = parseFloat(document.getElementById('plate-area').value);
+            const distance = parseFloat(document.getElementById('plate-distance').value);
+            const dielectricConstant = parseFloat(document.getElementById('dielectric-constant').value);
+            const epsilon0 = 8.854e-12; // Permittivity of free space
+
+            const capacitance = (dielectricConstant * epsilon0 * area) / distance;
+            document.getElementById('capacitance-result').innerHTML = `Capacitance: ${capacitance.toExponential(3)} F`;
+        }
+
+        const dictionary = {
+            "Electric Field": "A region around an electrically charged particle or object within which a force would be exerted on other charged particles or objects.",
+            "Electric Field Strength": "The force per unit charge experienced by a charged particle in an electric field, measured in newtons per coulomb (N/C) or volts per meter (V/m).",
+            "Gauss's Law": "A fundamental principle in electromagnetism that relates the electric field flux through a closed surface to the enclosed electric charge.",
+            "Capacitor": "An electrical component that stores electrical energy in an electric field, consisting of two conductors separated by an insulating material called a dielectric.",
+            "Capacitance": "The ratio of the charge stored on one plate of a capacitor to the potential difference between the plates, measured in farads (F).",
+            "Dielectric": "An insulating material placed between the plates of a capacitor to increase its capacitance and maximum operating voltage.",
+            "Electromagnetic Cloaking": "A technique that makes objects 'invisible' to electromagnetic waves by manipulating the path of the waves around the object.",
+            "Supercapacitor": "An advanced energy storage device that offers high power density and rapid charge/discharge capabilities, also known as an ultracapacitor or electric double-layer capacitor.",
+            "Electrostatic Force Microscopy": "A technique for imaging and measuring electric fields at the nanoscale, useful in studying the electrical properties of materials and devices.",
+            "Quantum Electrodynamics": "An advanced theory in physics that describes how light and matter interact, combining quantum mechanics and special relativity."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+            updateCapacitance();
+        });
+    </script>
+</body>
+</html>

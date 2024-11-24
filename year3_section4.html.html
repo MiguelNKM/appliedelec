@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 3 Applied Electricity - Alternating Current Machines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container, .simulation-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #dictionary-results {
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 3 Applied Electricity - Alternating Current Machines</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Alternating Current Machines</h2>
+            
+            <h3>1. Alternators</h3>
+            <p>Alternators are electrical machines that convert mechanical energy into electrical energy in the form of alternating current (AC). They are widely used in power generation, including in Ghana's power plants.</p>
+            
+            <h4>1.1 Principle of Operation</h4>
+            <p>Alternators work on the principle of electromagnetic induction. When a conductor moves through a magnetic field, or when a magnetic field moves past a conductor, an electromotive force (EMF) is induced in the conductor.</p>
+            
+            <h4>1.2 Components of an Alternator</h4>
+            <ul>
+                <li><strong>Stator:</strong> The stationary part containing armature windings where AC is generated.</li>
+                <li><strong>Rotor:</strong> The rotating part that creates a moving magnetic field. It can be either a permanent magnet or an electromagnet.</li>
+                <li><strong>Slip Rings:</strong> Conduct current to the rotor windings in wound rotor alternators.</li>
+                <li><strong>Brushes:</strong> Make contact with slip rings to transfer current.</li>
+            </ul>
+
+            <h4>1.3 Types of Alternators</h4>
+            <ul>
+                <li><strong>Salient Pole Alternators:</strong> Used in low-speed applications like hydroelectric plants.</li>
+                <li><strong>Cylindrical Rotor Alternators:</strong> Used in high-speed applications like thermal power plants.</li>
+            </ul>
+
+            <h4>1.4 Applications in Ghana</h4>
+            <p>In Ghana, alternators are crucial components in various power generation facilities:</p>
+            <ul>
+                <li><strong>Akosombo Hydroelectric Power Station:</strong> Uses large salient pole alternators.</li>
+                <li><strong>Takoradi Thermal Power Station:</strong> Employs cylindrical rotor alternators.</li>
+                <li><strong>Kpone Thermal Power Plant:</strong> Also uses cylindrical rotor alternators for high-speed operation.</li>
+            </ul>
+
+            <h3>2. A.C. Motors</h3>
+            <p>A.C. Motors are electrical machines that convert electrical energy in the form of alternating current into mechanical energy. They are widely used in industrial applications, home appliances, and increasingly in electric vehicles.</p>
+
+            <h4>2.1 Principle of Operation</h4>
+            <p>AC motors operate on the principle of a rotating magnetic field. When AC is supplied to the stator windings, it creates a rotating magnetic field. This field interacts with the rotor, causing it to rotate.</p>
+
+            <h4>2.2 Types of A.C. Motors</h4>
+            <ol>
+                <li><strong>Synchronous Motors:</strong>
+                    <ul>
+                        <li>Rotate at synchronous speed (speed of the rotating magnetic field)</li>
+                        <li>Used in applications requiring constant speed</li>
+                        <li>Examples: Clocks, timers, conveyor belts</li>
+                    </ul>
+                </li>
+                <li><strong>Induction Motors:</strong>
+                    <ul>
+                        <li>Most common type of AC motor</li>
+                        <li>Rotor speed is slightly less than synchronous speed (slip)</li>
+                        <li>Types: Squirrel cage and wound rotor</li>
+                        <li>Examples: Fans, pumps, compressors</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>2.3 Components of an A.C. Motor</h4>
+            <ul>
+                <li><strong>Stator:</strong> The stationary part containing the windings that create the rotating magnetic field.</li>
+                <li><strong>Rotor:</strong> The rotating part that generates mechanical power.</li>
+                <li><strong>Air Gap:</strong> The space between the stator and rotor.</li>
+                <li><strong>Bearings:</strong> Support the rotor and allow it to rotate freely.</li>
+                <li><strong>Cooling Fan:</strong> Helps dissipate heat generated during operation.</li>
+            </ul>
+
+            <h4>2.4 Applications in Ghana</h4>
+            <p>AC motors are extensively used in various sectors in Ghana:</p>
+            <ul>
+                <li><strong>Manufacturing:</strong> Powering conveyor belts, mixers, and other industrial machinery.</li>
+                <li><strong>Agriculture:</strong> Driving irrigation pumps and processing equipment.</li>
+                <li><strong>Mining:</strong> Operating crushers, conveyors, and pumps in Ghana's mining industry.</li>
+                <li><strong>Residential:</strong> Used in fans, air conditioners, and refrigerators.</li>
+            </ul>
+
+            <h4>2.5 Energy Efficiency Considerations</h4>
+            <p>With Ghana's focus on energy efficiency, there's a growing emphasis on using high-efficiency AC motors. The Energy Commission of Ghana promotes the use of energy-efficient motors to reduce electricity consumption in industries and homes.</p>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+
+            <h3>Problem 1: Alternator Frequency Calculation</h3>
+            <p>An alternator at the Akosombo Hydroelectric Power Station has 100 poles and rotates at 120 RPM. Calculate the frequency of the generated AC.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>The formula for frequency in an alternator is:
+                    <br>f = (P × N) / 120
+                    <br>Where:
+                    <br>f = frequency (Hz)
+                    <br>P = number of poles
+                    <br>N = rotational speed (RPM)</li>
+                <li>Substituting the values:
+                    <br>f = (100 × 120) / 120
+                    <br>f = 100 Hz</li>
+            </ol>
+            <p>Therefore, the frequency of the generated AC is 100 Hz.</p>
+
+            <h3>Problem 2: Induction Motor Slip Calculation</h3>
+            <p>An induction motor used in a Ghanaian textile factory has 4 poles and operates on a 50 Hz supply. The rotor rotates at 1455 RPM. Calculate the slip of the motor.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>First, calculate the synchronous speed:
+                    <br>N<sub>s</sub> = (120 × f) / P
+                    <br>Where:
+                    <br>N<sub>s</sub> = synchronous speed (RPM)
+                    <br>f = frequency (Hz)
+                    <br>P = number of poles
+                    <br>N<sub>s</sub> = (120 × 50) / 4 = 1500 RPM</li>
+                <li>Now, calculate the slip:
+                    <br>s = (N<sub>s</sub> - N<sub>r</sub>) / N<sub>s</sub>
+                    <br>Where:
+                    <br>s = slip
+                    <br>N<sub>r</sub> = rotor speed (RPM)
+                    <br>s = (1500 - 1455) / 1500 = 0.03 or 3%</li>
+            </ol>
+            <p>Therefore, the slip of the induction motor is 3%.</p>
+
+            <h3>Problem 3: Alternator Power Output</h3>
+            <p>An alternator at the Takoradi Thermal Power Station generates 3-phase AC with a line voltage of 11 kV and a line current of 2000 A. If the power factor is 0.85, calculate the power output of the alternator.</p>
+            <h4>Solution:</h4>
+            <ol>
+                <li>The formula for 3-phase power is:
+                    <br>P = √3 × V<sub>L</sub> × I<sub>L</sub> × cos φ
+                    <br>Where:
+                    <br>P = power output (W)
+                    <br>V<sub>L</sub> = line voltage (V)
+                    <br>I<sub>L</sub> = line current (A)
+                    <br>cos φ = power factor</li>
+                <li>Substituting the values:
+                    <br>P = √3 × 11000 × 2000 × 0.85
+                    <br>P = 32,307,423 W ≈ 32.3 MW</li>
+            </ol>
+            <p>Therefore, the power output of the alternator is approximately 32.3 MW.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>Alternator Frequency Calculator</h3>
+                <p>Calculate the frequency of an alternator based on the number of poles and rotational speed:</p>
+                <label for="poles">Number of Poles:</label>
+                <input type="number" id="poles" min="2" step="2">
+                <label for="rpm">Rotational Speed (RPM):</label>
+                <input type="number" id="rpm" min="1">
+                <button onclick="calculateAlternatorFrequency()">Calculate Frequency</button>
+                <div id="alternator-frequency-result" class="result"></div>
+            </div>
+            <div class="simulation-container">
+                <h3>Induction Motor Slip Calculator</h3>
+                <p>Calculate the slip of an induction motor:</p>
+                <label for="sync-speed">Synchronous Speed (RPM):</label>
+                <input type="number" id="sync-speed" min="1">
+                <label for="rotor-speed">Rotor Speed (RPM):</label>
+                <input type="number" id="rotor-speed" min="1">
+                <button onclick="calculateMotorSlip()">Calculate Slip</button>
+                <div id="motor-slip-result" class="result"></div>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=LtJoJBUSe28" target="_blank">How does an Alternator Work?</a></li>
+                <li><a href="https://www.youtube.com/watch?v=LAtPHANEfQo" target="_blank">How does an Induction Motor work?</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.electronics-tutorials.ws/electromagnetism/electromagnetic-induction.html" target="_blank">Electromagnetic Induction Tutorial</a></li>
+                <li><a href="https://www.electrical4u.com/alternator-or-ac-generator/" target="_blank">Alternator (AC Generator) Explained</a></li>
+                <li><a href="https://www.electrical4u.com/induction-motor-types-of-induction-motor/" target="_blank">Induction Motor: Types and Working Principle</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Electric Machinery Fundamentals" by Stephen J. Chapman</li>
+                <li>"Electric Motor Handbook" by H. Wayne Beaty and James L. Kirtley Jr.</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build a Simple AC Generator</h3>
+            <p><strong>Objective:</strong> Construct a basic alternator to understand the principles of AC generation.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Strong magnets</li>
+                <li>Copper wire</li>
+                <li>Cardboard tube</li>
+                <li>LED light</li>
+                <li>Hand crank or small motor</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Wind copper wire around the cardboard tube to create a coil.</li>
+                <li>Attach the magnets to the hand crank or motor shaft.</li>
+                <li>Set up the coil so that the magnets pass close to it when rotated.</li>
+                <li>Connect the ends of the coil to the LED.</li>
+                <li>Rotate the magnets and observe the LED lighting up.</li>
+            </ol>
+
+            <h3>2. Induction Motor Speed Control</h3>
+            <p><strong>Objective:</strong> Design a simple speed control system for a small induction motor.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Small single-phase induction motor</li>
+                <li>Variable voltage transformer (Variac)</li>
+                <li>Tachometer</li>
+                <li>Voltmeter</li>
+                <li>Ammeter</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Set up the motor with the Variac as the power source.</li>
+                <li>Connect the voltmeter and ammeter to measure input.</li>
+                <li>Use the tachometer to measure the motor's speed.</li>
+                <li>Vary the input voltage using the Variac and record the motor's speed.</li>
+                <li>Plot a graph of speed vs. voltage and analyze the relationship.</li>
+            </ol>
+
+            <h3>3. Alternator Efficiency Analysis</h3>
+            <p><strong>Objective:</strong> Study the efficiency of a small alternator under different load conditions.</p>
+            <p><strong>Materials needed:</strong></p>
+            <ul>
+                <li>Small alternator (e.g., from a car)</li>
+                <li>DC motor to drive the alternator</li>
+                <li>Variable resistor bank as load</li>
+                <li>Multimeters for voltage and current measurements</li>
+                <li>Tachometer</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Set up the DC motor to drive the alternator at a constant speed.</li>
+                <li>Connect the variable resistor bank as a load.</li>
+                <li>Measure input power to the DC motor and output power from the alternator.</li>
+                <li>Vary the load and record measurements for each setting.</li>
+                <li>Calculate efficiency at each load point and plot an efficiency curve.</li>
+            </ol>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="dictionary-search" placeholder="Search for a term...">
+            <button onclick="searchDictionary()">Search</button>
+            <div id="dictionary-results"></div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the main difference between an alternator and an AC motor?",
+                options: [
+                    "Alternators convert mechanical energy to electrical energy, while AC motors do the opposite",
+                    "Alternators use DC, while AC motors use AC",
+                    "Alternators have a stator, while AC motors don't",
+                    "There is no difference; they are the same machine"
+                ],
+                correctAnswer: "a"
+            },
+            {
+                question: "Which type of alternator is commonly used in hydroelectric power plants like Akosombo?",
+                options: [
+                    "Cylindrical rotor alternator",
+                    "Salient pole alternator",
+                    "Permanent magnet alternator",
+                    "Induction alternator"
+                ],
+                correctAnswer: "b"
+            },
+            {
+                question: "What is 'slip' in the context of an induction motor?",
+                options: [
+                    "The difference between stator and rotor speed",
+                    "The speed of the rotating magnetic field",
+                    "The number of pole pairs in the motor",
+                    "The efficiency of the motor"
+                ],
+                correctAnswer: "a"
+            },
+            {
+                question: "Which component of an alternator is responsible for creating the magnetic field?",
+                options: [
+                    "Stator",
+                    "Slip rings",
+                    "Rotor",
+                    "Brushes"
+                ],
+                correctAnswer: "c"
+            },
+            {
+                question: "What is the purpose of the air gap in an AC motor?",
+                options: [
+                    "To reduce friction",
+                    "To allow for cooling",
+                    "To create a path for the magnetic field",
+                    "To increase the motor's efficiency"
+                ],
+                correctAnswer: "c"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the principle of operation of an alternator and how it generates AC power.",
+                keywords: ["electromagnetic induction", "rotating magnetic field", "stator", "rotor", "slip rings", "frequency"],
+                modelAnswer: "An alternator operates on the principle of electromagnetic induction. It consists of two main components: the rotor (rotating part) and the stator (stationary part). The rotor, which is typically an electromagnet, is rotated by an external mechanical force (e.g., a turbine in a power plant). As the rotor spins, its magnetic field cuts across the conductors in the stator windings. This changing magnetic field induces an alternating electromotive force (EMF) in the stator windings, according to Faraday's law of induction. The frequency of the generated AC is determined by the rotational speed of the rotor and the number of pole pairs. In most alternators, the rotor windings are energized with DC current through slip rings and brushes, while the AC power is generated in the stator windings. This design allows for high-power generation without the need for the generated current to pass through moving parts."
+            },
+            {
+                question: "Discuss the advantages and disadvantages of induction motors compared to other types of electric motors.",
+                keywords: ["simple construction", "low maintenance", "rugged", "speed control", "starting torque", "power factor", "efficiency"],
+                modelAnswer: "Induction motors have several advantages: 1) Simple and rugged construction, with no commutator or brushes, leading to low maintenance requirements. 2) Relatively low cost compared to other motor types. 3) High reliability and ability to operate in harsh environments. 4) Can be designed for a wide range of powers, from fractional horsepower to several megawatts. 5) Self-starting capability when connected directly to the power supply. However, they also have some disadvantages: 1) Speed control is more complex and less efficient compared to DC motors. 2) Lower starting torque compared to some other motor types. 3) Always operate at a lagging power factor, which can be an issue in some applications. 4) Slightly lower efficiency compared to synchronous motors, especially at partial loads. 5) The speed is not exactly constant and varies with load. Despite these drawbacks, induction motors are the most widely used type of electric motor in industrial applications due to their overall reliability and cost-effectiveness."
+            },
+            {
+                question: "Describe the importance of alternators and AC motors in Ghana's industrial and energy sectors.",
+                keywords: ["power generation", "manufacturing", "agriculture", "mining", "energy efficiency", "economic development"],
+                modelAnswer: "Alternators and AC motors play crucial roles in Ghana's industrial and energy sectors. Alternators are fundamental to power generation in the country. Large alternators in power plants like the Akosombo Hydroelectric Power Station and the Takoradi Thermal Power Station generate the electricity that powers homes, businesses, and industries across Ghana. The reliability and efficiency of these alternators directly impact the country's energy security and economic development. AC motors, on the other hand, are the workhorses of Ghana's industrial sector. They are used extensively in manufacturing, driving machinery such as conveyor belts, pumps, and compressors. In agriculture, AC motors power irrigation systems and processing equipment, contributing to food security and agricultural productivity. The mining industry, a significant contributor to Ghana's economy, relies heavily on AC motors for various operations including ore extraction and processing. Furthermore, as Ghana focuses on energy efficiency and sustainable development, there's a growing emphasis on using high-efficiency AC motors to reduce electricity consumption and operating costs in industries. This shift towards more efficient motors aligns with Ghana's goals of reducing energy intensity and promoting sustainable industrialization. In summary, alternators and AC motors are integral to Ghana's power generation, industrial productivity, and ongoing efforts towards energy efficiency and economic growth."
+            },
+            {
+                question: "Explain the concept of synchronous speed in AC motors and its significance.",
+                keywords: ["rotating magnetic field", "stator frequency", "number of poles", "rotor speed", "slip", "power factor"],
+                modelAnswer: "Synchronous speed in AC motors refers to the speed at which the rotating magnetic field in the stator rotates. It is determined by the frequency of the AC supply and the number of magnetic poles in the motor. The formula for synchronous speed is Ns = 120f/P, where Ns is the synchronous speed in RPM, f is the frequency of the AC supply in Hz, and P is the number of poles. This speed is significant for several reasons: 1) It sets the theoretical maximum speed for induction motors. Induction motors always operate slightly below synchronous speed, with the difference being called slip. 2) Synchronous motors, as the name suggests, operate exactly at synchronous speed. This makes them useful in applications requiring precise speed control, such as in clocks or timing devices. 3) The relationship between synchronous speed and actual rotor speed in induction motors determines the slip, which is crucial for torque production. 4) Understanding synchronous speed is important for motor selection and application, as it helps determine the base speed of the motor for a given power supply frequency. 5) In power generation, alternators must be synchronized to the grid frequency, which is related to the synchronous speed concept. The significance of synchronous speed extends to power factor control in synchronous motors and generators, making it a fundamental concept in the study and application of AC machines."
+            },
+            {
+                question: "Discuss the factors affecting the efficiency of an alternator and methods to improve it.",
+                keywords: ["copper losses", "iron losses", "windage losses", "power factor", "cooling", "design optimization", "excitation control"],
+                modelAnswer: "The efficiency of an alternator is affected by several factors, and there are various methods to improve it: 1) Copper losses: These occur in the windings due to their electrical resistance. To reduce these, using larger cross-section conductors or more efficient winding designs can help. Superconducting windings, while expensive, can significantly reduce copper losses. 2) Iron losses: These include hysteresis and eddy current losses in the magnetic core. Using high-quality, thin laminated silicon steel cores can reduce these losses. 3) Windage and friction losses: These mechanical losses can be reduced by optimizing the rotor design for better aerodynamics and using high-quality bearings. 4) Excitation losses: Losses in the field winding and excitation system can be minimized by using more efficient excitation methods, such as brushless excitation systems. 5) Power factor: Operating at a high power factor improves efficiency. This can be achieved through proper reactive power management and using synchronous condensers. 6) Temperature: Higher temperatures increase resistance and losses. Improved cooling systems, such as hydrogen cooling in large alternators, can help maintain lower operating temperatures. 7) Loading: Alternators are typically most efficient at or near their rated load. Proper sizing and load management can ensure operation in the most efficient range. Methods to improve efficiency include: a) Design optimization using computer modeling and simulation. b) Using advanced materials like high-strength magnetic alloys. c) Implementing efficient cooling systems. d) Employing power electronics for better excitation control. e) Regular maintenance to ensure optimal performance. f) For grid-connected systems, implementing smart grid technologies for better load management and power factor control. Improving alternator efficiency is crucial for reducing fuel consumption in thermal power plants and maximizing energy capture in renewable energy systems, contributing to both economic and environmental benefits."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objective
+
+Questions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        function calculateAlternatorFrequency() {
+            const poles = parseInt(document.getElementById('poles').value);
+            const rpm = parseInt(document.getElementById('rpm').value);
+            const frequency = (poles * rpm) / 120;
+            document.getElementById('alternator-frequency-result').innerHTML = `Generated Frequency: ${frequency.toFixed(2)} Hz`;
+        }
+
+        function calculateMotorSlip() {
+            const syncSpeed = parseInt(document.getElementById('sync-speed').value);
+            const rotorSpeed = parseInt(document.getElementById('rotor-speed').value);
+            const slip = ((syncSpeed - rotorSpeed) / syncSpeed) * 100;
+            document.getElementById('motor-slip-result').innerHTML = `Motor Slip: ${slip.toFixed(2)}%`;
+        }
+
+        const dictionary = {
+            "Alternator": "A machine that converts mechanical energy into electrical energy in the form of alternating current.",
+            "Stator": "The stationary part of an alternator or motor, typically containing the armature windings.",
+            "Rotor": "The rotating part of an alternator or motor, often containing the field windings or permanent magnets.",
+            "Synchronous Speed": "The speed at which the magnetic field rotates in an AC motor, determined by the frequency of the power supply and the number of poles.",
+            "Induction Motor": "An AC motor where the rotor current is induced by the magnetic field of the stator, rather than being supplied by a separate circuit.",
+            "Slip": "The difference between the synchronous speed and the actual rotor speed in an induction motor, usually expressed as a percentage.",
+            "Power Factor": "The ratio of real power to apparent power in an AC electrical system.",
+            "Armature": "The power-producing component of an electrical machine, typically the stator in large alternators.",
+            "Field Winding": "The winding that produces the main magnetic field in an electrical machine, typically found on the rotor of an alternator.",
+            "Commutator": "A device used in DC motors to periodically reverse the current direction, not typically found in AC machines.",
+            "Brushes": "Devices used to transfer electrical current between stationary and moving parts in some electrical machines.",
+            "Efficiency": "The ratio of useful power output to total power input in an electrical machine, usually expressed as a percentage.",
+            "Torque": "The rotational force produced by a motor or applied to an alternator.",
+            "Synchronous Motor": "An AC motor that rotates at a speed precisely synchronized with the frequency of the power supply.",
+            "Excitation System": "The system that provides the field current for the rotor windings in an alternator or synchronous motor."
+        };
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('dictionary-search').value.toLowerCase();
+            const resultsContainer = document.getElementById('dictionary-results');
+            resultsContainer.innerHTML = '';
+
+            for (const [term, definition] of Object.entries(dictionary)) {
+                if (term.toLowerCase().includes(searchTerm) || definition.toLowerCase().includes(searchTerm)) {
+                    resultsContainer.innerHTML += `<p><strong>${term}:</strong> ${definition}</p>`;
+                }
+            }
+
+            if (resultsContainer.innerHTML === '') {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+
+        // Set the default tab to 'content'
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 3 Applied Electricity - Digital Electronics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-container {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .partial {
+            color: orange;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .show-more {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .model-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Year 3 Applied Electricity - Digital Electronics</h1>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'content')">Content</button>
+            <button class="tab-button" onclick="openTab(event, 'work-solutions')">Work Solutions</button>
+            <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz</button>
+            <button class="tab-button" onclick="openTab(event, 'simulations')">Simulations</button>
+            <button class="tab-button" onclick="openTab(event, 'resources')">Resources</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'dictionary')">Dictionary</button>
+        </div>
+
+        <div id="content" class="tab-content">
+            <h2>Digital Electronics Content</h2>
+            <h3>1. Binary Numbers</h3>
+            <p>Binary numbers are the foundation of digital electronics, using only two digits: 0 and 1. This system is used because electronic circuits have two stable states: ON (1) and OFF (0).</p>
+            
+            <h4>1.1 Binary Number System</h4>
+            <ul>
+                <li>Base-2 number system</li>
+                <li>Digits: 0 and 1 (called bits)</li>
+                <li>Each position represents a power of 2</li>
+            </ul>
+
+            <h4>1.2 Binary to Decimal Conversion</h4>
+            <p>To convert binary to decimal, multiply each bit by its positional value and sum the results.</p>
+            <p>Example: 1011 (binary) = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11 (decimal)</p>
+
+            <h4>1.3 Decimal to Binary Conversion</h4>
+            <p>To convert decimal to binary, divide the number by 2 repeatedly and read the remainders from bottom to top.</p>
+            <p>Example: 13 (decimal) to binary:</p>
+            <pre>
+13 ÷ 2 = 6 remainder 1
+6 ÷ 2 = 3 remainder 0
+3 ÷ 2 = 1 remainder 1
+1 ÷ 2 = 0 remainder 1
+            </pre>
+            <p>Reading from bottom to top: 13 (decimal) = 1101 (binary)</p>
+
+            <h3>2. Logic Gates</h3>
+            <p>Logic gates are the basic building blocks of digital circuits. They perform Boolean operations on binary inputs to produce binary outputs.</p>
+
+            <h4>2.1 Basic Logic Gates</h4>
+            <ul>
+                <li>AND Gate: Output is 1 only if all inputs are 1</li>
+                <li>OR Gate: Output is 1 if at least one input is 1</li>
+                <li>NOT Gate (Inverter): Output is the opposite of the input</li>
+                <li>NAND Gate: Combination of AND followed by NOT</li>
+                <li>NOR Gate: Combination of OR followed by NOT</li>
+                <li>XOR Gate: Output is 1 if inputs are different</li>
+                <li>XNOR Gate: Output is 1 if inputs are the same</li>
+            </ul>
+
+            <h4>2.2 Truth Tables</h4>
+            <p>Truth tables show all possible input combinations and their corresponding outputs for a logic gate.</p>
+            <p>Example: AND Gate Truth Table</p>
+            <table>
+                <tr><th>Input A</th><th>Input B</th><th>Output</th></tr>
+                <tr><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>0</td></tr>
+                <tr><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td></tr>
+            </table>
+
+            <h4>2.3 Boolean Algebra</h4>
+            <p>Boolean algebra is used to analyze and simplify digital circuits. Key laws include:</p>
+            <ul>
+                <li>Commutative Law: A + B = B + A, A · B = B · A</li>
+                <li>Associative Law: (A + B) + C = A + (B + C), (A · B) · C = A · (B · C)</li>
+                <li>Distributive Law: A · (B + C) = (A · B) + (A · C)</li>
+                <li>Identity Law: A + 0 = A, A · 1 = A</li>
+                <li>Complement Law: A + A' = 1, A · A' = 0</li>
+            </ul>
+        </div>
+
+        <div id="work-solutions" class="tab-content">
+            <h2>Work Solutions</h2>
+            
+            <h3>Problem 1: Binary to Decimal Conversion</h3>
+            <p>Convert the binary number 10110 to decimal.</p>
+            <h4>Solution:</h4>
+            <p>10110 (binary) = 1×2⁴ + 0×2³ + 1×2² + 1×2¹ + 0×2⁰</p>
+            <p>= 16 + 0 + 4 + 2 + 0</p>
+            <p>= 22 (decimal)</p>
+
+            <h3>Problem 2: Decimal to Binary Conversion</h3>
+            <p>Convert the decimal number 45 to binary.</p>
+            <h4>Solution:</h4>
+            <pre>
+45 ÷ 2 = 22 remainder 1
+22 ÷ 2 = 11 remainder 0
+11 ÷ 2 = 5  remainder 1
+5 ÷ 2 = 2   remainder 1
+2 ÷ 2 = 1   remainder 0
+1 ÷ 2 = 0   remainder 1
+            </pre>
+            <p>Reading from bottom to top: 45 (decimal) = 101101 (binary)</p>
+
+            <h3>Problem 3: Logic Gate Output</h3>
+            <p>Determine the output of an AND gate with inputs A = 1 and B = 0.</p>
+            <h4>Solution:</h4>
+            <p>For an AND gate, the output is 1 only if all inputs are 1.</p>
+            <p>Since A = 1 and B = 0, the output will be 0.</p>
+
+            <h3>Problem 4: Boolean Algebra Simplification</h3>
+            <p>Simplify the Boolean expression: A · B + A · (B + C) + (B + C)</p>
+            <h4>Solution:</h4>
+            <p>Step 1: A · B + A · (B + C) + (B + C)</p>
+            <p>Step 2: A · B + A · B + A · C + B + C (Distributive Law)</p>
+            <p>Step 3: (A · B + A · B) + (A · C + B + C)</p>
+            <p>Step 4: A · B + (A · C + B + C) (Idempotent Law: X + X = X)</p>
+            <p>Step 5: A · B + B + C (Absorption Law: X + X · Y = X)</p>
+            <p>Step 6: B + C (Absorption Law again)</p>
+            <p>Therefore, the simplified expression is B + C</p>
+
+            <h3>Problem 5: Combinational Logic Circuit</h3>
+            <p>Design a logic circuit that implements the function F = A · B + C</p>
+            <h4>Solution:</h4>
+            <p>1. Use an AND gate for A · B</p>
+            <p>2. Use an OR gate to combine the output of the AND gate with C</p>
+            <p>The circuit would have two inputs (A and B) going into an AND gate, and the output of the AND gate along with input C going into an OR gate. The output of the OR gate gives the function F.</p>
+        </div>
+
+        <div id="quiz" class="tab-content">
+            <h2>Quiz</h2>
+            <div id="quiz-menu">
+                <button onclick="startQuiz('study')">Start Study Mode</button>
+                <button onclick="startQuiz('exam')">Start Exam Mode</button>
+            </div>
+            <div id="quiz-container" style="display: none;">
+                <div id="timer" style="display: none;"></div>
+                <div id="questions"></div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div id="simulations" class="tab-content">
+            <h2>Simulations</h2>
+            <div class="simulation-container">
+                <h3>Logic Gate Simulator</h3>
+                <p>Select inputs and gate type to see the output:</p>
+                <label>Input A: <input type="checkbox" id="inputA"></label>
+                <label>Input B: <input type="checkbox" id="inputB"></label>
+                <select id="gateType">
+                    <option value="AND">AND Gate</option>
+                    <option value="OR">OR Gate</option>
+                    <option value="NOT">NOT Gate</option>
+                    <option value="NAND">NAND Gate</option>
+                    <option value="NOR">NOR Gate</option>
+                    <option value="XOR">XOR Gate</option>
+                </select>
+                <button onclick="runSimulation()">Run Simulation</button>
+                <p>Output: <span id="gateOutput"></span></p>
+            </div>
+        </div>
+
+        <div id="resources" class="tab-content">
+            <h2>Resources</h2>
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=LKnqECcg6Gw" target="_blank">Introduction to Number Systems and Binary</a></li>
+                <li><a href="https://www.youtube.com/watch?v=gI-qXk7XojA" target="_blank">Logic Gates, Truth Tables, Boolean Algebra</a></li>
+            </ul>
+            <h3>Online Resources</h3>
+            <ul>
+                <li><a href="https://www.nand2tetris.org/" target="_blank">From NAND to Tetris</a></li>
+                <li><a href="https://circuitverse.org/" target="_blank">CircuitVerse - Digital Logic Circuit Simulator</a></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+                <li>"Digital Design" by M. Morris Mano and Michael D. Ciletti</li>
+                <li>"Digital Fundamentals" by Thomas L. Floyd</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <h3>1. Build a Binary Calculator</h3>
+            <p>Create a simple calculator that can add and subtract binary numbers.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>LED lights</li>
+                <li>Resistors</li>
+                <li>Switches</li>
+                <li>Wires</li>
+                <li>Arduino board (optional, for more advanced version)</li>
+            </ul>
+
+            <h3>2. Logic Gate Demonstrator</h3>
+            <p>Build a physical model of different logic gates using switches and LEDs.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>LED lights</li>
+                <li>Resistors</li>
+                <li>Switches</li>
+                <li>7400 series integrated circuits (e.g., 7408 for AND, 7432 for OR)</li>
+                <li>Wires</li>
+            </ul>
+
+            <h3>3. Binary to Decimal Converter</h3>
+            <p>Design a circuit that converts a 4-bit binary number to its decimal equivalent using a 7-segment display.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>7-segment display</li>
+                <li>Binary-to-BCD converter IC (e.g., 74185)</li>
+                <li>BCD-to-7-segment decoder IC (e.g., 7447)</li>
+                <li>Switches</li>
+                <li>Resistors</li>
+                <li>Wires</li>
+            </ul>
+
+            <h3>4. Digital Dice</h3>
+            <p>Build an electronic dice using a 555 timer, a counter IC, and a 7-segment display.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>555 timer IC</li>
+                <li>4017 decade counter IC</li>
+                <li>7447 BCD-to-7-segment decoder</li>
+                <li>7-segment display</li>
+                <li>Push button</li>
+                <li>Resistors and capacitors</li>
+                <li>Wires</li>
+            </ul>
+
+            <h3>5. Simple Digital Clock</h3>
+            <p>Create a basic digital clock using flip-flops and counters.</p>
+            <h4>Materials needed:</h4>
+            <ul>
+                <li>Breadboard</li>
+                <li>7490 decade counter ICs</li>
+                <li>7447 BCD-to-7-segment decoders</li>
+                <li>7-segment displays</li>
+                <li>555 timer IC (for clock pulse)</li>
+                <li>Resistors and capacitors</li>
+                <li>Wires</li>
+            </ul>
+        </div>
+
+        <div id="dictionary" class="tab-content">
+            <h2>Dictionary</h2>
+            <input type="text" id="search-input" placeholder="Search for a term...">
+            <div id="search-results"></div>
+            <table id="dictionary-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+                <!-- Dictionary entries will be populated here -->
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const objectiveQuestions = [
+            {
+                question: "What is the decimal equivalent of the binary number 1010?",
+                options: ["8", "10", "12", "14"],
+                correctAnswer: "10"
+            },
+            {
+                question: "Which logic gate gives an output of 1 only when all inputs are 1?",
+                options: ["OR", "AND", "NOT", "XOR"],
+                correctAnswer: "AND"
+            },
+            {
+                question: "What is the binary representation of the decimal number 25?",
+                options: ["11001", "10101", "11101", "10001"],
+                correctAnswer: "11001"
+            },
+            {
+                question: "In Boolean algebra, what is the result of A + A'?",
+                options: ["0", "1", "A", "A'"],
+                correctAnswer: "1"
+            },
+            {
+                question: "Which of the following is NOT a basic logic gate?",
+                options: ["AND", "OR", "XOR", "ADD"],
+                correctAnswer: "ADD"
+            }
+        ];
+
+        const subjectiveQuestions = [
+            {
+                question: "Explain the process of converting a decimal number to binary.",
+                keywords: ["division by 2", "remainders", "least significant bit", "most significant bit", "powers of 2"],
+                modelAnswer: "To convert a decimal number to binary, you repeatedly divide the number by 2 and keep track of the remainders. The process starts with the given decimal number and continues until the quotient becomes 0. The remainders, read from bottom to top, form the binary number. Each remainder represents a bit in the binary number, with the first remainder being the least significant bit (LSB) and the last remainder being the most significant bit (MSB). This method works because binary is a base-2 system, where each bit position represents a power of 2."
+            },
+            {
+                question: "Describe the operation of a NAND gate and explain why it's considered a universal gate.",
+                keywords: ["AND gate", "NOT gate", "truth table", "output", "construct other gates", "NOR gate"],
+                modelAnswer: "A NAND gate is a logic gate that combines the operations of an AND gate followed by a NOT gate. Its output is the inverse of an AND gate: it produces a 0 output only when all inputs are 1, and a 1 output for all other input combinations. The NAND gate is considered a universal gate because it can be used to construct all other logic gates (AND, OR, NOT, NOR, XOR, XNOR). For example, a NOT gate can be created by connecting all inputs of a NAND gate together, and an AND gate can be created by following a NAND gate with a NOT gate. This universality makes NAND gates very useful in digital circuit design, as they can simplify the overall circuit structure and reduce the types of components needed."
+            },
+            {
+                question: "Explain the concept of Boolean algebra and its importance in digital electronics.",
+                keywords: ["two-valued logic", "true/false", "1/0", "simplification", "logic gates", "circuit design", "laws and theorems"],
+                modelAnswer: "Boolean algebra is a branch of mathematics that deals with the manipulation of logical expressions and binary variables. It is based on a two-valued logic system where variables can only have two possible values: true/false or 1/0. In digital electronics, Boolean algebra is crucial for several reasons: 1) It provides a mathematical framework for analyzing and designing digital circuits. 2) It allows for the simplification of complex logical expressions, which leads to more efficient circuit designs with fewer components. 3) Boolean laws and theorems (such as commutative, associative, and distributive laws) enable systematic manipulation of logical expressions. 4) It forms the basis for designing and understanding the operation of logic gates, which are the fundamental building blocks of digital circuits. 5) Boolean algebra facilitates the conversion between different forms of logical expressions (sum-of-products, product-of-sums), aiding in circuit optimization. Overall, Boolean algebra is an essential tool for digital circuit designers, enabling them to create complex digital systems efficiently and reliably."
+            }
+        ];
+
+        let quizMode = null;
+        let timeRemaining = 0;
+        let timer = null;
+
+        function startQuiz(mode) {
+            quizMode = mode;
+            document.getElementById('quiz-menu').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-result').innerHTML = '';
+
+            let questionsHtml = '';
+            objectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + 1}. ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="q${index + 1}" value="${['a', 'b', 'c', 'd'][i]}">
+                                    ${option}
+                                </label><br>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                questionsHtml += `
+                    <div class="quiz-question">
+                        <p>${index + objectiveQuestions.length + 1}. ${q.question}</p>
+                        <textarea name="q${index + objectiveQuestions.length + 1}"></textarea>
+                    </div>
+                `;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHtml;
+
+            if (mode === 'exam') {
+                timeRemaining = 900; // 15 minutes
+                document.getElementById('timer').style.display = 'block';
+                updateTimer();
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+            timeRemaining--;
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            document.getElementById('timer').style.display = 'none';
+
+            let score = 0;
+            let maxScore = objectiveQuestions.length * 3 + subjectiveQuestions.length * 7;
+            let reviewContent = '';
+
+            objectiveQuestions.forEach((q, index) => {
+                const selectedAnswer = document.querySelector(`input[name="q${index + 1}"]:checked`)?.value;
+                if (selectedAnswer === q.correctAnswer) {
+                    score += 3;
+                    reviewContent += `<p class="correct">Question ${index + 1}: Correct! (3/3 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + 1}: Incorrect. (0/3 marks)</p>`;
+                    if (quizMode === 'study') {
+                        reviewContent += `<p>The correct answer was: ${q.options[['a', 'b', 'c', 'd'].indexOf(q.correctAnswer)]}</p>`;
+                    }
+                }
+            });
+
+            subjectiveQuestions.forEach((q, index) => {
+                const answer = document.querySelector(`textarea[name="q${index + objectiveQuestions.length + 1}"]`).value.trim().toLowerCase();
+                const matchedKeywords = q.keywords.filter(keyword => answer.includes(keyword.toLowerCase()));
+                const questionScore = Math.min(matchedKeywords.length, 7);
+                score += questionScore;
+
+                if (questionScore === 7) {
+                    reviewContent += `<p class="correct">Question ${index + objectiveQuestions.length + 1}: Excellent! (${questionScore}/7 marks)</p>`;
+                } else if (questionScore > 0) {
+                    reviewContent += `<p class="partial">Question ${index + objectiveQuestions.length + 1}: Good attempt. (${questionScore}/7 marks)</p>`;
+                } else {
+                    reviewContent += `<p class="incorrect">Question ${index + objectiveQuestions.length + 1}: Needs improvement. (${questionScore}/7 marks)</p>`;
+                }
+
+                if (quizMode === 'study') {
+                    reviewContent += `<p>Keywords to include: ${q.keywords.join(', ')}</p>`;
+                    reviewContent += `<p class="show-more" onclick="toggleModelAnswer(${index + objectiveQuestions.length + 1})">Show Model Answer</p>`;
+                    reviewContent += `<div id="model-answer-${index + objectiveQuestions.length + 1}" class="model-answer">${q.modelAnswer}</div>`;
+                }
+            });
+
+            const percentage = (score / maxScore) * 100;
+            let resultMessage = `<h3>Quiz Results</h3><p>Your score: ${score}/${maxScore} (${percentage.toFixed(2)}%)</p>`;
+
+            if (percentage >= 70) {
+                resultMessage += '<p class="correct">Congratulations! You have qualified for the final examination and certification.</p>';
+            } else {
+                resultMessage += '<p class="incorrect">You need to score at least 70% to qualify for the final examination and certification. Please review the material and try again.</p>';
+            }
+
+            resultMessage += '<h4>Review:</h4>' + reviewContent;
+            resultMessage += '<button onclick="resetQuiz()">Return to Quiz Menu</button>';
+
+            document.getElementById('quiz-result').innerHTML = resultMessage;
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+
+        function toggleModelAnswer(questionNumber) {
+            const modelAnswer = document.getElementById(`model-answer-${questionNumber}`);
+            const showMoreButton = modelAnswer.previousElementSibling;
+            if (modelAnswer.style.display === 'none' || modelAnswer.style.display === '') {
+                modelAnswer.style.display = 'block';
+                showMoreButton.textContent = 'Hide Model Answer';
+            } else {
+                modelAnswer.style.display = 'none';
+                showMoreButton.textContent = 'Show Model Answer';
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-menu').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            quizMode = null;
+            clearInterval(timer);
+        }
+
+        // Logic Gate Simulation
+        function runSimulation() {
+            const inputA = document.getElementById('inputA').checked ? 1 : 0;
+            const inputB = document.getElementById('inputB').checked ? 1 : 0;
+            const gateType = document.getElementById('gateType').value;
+            let output;
+
+            switch(gateType) {
+                case 'AND':
+                    output = inputA && inputB;
+                    break;
+                case 'OR':
+                    output = inputA || inputB;
+                    break;
+                case 'NOT':
+                    output = !inputA;
+                    break;
+                case 'NAND':
+                    output = !(inputA && inputB);
+                    break;
+                case 'NOR':
+                    output = !(inputA || inputB);
+                    break;
+                case 'XOR':
+                    output = inputA ^ inputB;
+                    break;
+            }
+
+            document.getElementById('gateOutput').textContent = output ? '1' : '0';
+        }
+
+        // Dictionary functionality
+        const dictionary = {
+            "Binary": "A number system that uses only two digits: 0 and 1.",
+            "Bit": "The smallest unit of digital information, representing either 0 or 1.",
+            "Logic Gate": "An electronic circuit that performs a logical operation on one or more binary inputs and produces a single binary output.",
+            "AND Gate": "A logic gate that outputs 1 only when all inputs are 1.",
+            "OR Gate": "A logic gate that outputs 1 if at least one input is 1.",
+            "NOT Gate": "A logic gate that inverts the input, changing 1 to 0 and 0 to 1.",
+            "NAND Gate": "A logic gate that combines AND and NOT operations.",
+            "NOR Gate": "A logic gate that combines OR and NOT operations.",
+            "X0R Gate": "A logic gate that outputs 1 when the inputs are different.",
+            "Boolean Algebra": "A branch of algebra in which the values of the variables are the truth values true and false, usually denoted 1 and 0.",
+            "Truth Table": "A table showing the output values of a logic circuit for every possible combination of input values.",
+            "Combinational Logic": "A type of digital logic which is implemented by Boolean circuits, where the output is a pure function of the present input only.",
+            "Sequential Logic": "A type of logic circuit whose output depends not only on the present input but also on the history of the input.",
+            "Flip-Flop": "A circuit that has two stable states and can be used to store state information.",
+            "Integrated Circuit (IC)": "A set of electronic circuits on one small flat piece (or chip) of semiconductor material, usually silicon."
+        };
+
+        function populateDictionary() {
+            const table = document.getElementById('dictionary-table');
+            for (const [term, definition] of Object.entries(dictionary)) {
+                const row = table.insertRow();
+                const termCell = row.insertCell(0);
+                const definitionCell = row.insertCell(1);
+                termCell.textContent = term;
+                definitionCell.textContent = definition;
+            }
+        }
+
+        function searchDictionary() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const table = document.getElementById('dictionary-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const termCell = rows[i].getElementsByTagName('td')[0];
+                if (termCell) {
+                    const term = termCell.textContent || termCell.innerText;
+                    if (term.toLowerCase().indexOf(searchTerm) > -1) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Set the default tab to 'content' and initialize the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tab-button').click();
+            populateDictionary();
+            document.getElementById('search-input').addEventListener('keyup', searchDictionary);
+        });
+    </script>
+</body>
+</html>
